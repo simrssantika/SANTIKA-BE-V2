@@ -39,3 +39,6 @@ out/
 ### Kotlin ###
 .kotlin
 CLAUDE.md
+/.claude
+/logs/*
+!/logs/.gitKeep

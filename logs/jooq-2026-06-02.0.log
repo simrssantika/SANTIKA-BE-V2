@@ -1,7 +1,0 @@
-2026-06-02T21:51:39.069+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] org.jooq.tools.LoggerListener            : Executing query          : select 1 as "one"
-2026-06-02T21:51:39.114+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] org.jooq.tools.LoggerListener            : Fetched result           : +----+
-2026-06-02T21:51:39.114+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] org.jooq.tools.LoggerListener            :                          : | one|
-2026-06-02T21:51:39.114+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] org.jooq.tools.LoggerListener            :                          : +----+
-2026-06-02T21:51:39.114+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] org.jooq.tools.LoggerListener            :                          : |   1|
-2026-06-02T21:51:39.115+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] org.jooq.tools.LoggerListener            :                          : +----+
-2026-06-02T21:51:39.115+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] org.jooq.tools.LoggerListener            : Fetched row(s)           : 1
