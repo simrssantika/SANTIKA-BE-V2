@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: kelurahan
+      author: ridlo
+      changes:
+        - createTable:
+            tableName: wilayah_kelurahan
+            schemaName: master
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: kecamatan_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_kecamatan_id
+                    referencedColumnNames: id
+                    referencedTableSchemaName: master
+                    referencedTableName: wilayah_kecamatan
+              - column:
+                  name: kode_kelurahan
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nama_kelurahan
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+      rollback:
+        - dropTable:
+            tableName: wilayah_kelurahan
+            schemaName: master
+
+  - changeSet:
+      id: kelurahan-unique-kode
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_kode_wilayah_kelurahan ON master.wilayah_kelurahan (kode_kelurahan) WHERE (deleted_at IS NULL);

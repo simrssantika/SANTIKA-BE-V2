@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: prosedur
+      author: ridlo
+      changes:
+        - createTable:
+            schemaName: master
+            tableName: medis_prosedur_icd9
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: kode_prosedur
+                  type: varchar(30)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nama_prosedur
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: prosedur-index
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_kode_prosedur ON master.medis_prosedur_icd9 (kode_prosedur) WHERE (deleted_at IS NULL);

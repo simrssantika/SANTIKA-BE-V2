@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-schema-shared
+      author: system
+      changes:
+        - sql:
+            sql: CREATE SCHEMA IF NOT EXISTS shared;
+
+  - include:
+      file: db/changelog/shared/user/user.yaml
+  - include:
+      file: db/changelog/shared/audit/audit.yaml
+  - include:
+      file: db/changelog/shared/file/file.yaml

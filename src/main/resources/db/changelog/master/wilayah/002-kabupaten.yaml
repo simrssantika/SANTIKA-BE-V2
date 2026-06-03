@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: kabupaten
+      author: ridlo
+      changes:
+        - createTable:
+            tableName: wilayah_kab_kota
+            schemaName: master
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: provinsi_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_provinsi_id
+                    referencedColumnNames: id
+                    referencedTableSchemaName: master
+                    referencedTableName: wilayah_provinsi
+              - column:
+                  name: kode_kab_kota
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nama_kab_kota
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+      rollback:
+        - dropTable:
+            tableName: wilayah_kab_kota
+            schemaName: master
+
+  - changeSet:
+      id: kabupaten-unique-kode
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_kode_wilayah_kab_kota ON master.wilayah_kab_kota (kode_kab_kota) WHERE (deleted_at IS NULL);

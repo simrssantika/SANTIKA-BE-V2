@@ -1,0 +1,194 @@
+databaseChangeLog:
+  - changeSet:
+      id: pegawai
+      author: ridlo
+      changes:
+        - createTable:
+            schemaName: kepegawaian
+            tableName: pegawai
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nama
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nip
+                  type: varchar(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: jenis_identitas
+                  type: varchar(20)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: identitas_lain
+                  type: varchar(30)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: no_identitas
+                  type: varchar(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: kelamin
+                  type: varchar(1)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: jabatan
+                  type: varchar(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: telephone
+                  type: varchar(20)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: email
+                  type: varchar(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: jenjang_jabatan
+                  type: varchar(20)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: kelompok_pegawai_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: resiko_pegawai_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: darurat_pegawai_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: departemen_pegawai_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: bidang_pegawai_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: status_pegawai
+                  type: varchar(20)
+                  defaultValue: KONTRAK
+                  constraints:
+                    nullable: false
+              - column:
+                  name: vendor_tenaga_luar_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: pendidikan
+                  type: varchar(20)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: tempat_lahir
+                  type: varchar(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: tanggal_lahir
+                  type: date
+                  constraints:
+                    nullable: true
+              - column:
+                  name: provinsi_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: kabupaten_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: kecamatan_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: kelurahan_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: alamat
+                  type: varchar(200)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: mulai_bekerja
+                  type: date
+                  constraints:
+                    nullable: true
+              - column:
+                  name: foto_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: is_active
+                  type: boolean
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: pegawai-indexes
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_nip_pegawai ON kepegawaian.pegawai (nip) WHERE (deleted_at IS NULL);
+              CREATE INDEX idx_pegawai_kelompok ON kepegawaian.pegawai (kelompok_pegawai_id);
+              CREATE INDEX idx_pegawai_resiko ON kepegawaian.pegawai (resiko_pegawai_id);
+              CREATE INDEX idx_pegawai_darurat ON kepegawaian.pegawai (darurat_pegawai_id);
+              CREATE INDEX idx_pegawai_departemen ON kepegawaian.pegawai (departemen_pegawai_id);
+              CREATE INDEX idx_pegawai_bidang ON kepegawaian.pegawai (bidang_pegawai_id);
+              CREATE INDEX idx_pegawai_vendor ON kepegawaian.pegawai (vendor_tenaga_luar_id);
+              CREATE INDEX idx_pegawai_provinsi ON kepegawaian.pegawai (provinsi_id);
+              CREATE INDEX idx_pegawai_kabupaten ON kepegawaian.pegawai (kabupaten_id);
+              CREATE INDEX idx_pegawai_kecamatan ON kepegawaian.pegawai (kecamatan_id);
+              CREATE INDEX idx_pegawai_kelurahan ON kepegawaian.pegawai (kelurahan_id);
+              CREATE INDEX idx_pegawai_foto ON kepegawaian.pegawai (foto_id);

@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: provinsi
+      author: ridlo
+      changes:
+        - createTable:
+            tableName: wilayah_provinsi
+            schemaName: master
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: kode_provinsi
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nama_provinsi
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+      rollback:
+        - dropTable:
+            tableName: wilayah_provinsi
+            schemaName: master
+
+  - changeSet:
+      id: provinsi-unique-kode
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_kode_provinsi ON master.wilayah_provinsi (kode_provinsi) WHERE (deleted_at IS NULL);

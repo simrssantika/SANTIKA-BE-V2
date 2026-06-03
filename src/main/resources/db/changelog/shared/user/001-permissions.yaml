@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: shared-permissions
+      author: system
+      changes:
+        - createTable:
+            schemaName: shared
+            tableName: permissions
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: display_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: shared-permissions-unique
+      author: system
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_permission_name ON shared.permissions (name) WHERE deleted_at IS NULL;

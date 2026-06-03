@@ -1,0 +1,101 @@
+databaseChangeLog:
+  - changeSet:
+      id: shared-storage-files
+      author: system
+      changes:
+        - createTable:
+            schemaName: shared
+            tableName: storage_files
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: original_name
+                  type: varchar(255)
+              - column:
+                  name: stored_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: path
+                  type: varchar(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ext
+                  type: varchar(50)
+              - column:
+                  name: size
+                  type: bigint
+              - column:
+                  name: mime_type
+                  type: varchar(100)
+              - column:
+                  name: module
+                  type: varchar(100)
+              - column:
+                  name: entity_id
+                  type: uuid
+              - column:
+                  name: uploaded_by
+                  type: uuid
+              - column:
+                  name: moved_from_temp_id
+                  type: uuid
+              - column:
+                  name: version
+                  type: bigint
+                  defaultValueNumeric: 0
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: deleted_at
+                  type: timestamp
+
+        - addForeignKeyConstraint:
+            baseTableSchemaName: shared
+            baseTableName: storage_files
+            baseColumnNames: uploaded_by
+            referencedTableSchemaName: shared
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_storage_files_uploaded_by
+            onDelete: SET NULL
+
+        - createIndex:
+            schemaName: shared
+            tableName: storage_files
+            indexName: idx_storage_files_module_entity
+            columns:
+              - column:
+                  name: module
+              - column:
+                  name: entity_id
+
+        - createIndex:
+            schemaName: shared
+            tableName: storage_files
+            indexName: idx_storage_files_uploaded_by
+            columns:
+              - column:
+                  name: uploaded_by
+
+        - createIndex:
+            schemaName: shared
+            tableName: storage_files
+            indexName: idx_storage_files_deleted_at
+            columns:
+              - column:
+                  name: deleted_at

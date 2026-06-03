@@ -1,0 +1,2181 @@
+{
+  "title": "Santika API Spec",
+  "modules": {
+    "master": [
+      {
+        "section": "Provinsi",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/master/provinsi",
+            "Query Params": [
+              {
+                "Param": "page",
+                "Tipe": "integer",
+                "Keterangan": "Default: 0"
+              },
+              {
+                "Param": "size",
+                "Tipe": "integer",
+                "Keterangan": "Default: 10"
+              },
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari nama provinsi"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Provinsi retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_provinsi": "35",
+                    "nama_provinsi": "Jawa Timur"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 38,
+                  "total_pages": 4
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/provinsi/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Provinsi retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "kode_provinsi": "35",
+                "nama_provinsi": "Jawa Timur"
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/provinsi/options",
+            "Query Params": [
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Filter nama"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Jawa Timur"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/master/provinsi",
+            "Request Body": "{\n  \"kode_provinsi\": \"35\",        // required\n  \"nama_provinsi\": \"Jawa Timur\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Provinsi created successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440000",
+                "kode_provinsi": "35",
+                "nama_provinsi": "Jawa Timur"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/master/provinsi/{id}",
+            "Request Body": "{\n  \"kode_provinsi\": \"35\",        // optional\n  \"nama_provinsi\": \"Jawa Timur\" // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Provinsi updated successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440000",
+                "kode_provinsi": "35",
+                "nama_provinsi": "Jawa Timur"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/master/provinsi/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Provinsi deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Kabupaten / Kota",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/master/kabupaten",
+            "Query Params": [
+              {
+                "Param": "page",
+                "Tipe": "integer",
+                "Keterangan": "Default: 0"
+              },
+              {
+                "Param": "size",
+                "Tipe": "integer",
+                "Keterangan": "Default: 10"
+              },
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari nama"
+              },
+              {
+                "Param": "provinsi_id",
+                "Tipe": "uuid",
+                "Keterangan": "Filter by provinsi"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kabupaten retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_kab_kota": "3573",
+                    "nama_kab_kota": "Kota Malang",
+                    "provinsi": {
+                      "id": "uuid",
+                      "nama_provinsi": "Jawa Timur"
+                    }
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 514,
+                  "total_pages": 52
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/kabupaten/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kabupaten retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "kode_kab_kota": "3573",
+                "nama_kab_kota": "Kota Malang",
+                "provinsi": {
+                  "id": "uuid",
+                  "nama_provinsi": "Jawa Timur"
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/kabupaten/options",
+            "Query Params": [
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Filter nama"
+              },
+              {
+                "Param": "provinsi_id",
+                "Tipe": "uuid",
+                "Keterangan": "Filter by provinsi (cascading)"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Kota Malang"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/master/kabupaten",
+            "Request Body": "{\n  \"kode_kab_kota\": \"3573\",       // required\n  \"nama_kab_kota\": \"Kota Malang\", // required\n  \"provinsi_id\": \"uuid\"           // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Kabupaten created successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440001",
+                "kode_kab_kota": "3573",
+                "nama_kab_kota": "Kota Malang",
+                "provinsi": {
+                  "id": "550e8400-e29b-41d4-a716-446655440000",
+                  "nama_provinsi": "Jawa Timur"
+                }
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/master/kabupaten/{id}",
+            "Request Body": "{\n  \"kode_kab_kota\": \"3573\",        // optional\n  \"nama_kab_kota\": \"Kota Malang\", // optional\n  \"provinsi_id\": \"uuid\"           // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kabupaten updated successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440001",
+                "kode_kab_kota": "3573",
+                "nama_kab_kota": "Kota Malang",
+                "provinsi": {
+                  "id": "550e8400-e29b-41d4-a716-446655440000",
+                  "nama_provinsi": "Jawa Timur"
+                }
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/master/kabupaten/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kabupaten deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Kecamatan",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/master/kecamatan",
+            "Query Params": [
+              {
+                "Param": "page",
+                "Tipe": "integer",
+                "Keterangan": "Default: 0"
+              },
+              {
+                "Param": "size",
+                "Tipe": "integer",
+                "Keterangan": "Default: 10"
+              },
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari nama"
+              },
+              {
+                "Param": "kabupaten_id",
+                "Tipe": "uuid",
+                "Keterangan": "Filter by kabupaten"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kecamatan retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_kecamatan": "3573010",
+                    "nama_kecamatan": "Klojen",
+                    "kabupaten": {
+                      "id": "uuid",
+                      "nama_kab_kota": "Kota Malang"
+                    }
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 7285,
+                  "total_pages": 729
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/kecamatan/options",
+            "Query Params": [
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Filter nama"
+              },
+              {
+                "Param": "kabupaten_id",
+                "Tipe": "uuid",
+                "Keterangan": "Filter cascading"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Klojen"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/master/kecamatan",
+            "Request Body": "{\n  \"kode_kecamatan\": \"3573010\", // required\n  \"nama_kecamatan\": \"Klojen\",  // required\n  \"kabupaten_id\": \"uuid\"        // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Kecamatan created successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440002",
+                "kode_kecamatan": "3573010",
+                "nama_kecamatan": "Klojen",
+                "kabupaten": {
+                  "id": "550e8400-e29b-41d4-a716-446655440001",
+                  "nama_kab_kota": "Kota Malang"
+                }
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/master/kecamatan/{id}",
+            "Request Body": "{\n  \"kode_kecamatan\": \"3573010\", // optional\n  \"nama_kecamatan\": \"Klojen\",  // optional\n  \"kabupaten_id\": \"uuid\"        // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kecamatan updated successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440002",
+                "kode_kecamatan": "3573010",
+                "nama_kecamatan": "Klojen",
+                "kabupaten": {
+                  "id": "550e8400-e29b-41d4-a716-446655440001",
+                  "nama_kab_kota": "Kota Malang"
+                }
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/master/kecamatan/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kecamatan deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Kelurahan",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/master/kelurahan",
+            "Query Params": [
+              {
+                "Param": "page",
+                "Tipe": "integer",
+                "Keterangan": "Default: 0"
+              },
+              {
+                "Param": "size",
+                "Tipe": "integer",
+                "Keterangan": "Default: 10"
+              },
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari nama"
+              },
+              {
+                "Param": "kecamatan_id",
+                "Tipe": "uuid",
+                "Keterangan": "Filter by kecamatan"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kelurahan retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_kelurahan": "3573010001",
+                    "nama_kelurahan": "Klojen",
+                    "kecamatan": {
+                      "id": "uuid",
+                      "nama_kecamatan": "Klojen"
+                    }
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 83761,
+                  "total_pages": 8377
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/kelurahan/options",
+            "Query Params": [
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Filter nama"
+              },
+              {
+                "Param": "kecamatan_id",
+                "Tipe": "uuid",
+                "Keterangan": "Filter cascading"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Klojen"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/master/kelurahan",
+            "Request Body": "{\n  \"kode_kelurahan\": \"3573010001\", // required\n  \"nama_kelurahan\": \"Klojen\",     // required\n  \"kecamatan_id\": \"uuid\"           // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Kelurahan created successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440003",
+                "kode_kelurahan": "3573010001",
+                "nama_kelurahan": "Klojen",
+                "kecamatan": {
+                  "id": "550e8400-e29b-41d4-a716-446655440002",
+                  "nama_kecamatan": "Klojen"
+                }
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/master/kelurahan/{id}",
+            "Request Body": "{\n  \"kode_kelurahan\": \"3573010001\", // optional\n  \"nama_kelurahan\": \"Klojen\",     // optional\n  \"kecamatan_id\": \"uuid\"           // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kelurahan updated successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440003",
+                "kode_kelurahan": "3573010001",
+                "nama_kelurahan": "Klojen",
+                "kecamatan": {
+                  "id": "550e8400-e29b-41d4-a716-446655440002",
+                  "nama_kecamatan": "Klojen"
+                }
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/master/kelurahan/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kelurahan deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Penjamin",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/master/penjamin",
+            "Query Params": [
+              {
+                "Param": "page",
+                "Tipe": "integer",
+                "Keterangan": "Default: 0"
+              },
+              {
+                "Param": "size",
+                "Tipe": "integer",
+                "Keterangan": "Default: 10"
+              },
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari nama penjamin"
+              },
+              {
+                "Param": "is_active",
+                "Tipe": "boolean",
+                "Keterangan": "Filter status aktif"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Penjamin retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "penjamin": "BPJS Kesehatan",
+                    "nama_perusahaan_penjamin": "BPJS Kesehatan",
+                    "alamat_penjamin": "Jl. Letjen Suprapto No.20",
+                    "telephone_penjamin": "021-500400",
+                    "penerima_tagihan": "Kantor BPJS Malang",
+                    "is_active": true
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 5,
+                  "total_pages": 1
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/penjamin/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "BPJS Kesehatan"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/master/penjamin",
+            "Request Body": "{\n  \"penjamin\": \"BPJS Kesehatan\",                  // required\n  \"nama_perusahaan_penjamin\": \"BPJS Kesehatan\",  // required\n  \"alamat_penjamin\": \"Jl. Letjen Suprapto No.20\", // optional\n  \"telephone_penjamin\": \"021-500400\",              // optional\n  \"penerima_tagihan\": \"Kantor BPJS Malang\",        // optional\n  \"is_active\": true\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Penjamin created successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440010",
+                "penjamin": "BPJS Kesehatan",
+                "nama_perusahaan_penjamin": "BPJS Kesehatan",
+                "alamat_penjamin": "Jl. Letjen Suprapto No.20",
+                "telephone_penjamin": "021-500400",
+                "penerima_tagihan": "Kantor BPJS Malang",
+                "is_active": true
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/master/penjamin/{id}",
+            "Request Body": "{\n  \"penjamin\": \"BPJS Kesehatan\",                   // optional\n  \"nama_perusahaan_penjamin\": \"BPJS Kesehatan\",   // optional\n  \"alamat_penjamin\": \"Jl. Letjen Suprapto No.20\", // optional\n  \"telephone_penjamin\": \"021-500400\",              // optional\n  \"penerima_tagihan\": \"Kantor BPJS Malang\",        // optional\n  \"is_active\": true                                // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Penjamin updated successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440010",
+                "penjamin": "BPJS Kesehatan",
+                "nama_perusahaan_penjamin": "BPJS Kesehatan",
+                "alamat_penjamin": "Jl. Letjen Suprapto No.20",
+                "telephone_penjamin": "021-500400",
+                "penerima_tagihan": "Kantor BPJS Malang",
+                "is_active": true
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/master/penjamin/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Penjamin deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Spesialis",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/master/spesialis",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Spesialis retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_spesialis": "SP-001",
+                    "nama_spesialis": "Penyakit Dalam"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 20,
+                  "total_pages": 2
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/spesialis/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Penyakit Dalam"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/master/spesialis",
+            "Request Body": "{\n  \"kode_spesialis\": \"SP-001\",      // required\n  \"nama_spesialis\": \"Penyakit Dalam\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Spesialis created successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440020",
+                "kode_spesialis": "SP-001",
+                "nama_spesialis": "Penyakit Dalam"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/master/spesialis/{id}",
+            "Request Body": "{\n  \"kode_spesialis\": \"SP-001\",       // optional\n  \"nama_spesialis\": \"Penyakit Dalam\" // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Spesialis updated successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440020",
+                "kode_spesialis": "SP-001",
+                "nama_spesialis": "Penyakit Dalam"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/master/spesialis/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Spesialis deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Poli",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/master/poli",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Poli retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_poli": "POLI-001",
+                    "nama_poli": "Poliklinik Umum"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 10,
+                  "total_pages": 1
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/poli/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Poliklinik Umum"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/master/poli",
+            "Request Body": "{\n  \"kode_poli\": \"POLI-001\",       // required\n  \"nama_poli\": \"Poliklinik Umum\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Poli created successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440030",
+                "kode_poli": "POLI-001",
+                "nama_poli": "Poliklinik Umum"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/master/poli/{id}",
+            "Request Body": "{\n  \"kode_poli\": \"POLI-001\",       // optional\n  \"nama_poli\": \"Poliklinik Umum\" // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Poli updated successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440030",
+                "kode_poli": "POLI-001",
+                "nama_poli": "Poliklinik Umum"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/master/poli/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Poli deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Diagnosa",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/master/diagnosa",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Diagnosa retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_diagnosa": "A00",
+                    "nama_diagnosa": "Cholera"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 12000,
+                  "total_pages": 1200
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/diagnosa/options",
+            "Query Params": [
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari kode atau nama diagnosa"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "A00 — Cholera"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/master/diagnosa",
+            "Request Body": "{\n  \"kode_diagnosa\": \"A00\", // required\n  \"nama_diagnosa\": \"Cholera\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Diagnosa created successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440040",
+                "kode_diagnosa": "A00",
+                "nama_diagnosa": "Cholera"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/master/diagnosa/{id}",
+            "Request Body": "{\n  \"kode_diagnosa\": \"A00\",     // optional\n  \"nama_diagnosa\": \"Cholera\"  // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Diagnosa updated successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440040",
+                "kode_diagnosa": "A00",
+                "nama_diagnosa": "Cholera"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/master/diagnosa/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Diagnosa deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Prosedur",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/master/prosedur",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Prosedur retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_prosedur": "01.0",
+                    "nama_prosedur": "Craniofacial Operations"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 4000,
+                  "total_pages": 400
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/master/prosedur/options",
+            "Query Params": [
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari kode atau nama prosedur"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "01.0 — Craniofacial Operations"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/master/prosedur",
+            "Request Body": "{\n  \"kode_prosedur\": \"01.0\",            // required\n  \"nama_prosedur\": \"Craniofacial Operations\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Prosedur created successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440050",
+                "kode_prosedur": "01.0",
+                "nama_prosedur": "Craniofacial Operations"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/master/prosedur/{id}",
+            "Request Body": "{\n  \"kode_prosedur\": \"01.0\",              // optional\n  \"nama_prosedur\": \"Craniofacial Operations\" // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Prosedur updated successfully",
+              "data": {
+                "id": "550e8400-e29b-41d4-a716-446655440050",
+                "kode_prosedur": "01.0",
+                "nama_prosedur": "Craniofacial Operations"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/master/prosedur/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Prosedur deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      }
+    ],
+    "kepegawaian": [
+      {
+        "section": "Upload File",
+        "endpoints": [
+          {
+            "method": "POST",
+            "path": "/file/upload",
+            "Request — multipart/form-data": [
+              {
+                "Field": "files",
+                "Tipe": "file[]",
+                "Keterangan": "Satu atau lebih file (required)"
+              },
+              {
+                "Field": "status",
+                "Tipe": "string",
+                "Keterangan": "private | public (required)"
+              }
+            ],
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "File uploaded successfully",
+              "data": [
+                {
+                  "temporary_name": "tmp_a1b2c3d4e5f6",
+                  "nama_asli_file": "sip_dokter.pdf",
+                  "ext": "pdf",
+                  "size": "245KB",
+                  "status": "private"
+                },
+                {
+                  "temporary_name": "tmp_g7h8i9j0k1l2",
+                  "nama_asli_file": "foto_profil.jpg",
+                  "ext": "jpg",
+                  "size": "120KB",
+                  "status": "public"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "section": "Spesialis",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/kepegawaian/spesialis",
+            "Query Params": [
+              {
+                "Param": "page",
+                "Tipe": "integer",
+                "Keterangan": "Default: 0"
+              },
+              {
+                "Param": "size",
+                "Tipe": "integer",
+                "Keterangan": "Default: 10"
+              },
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari nama spesialis"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Spesialis retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_spesialis": "SP-001",
+                    "nama_spesialis": "Penyakit Dalam"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 20,
+                  "total_pages": 2
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/spesialis/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Spesialis retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "kode_spesialis": "SP-001",
+                "nama_spesialis": "Penyakit Dalam"
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/spesialis/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Penyakit Dalam"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/kepegawaian/spesialis",
+            "Request Body": "{\n  \"kode_spesialis\": \"SP-001\",        // required\n  \"nama_spesialis\": \"Penyakit Dalam\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Spesialis created successfully",
+              "data": {
+                "id": "uuid",
+                "kode_spesialis": "SP-001",
+                "nama_spesialis": "Penyakit Dalam"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/kepegawaian/spesialis/{id}",
+            "Request Body": "{\n  \"kode_spesialis\": \"SP-001\",        // optional\n  \"nama_spesialis\": \"Penyakit Dalam\" // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Spesialis updated successfully",
+              "data": {
+                "id": "uuid",
+                "kode_spesialis": "SP-001",
+                "nama_spesialis": "Penyakit Dalam"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/kepegawaian/spesialis/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Spesialis deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Kelompok Pegawai",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/kepegawaian/kelompok",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kelompok retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_kelompok": "KLP-001",
+                    "nama_kelompok": "Tenaga Medis"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 5,
+                  "total_pages": 1
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/kelompok/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kelompok retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "kode_kelompok": "KLP-001",
+                "nama_kelompok": "Tenaga Medis"
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/kelompok/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Tenaga Medis"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/kepegawaian/kelompok",
+            "Request Body": "{\n  \"kode_kelompok\": \"KLP-001\",    // required\n  \"nama_kelompok\": \"Tenaga Medis\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Kelompok created successfully",
+              "data": {
+                "id": "uuid",
+                "kode_kelompok": "KLP-001",
+                "nama_kelompok": "Tenaga Medis"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/kepegawaian/kelompok/{id}",
+            "Request Body": "{\n  \"kode_kelompok\": \"KLP-001\",    // optional\n  \"nama_kelompok\": \"Tenaga Medis\" // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kelompok updated successfully",
+              "data": {
+                "id": "uuid",
+                "kode_kelompok": "KLP-001",
+                "nama_kelompok": "Tenaga Medis"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/kepegawaian/kelompok/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Kelompok deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Resiko Pegawai",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/kepegawaian/resiko",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Resiko retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_resiko": "RSK-001",
+                    "nama_resiko": "Resiko Tinggi"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 3,
+                  "total_pages": 1
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/resiko/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Resiko retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "kode_resiko": "RSK-001",
+                "nama_resiko": "Resiko Tinggi"
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/resiko/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Resiko Tinggi"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/kepegawaian/resiko",
+            "Request Body": "{\n  \"kode_resiko\": \"RSK-001\",   // required\n  \"nama_resiko\": \"Resiko Tinggi\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Resiko created successfully",
+              "data": {
+                "id": "uuid",
+                "kode_resiko": "RSK-001",
+                "nama_resiko": "Resiko Tinggi"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/kepegawaian/resiko/{id}",
+            "Request Body": "{\n  \"kode_resiko\": \"RSK-001\",      // optional\n  \"nama_resiko\": \"Resiko Tinggi\" // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Resiko updated successfully",
+              "data": {
+                "id": "uuid",
+                "kode_resiko": "RSK-001",
+                "nama_resiko": "Resiko Tinggi"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/kepegawaian/resiko/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Resiko deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Darurat Pegawai",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/kepegawaian/darurat",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Darurat retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_emergency": "EMG-001",
+                    "nama_emergency": "Kontak Darurat Keluarga"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 2,
+                  "total_pages": 1
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/darurat/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Darurat retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "kode_emergency": "EMG-001",
+                "nama_emergency": "Kontak Darurat Keluarga"
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/darurat/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Kontak Darurat Keluarga"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/kepegawaian/darurat",
+            "Request Body": "{\n  \"kode_emergency\": \"EMG-001\",             // required\n  \"nama_emergency\": \"Kontak Darurat Keluarga\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Darurat created successfully",
+              "data": {
+                "id": "uuid",
+                "kode_emergency": "EMG-001",
+                "nama_emergency": "Kontak Darurat Keluarga"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/kepegawaian/darurat/{id}",
+            "Request Body": "{\n  \"kode_emergency\": \"EMG-001\",              // optional\n  \"nama_emergency\": \"Kontak Darurat Keluarga\" // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Darurat updated successfully",
+              "data": {
+                "id": "uuid",
+                "kode_emergency": "EMG-001",
+                "nama_emergency": "Kontak Darurat Keluarga"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/kepegawaian/darurat/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Darurat deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Departemen",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/kepegawaian/departemen",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Departemen retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_departemen": "DEP-001",
+                    "nama_departemen": "Instalasi Rawat Jalan"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 8,
+                  "total_pages": 1
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/departemen/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Departemen retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "kode_departemen": "DEP-001",
+                "nama_departemen": "Instalasi Rawat Jalan"
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/departemen/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Instalasi Rawat Jalan"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/kepegawaian/departemen",
+            "Request Body": "{\n  \"kode_departemen\": \"DEP-001\",           // required\n  \"nama_departemen\": \"Instalasi Rawat Jalan\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Departemen created successfully",
+              "data": {
+                "id": "uuid",
+                "kode_departemen": "DEP-001",
+                "nama_departemen": "Instalasi Rawat Jalan"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/kepegawaian/departemen/{id}",
+            "Request Body": "{\n  \"kode_departemen\": \"DEP-001\",            // optional\n  \"nama_departemen\": \"Instalasi Rawat Jalan\" // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Departemen updated successfully",
+              "data": {
+                "id": "uuid",
+                "kode_departemen": "DEP-001",
+                "nama_departemen": "Instalasi Rawat Jalan"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/kepegawaian/departemen/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Departemen deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Bidang",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/kepegawaian/bidang",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Bidang retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "kode_bidang": "BID-001",
+                    "nama_bidang": "Keperawatan"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 6,
+                  "total_pages": 1
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/bidang/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Bidang retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "kode_bidang": "BID-001",
+                "nama_bidang": "Keperawatan"
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/bidang/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "Keperawatan"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/kepegawaian/bidang",
+            "Request Body": "{\n  \"kode_bidang\": \"BID-001\",  // required\n  \"nama_bidang\": \"Keperawatan\" // required\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Bidang created successfully",
+              "data": {
+                "id": "uuid",
+                "kode_bidang": "BID-001",
+                "nama_bidang": "Keperawatan"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/kepegawaian/bidang/{id}",
+            "Request Body": "{\n  \"kode_bidang\": \"BID-001\",   // optional\n  \"nama_bidang\": \"Keperawatan\" // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Bidang updated successfully",
+              "data": {
+                "id": "uuid",
+                "kode_bidang": "BID-001",
+                "nama_bidang": "Keperawatan"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/kepegawaian/bidang/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Bidang deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Vendor Tenaga Luar",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/kepegawaian/vendor",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Vendor retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "nama_vendor": "PT. Medika Jaya",
+                    "alamat_vendor": "Jl. Soekarno Hatta No.10, Malang",
+                    "bidang_vendor": "Tenaga Keperawatan",
+                    "telephone_vendor": "0341-123456",
+                    "nama_kontak_darurat": "Budi Santoso",
+                    "kontak_darurat_vendor": "08123456789"
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "number": 0,
+                  "total_elements": 3,
+                  "total_pages": 1
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/vendor/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Vendor retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "nama_vendor": "PT. Medika Jaya",
+                "alamat_vendor": "Jl. Soekarno Hatta No.10, Malang",
+                "bidang_vendor": "Tenaga Keperawatan",
+                "telephone_vendor": "0341-123456",
+                "nama_kontak_darurat": "Budi Santoso",
+                "kontak_darurat_vendor": "08123456789"
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/vendor/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "PT. Medika Jaya"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/kepegawaian/vendor",
+            "Request Body": "{\n  \"nama_vendor\": \"PT. Medika Jaya\",              // required\n  \"alamat_vendor\": \"Jl. Soekarno Hatta No.10\",   // optional\n  \"bidang_vendor\": \"Tenaga Keperawatan\",          // optional\n  \"telephone_vendor\": \"0341-123456\",              // optional\n  \"nama_kontak_darurat\": \"Budi Santoso\",          // optional\n  \"kontak_darurat_vendor\": \"08123456789\"          // optional\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Vendor created successfully",
+              "data": {
+                "id": "uuid",
+                "nama_vendor": "PT. Medika Jaya",
+                "bidang_vendor": "Tenaga Keperawatan"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/kepegawaian/vendor/{id}",
+            "Request Body": "{\n  \"nama_vendor\": \"PT. Medika Jaya\",            // optional\n  \"alamat_vendor\": \"Jl. Soekarno Hatta No.10\", // optional\n  \"bidang_vendor\": \"Tenaga Keperawatan\",        // optional\n  \"telephone_vendor\": \"0341-123456\",            // optional\n  \"nama_kontak_darurat\": \"Budi Santoso\",        // optional\n  \"kontak_darurat_vendor\": \"08123456789\"        // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Vendor updated successfully",
+              "data": {
+                "id": "uuid",
+                "nama_vendor": "PT. Medika Jaya",
+                "bidang_vendor": "Tenaga Keperawatan"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/kepegawaian/vendor/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Vendor deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Pegawai",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/kepegawaian/pegawai",
+            "Query Params": [
+              {
+                "Param": "page",
+                "Tipe": "integer",
+                "Keterangan": "Default: 0"
+              },
+              {
+                "Param": "size",
+                "Tipe": "integer",
+                "Keterangan": "Default: 10"
+              },
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari nama / NIP"
+              },
+              {
+                "Param": "departemen_id",
+                "Tipe": "uuid",
+                "Keterangan": "Filter by departemen"
+              },
+              {
+                "Param": "status_pegawai",
+                "Tipe": "string",
+                "Keterangan": "TETAP | KONTRAK | TRAINING | dll"
+              },
+              {
+                "Param": "is_active",
+                "Tipe": "boolean",
+                "Keterangan": "Filter status aktif"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Pegawai retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "nip": "EMP00001",
+                    "nama": "dr. Siti Rahayu",
+                    "kelamin": "P",
+                    "jabatan": "Dokter Umum",
+                    "status_pegawai": "TETAP",
+                    "is_active": true,
+                    "departemen": {
+                      "id": "uuid",
+                      "nama_departemen": "Instalasi Rawat Jalan"
+                    },
+                    "foto": {
+                      "id": "uuid",
+                      "file": "/uploads/foto/siti.jpg"
+                    }
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "has_next": true,
+                  "has_previous": false
+                }
+
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/pegawai/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Pegawai retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "nip": "EMP00001",
+                "nama": "dr. Siti Rahayu",
+                "jenis_identitas": "NIK",
+                "no_identitas": "3573010001234567",
+                "kelamin": "P",
+                "tempat_lahir": "Malang",
+                "tanggal_lahir": "1985-03-15",
+                "jabatan": "Dokter Umum",
+                "jenjang_jabatan": "Madya",
+                "pendidikan": "S1 Kedokteran",
+                "telephone": "08123456789",
+                "email": "siti@rsmd.co.id",
+                "status_pegawai": "TETAP",
+                "mulai_bekerja": "2010-01-01",
+                "is_active": true,
+                "alamat": "Jl. Veteran No.5, Malang",
+                "provinsi": {
+                  "id": "uuid",
+                  "nama_provinsi": "Jawa Timur"
+                },
+                "kabupaten": {
+                  "id": "uuid",
+                  "nama_kab_kota": "Kota Malang"
+                },
+                "kecamatan": {
+                  "id": "uuid",
+                  "nama_kecamatan": "Klojen"
+                },
+                "kelurahan": {
+                  "id": "uuid",
+                  "nama_kelurahan": "Klojen"
+                },
+                "kelompok": {
+                  "id": "uuid",
+                  "nama_kelompok": "Tenaga Medis"
+                },
+                "resiko": {
+                  "id": "uuid",
+                  "nama_resiko": "Resiko Tinggi"
+                },
+                "darurat": {
+                  "id": "uuid",
+                  "nama_emergency": "Kontak Darurat Keluarga"
+                },
+                "departemen": {
+                  "id": "uuid",
+                  "nama_departemen": "Instalasi Rawat Jalan"
+                },
+                "bidang": {
+                  "id": "uuid",
+                  "nama_bidang": "Keperawatan"
+                },
+                "vendor_tenaga_luar": null,
+                "foto": {
+                  "id": "uuid",
+                  "file": "/uploads/foto/siti.jpg",
+                  "status": "public"
+                },
+                "dokter": null
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/pegawai/options",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "EMP00001 — dr. Siti Rahayu"
+                }
+              ]
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/pegawai/{id}/dokter",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Dokter retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "pegawai_id": "uuid",
+                "nama_dokter": "dr. Siti Rahayu",
+                "nip": "EMP00001",
+                "telephone_dokter": "08123456789",
+                "email_dokter": "siti@rsmd.co.id",
+                "alumni": "Universitas Brawijaya",
+                "no_ijin_praktek": "SIP/123/2020",
+                "is_active": true,
+                "spesialis": {
+                  "id": "uuid",
+                  "nama_spesialis": "Umum"
+                },
+                "document_ijin_praktek": {
+                  "id": "uuid",
+                  "file": "/uploads/sip/siti.pdf"
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/pegawai/{id}/dokumen",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Dokumen retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "nama_dokumen": "Ijazah S1",
+                    "is_active": true,
+                    "dokumen": {
+                      "id": "uuid",
+                      "file": "/uploads/dokumen/ijazah.pdf",
+                      "ext": "pdf"
+                    }
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "has_next": false,
+                  "has_previous": false
+                }
+              }
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/kepegawaian/pegawai",
+            "Request Body": "{\n  // === DATA PEGAWAI ===\n  \"nip\": \"EMP00001\",                    // required, unique\n  \"nama\": \"dr. Siti Rahayu\",            // required\n  \"jenis_identitas\": \"NIK\",             // required: NIK | PASSPORT | NPWP | LAIN\n  \"no_identitas\": \"3573010001234567\",    // required\n  \"identitas_lain\": null,               // optional, keterangan jika LAIN\n  \"kelamin\": \"P\",                       // required: L | P\n  \"tempat_lahir\": \"Malang\",             // optional\n  \"tanggal_lahir\": \"1985-03-15\",        // optional\n  \"jabatan\": \"Dokter Umum\",             // optional\n  \"jenjang_jabatan\": \"Madya\",           // optional\n  \"pendidikan\": \"S1 Kedokteran\",        // optional\n  \"telephone\": \"08123456789\",           // optional\n  \"email\": \"siti@rsmd.co.id\",           // optional, unique\n  \"status_pegawai\": \"TETAP\",            // required: TETAP | KONTRAK | TRAINING | TENAGA LUAR | MAGANG | RESIGN | STAFF LUAR\n  \"mulai_bekerja\": \"2010-01-01\",        // optional\n  \"alamat\": \"Jl. Veteran No.5\",         // optional\n  \"provinsi_id\": \"uuid\",               // optional\n  \"kabupaten_id\": \"uuid\",              // optional\n  \"kecamatan_id\": \"uuid\",              // optional\n  \"kelurahan_id\": \"uuid\",              // optional\n  \"kelompok_pegawai_id\": \"uuid\",       // optional\n  \"resiko_pegawai_id\": \"uuid\",         // optional\n  \"darurat_pegawai_id\": \"uuid\",        // optional\n  \"departemen_pegawai_id\": \"uuid\",     // optional\n  \"bidang_pegawai_id\": \"uuid\",         // optional\n  \"vendor_tenaga_luar_id\": null,       // optional, wajib jika status TENAGA LUAR\n  \"foto_temporary_name\": \"tmp_abc123\", // optional\n\n  // === DATA DOKUMEN (opsional, bisa banyak) ===\n  \"dokumen\": [\n    {\n      \"nama_dokumen\": \"Ijazah S1\",      // required jika ada dokumen\n      \"temporary_name\": \"tmp_def456\"    // required jika ada dokumen\n    }\n  ],\n\n  // === DATA DOKTER (opsional, jika pegawai adalah dokter) ===\n  \"dokter\": {\n    \"nama_dokter\": \"dr. Siti Rahayu\",         // required jika dokter\n    \"telephone_dokter\": \"08123456789\",         // optional\n    \"email_dokter\": \"siti@rsmd.co.id\",         // optional\n    \"spesialis_id\": \"uuid\",                    // required jika dokter\n    \"alumni\": \"Universitas Brawijaya\",         // optional\n    \"no_ijin_praktek\": \"SIP/123/2020\",         // required jika dokter\n    \"document_ijin_praktek_temporary_name\": \"tmp_ghi789\" // optional\n  }\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Pegawai created successfully",
+              "data": {
+                "id": "uuid",
+                "nip": "EMP00001",
+                "nama": "dr. Siti Rahayu",
+                "status_pegawai": "TETAP",
+                "is_active": true
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/kepegawaian/pegawai/{id}",
+            "Request Body": "{\n  // semua field sama dengan POST, semua optional\n  \"nama\": \"dr. Siti Rahayu, Sp.PD\",\n  \"jabatan\": \"Dokter Spesialis\",\n  \"foto_temporary_name\": \"tmp_newphoto123\"\n  // ... field lain sesuai kebutuhan\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Pegawai updated successfully",
+              "data": {
+                "id": "uuid",
+                "nip": "EMP00001",
+                "nama": "dr. Siti Rahayu, Sp.PD",
+                "status_pegawai": "TETAP",
+                "is_active": true
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/kepegawaian/pegawai/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Pegawai deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      },
+      {
+        "section": "Dokter",
+        "endpoints": [
+          {
+            "method": "GET",
+            "path": "/kepegawaian/dokter",
+            "Query Params": [
+              {
+                "Param": "page",
+                "Tipe": "integer",
+                "Keterangan": "Default: 0"
+              },
+              {
+                "Param": "size",
+                "Tipe": "integer",
+                "Keterangan": "Default: 10"
+              },
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari nama dokter"
+              },
+              {
+                "Param": "spesialis_id",
+                "Tipe": "uuid",
+                "Keterangan": "Filter by spesialis"
+              },
+              {
+                "Param": "is_active",
+                "Tipe": "boolean",
+                "Keterangan": "Filter status aktif"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Dokter retrieved successfully",
+              "data": {
+                "content": [
+                  {
+                    "id": "uuid",
+                    "nama_dokter": "dr. Siti Rahayu",
+                    "nip": "EMP00001",
+                    "telephone_dokter": "08123456789",
+                    "is_active": true,
+                    "spesialis": {
+                      "id": "uuid",
+                      "nama_spesialis": "Umum"
+                    }
+                  }
+                ],
+                "page": {
+                  "size": 10,
+                  "has_next": false,
+                  "has_previous": false
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/dokter/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Dokter retrieved successfully",
+              "data": {
+                "id": "uuid",
+                "nama_dokter": "dr. Siti Rahayu",
+                "nip": "EMP00001",
+                "telephone_dokter": "08123456789",
+                "email_dokter": "siti@rsmd.co.id",
+                "alumni": "Universitas Brawijaya",
+                "no_ijin_praktek": "SIP/123/2020",
+                "is_active": true,
+                "spesialis": {
+                  "id": "uuid",
+                  "nama_spesialis": "Umum"
+                },
+                "document_ijin_praktek": {
+                  "id": "uuid",
+                  "file": "/uploads/sip/siti.pdf"
+                },
+                "pegawai": {
+                  "id": "uuid",
+                  "nip": "EMP00001",
+                  "nama": "dr. Siti Rahayu"
+                }
+              }
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/kepegawaian/dokter/options",
+            "Query Params": [
+              {
+                "Param": "search",
+                "Tipe": "string",
+                "Keterangan": "Cari nama dokter"
+              },
+              {
+                "Param": "spesialis_id",
+                "Tipe": "uuid",
+                "Keterangan": "Filter by spesialis"
+              }
+            ],
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "OK",
+              "data": [
+                {
+                  "value": "uuid",
+                  "label": "dr. Siti Rahayu — Umum"
+                }
+              ]
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/kepegawaian/dokter",
+            "Request Body": "{\n  \"pegawai_id\": \"uuid\",                             // required\n  \"nama_dokter\": \"dr. Siti Rahayu\",                 // required\n  \"nip\": \"EMP00001\",                                // required\n  \"telephone_dokter\": \"08123456789\",                // optional\n  \"email_dokter\": \"siti@rsmd.co.id\",                // optional\n  \"spesialis_id\": \"uuid\",                           // required\n  \"alumni\": \"Universitas Brawijaya\",                // optional\n  \"no_ijin_praktek\": \"SIP/123/2020\",                // required\n  \"document_ijin_praktek_temporary_name\": \"tmp_abc\" // optional\n}",
+            "Response 201": {
+              "status": "OK",
+              "code": 201,
+              "message": "Dokter created successfully",
+              "data": {
+                "id": "uuid",
+                "nama_dokter": "dr. Siti Rahayu",
+                "nip": "EMP00001",
+                "no_ijin_praktek": "SIP/123/2020"
+              }
+            }
+          },
+          {
+            "method": "PATCH",
+            "path": "/kepegawaian/dokter/{id}",
+            "Request Body": "{\n  \"nama_dokter\": \"dr. Siti Rahayu, Sp.PD\",          // optional\n  \"telephone_dokter\": \"08123456789\",                  // optional\n  \"email_dokter\": \"siti@rsmd.co.id\",                  // optional\n  \"spesialis_id\": \"uuid\",                             // optional\n  \"alumni\": \"Universitas Brawijaya\",                  // optional\n  \"no_ijin_praktek\": \"SIP/123/2025\",                  // optional\n  \"document_ijin_praktek_temporary_name\": \"tmp_new\"   // optional\n}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Dokter updated successfully",
+              "data": {
+                "id": "uuid",
+                "nama_dokter": "dr. Siti Rahayu, Sp.PD",
+                "nip": "EMP00001",
+                "no_ijin_praktek": "SIP/123/2025"
+              }
+            }
+          },
+          {
+            "method": "DELETE",
+            "path": "/kepegawaian/dokter/{id}",
+            "Response 200": {
+              "status": "OK",
+              "code": 200,
+              "message": "Dokter deleted successfully",
+              "data": null
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

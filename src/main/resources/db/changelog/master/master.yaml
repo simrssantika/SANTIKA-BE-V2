@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: master
+      author: ridlo
+      changes:
+        - sql:
+            sql: CREATE SCHEMA IF NOT EXISTS master;
+
+
+  - changeSet:
+      id: master-wilayah
+      author: ridlo
+  - include:
+      file: db/changelog/master/wilayah/wilayah.yaml
+  #      context: wilayah
+  - include:
+      file: db/changelog/master/medis/medis.yaml
+  #      context: medis
+  - include:
+      file: db/changelog/master/support/support.yaml

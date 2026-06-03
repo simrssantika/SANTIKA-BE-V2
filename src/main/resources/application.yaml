@@ -1,0 +1,204 @@
+spring:
+
+  threads:
+    virtual:
+      enabled: true
+
+  application:
+    name: ${APP_NAME:SANTIKA}
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    mapper:
+      accept-case-insensitive-enums: true
+
+  profiles:
+    active: ${APP_ENV:dev}
+
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/simrs}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
+    driver-class-name: ${DB_DRIVER:org.postgresql.Driver}
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 10
+      pool-name: santika-pool
+      idle-timeout: 30000    # Tutup koneksi nganggur setelah 30 detik
+      max-lifetime: 1800000  # Refresh koneksi tiap 30 menit
+      connection-timeout: 20000
+
+  jooq:
+    sql-dialect: POSTGRES
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  data:
+    redis:
+      # Proyek hanya pakai RedisTemplate (rate-limit & file-lock), tidak ada Redis repository.
+      # Matikan scanning Redis repository agar tidak salah mengklaim repository JPA.
+      repositories:
+        enabled: false
+      host: ${DRAGONFLY_HOST:localhost}
+      port: ${DRAGONFLY_PORT:6379}
+      password: ${DRAGONFLY_PASSWORD:root}
+      timeout: 2000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 2
+          max-wait: 100ms
+
+  liquibase:
+    change-log: classpath:/db/changelog/001-master.yaml
+    enabled: ${LIQUIBASE_ENABLED:true}
+    contexts: ${LIQUIBASE_SEED:NON}
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: ${MAX_FILE_SIZE:10MB}
+      max-request-size: ${MAX_REQUEST_SIZE:20MB}
+
+  web:
+    error:
+      whitelabel:
+        enabled: true
+
+app:
+  temp-dir: ${APP_TEMP_DIR:/tmp/simrs/temp}
+  upload-dir: ${APP_UPLOAD_DIR:/tmp/simrs/uploads}
+  temp-file-expiry-hours: ${TEMP_FILE_EXPIRY_HOURS:24}
+  cleanup:
+    cron: ${CLEANUP_CRON:0 0 * * * *}
+    batch-size: ${CLEANUP_BATCH_SIZE:100}
+  signed-url:
+    # Secret HMAC — WAJIB diganti di production, jangan pakai default
+    secret: ${SIGNED_URL_SECRET:SantikaSignedUrlSecretKeyChangeMeInProductionMinimal32Char}
+    # Masa berlaku default signed URL dalam detik (5 menit)
+    default-ttl-seconds: ${SIGNED_URL_TTL_S:300}
+
+
+logging:
+  file:
+    name: logs/app.log
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    com.zaxxer.hikari: DEBUG
+#    org.jooq.tools.LoggerListener: DEBUG
+
+jwt:
+  secret: ${JWT_SECRET:SantikaSIMRSSecretKeyYangCukupPanjangUntukHMACSHA256Algorithm}
+  expiration: ${JWT_EXPIRATION_S:600}
+  refreshExpiration: ${JWT_REFRESH_EXPIRATION_S:604800}
+
+
+server:
+  port: ${APP_PORT:9002}
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,text/css,application/javascript,application/x-javascript,image/svg+xml,application/pdf
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        minimum-number-of-calls: 5
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 3
+        slow-call-rate-threshold: 50
+        slow-call-duration-threshold: 3s
+        automatic-transition-from-open-to-half-open-enabled: true
+        register-health-indicator: true
+        record-exceptions:
+          - java.io.IOException
+          - java.net.SocketException
+          - java.net.SocketTimeoutException
+          - java.net.ConnectException
+        ignore-exceptions:
+          - java.lang.Exception
+    instances:
+      # Aktifkan kalau DB berada di jaringan berbeda (remote DB)
+      # database:
+      #   base-config: default
+      #   sliding-window-size: 10
+      #   minimum-number-of-calls: 5
+      #   failure-rate-threshold: 50
+      #   wait-duration-in-open-state: 15s
+      #   permitted-number-of-calls-in-half-open-state: 3
+      #   slow-call-duration-threshold: 2s
+      #   record-exceptions:
+      #     - java.sql.SQLException
+      #     - java.net.SocketTimeoutException
+      #     - java.net.ConnectException
+      #     - org.springframework.dao.DataAccessResourceFailureException
+      #   ignore-exceptions:
+      #     - org.springframework.dao.DataIntegrityViolationException
+      #     - jakarta.persistence.EntityNotFoundException
+      dragonfly:
+        base-config: default
+        sliding-window-size: 5
+        minimum-number-of-calls: 3
+        failure-rate-threshold: 60
+        wait-duration-in-open-state: 30s
+        permitted-number-of-calls-in-half-open-state: 2
+        slow-call-duration-threshold: 1s
+      external:
+        base-config: default
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 20s
+        permitted-number-of-calls-in-half-open-state: 3
+        slow-call-duration-threshold: 5s
+
+  retry:
+    configs:
+      default:
+        max-attempts: 3
+        wait-duration: 500ms
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 2
+        retry-exceptions:
+          - java.io.IOException
+          - java.net.SocketTimeoutException
+          - java.net.ConnectException
+        ignore-exceptions:
+          - java.lang.Exception
+    instances:
+      external:
+        base-config: default
+        max-attempts: 3
+        wait-duration: 1s
+
+  timelimiter:
+    configs:
+      default:
+        timeout-duration: 5s
+        cancel-running-future: true
+    instances:
+      external:
+        timeout-duration: 10s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: startup, health, info
+

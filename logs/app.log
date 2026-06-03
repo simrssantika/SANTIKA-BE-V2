@@ -1,0 +1,372 @@
+2026-06-04T05:56:26.377+07:00  INFO 31344 --- [SANTIKA] [restartedMain] com.santika.simrs.SimrsApplicationKt     : Starting SimrsApplicationKt using Java 24.0.2 with PID 31344 (F:\DevFIle\SANTIKA\simrs\build\classes\kotlin\main started by RACING in F:\DevFIle\SANTIKA\simrs)
+2026-06-04T05:56:26.386+07:00  INFO 31344 --- [SANTIKA] [restartedMain] com.santika.simrs.SimrsApplicationKt     : The following 1 profile is active: "dev"
+2026-06-04T05:56:26.513+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T05:56:26.514+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T05:56:30.460+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-04T05:56:30.468+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T05:56:31.132+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 636 ms. Found 23 JPA repository interfaces.
+2026-06-04T05:56:31.235+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-04T05:56:31.237+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-04T05:56:31.303+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.global.audit.AuditRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.307+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.BidangPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.307+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.DaruratPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.307+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.DepartemenPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.308+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.DokterRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.308+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.DokumenPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.308+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.KelompokPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.308+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.PegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.309+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.ResikoPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.309+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.SpesialisRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.309+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.VendorTenagaLuarRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.309+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.MedisDiagnosaRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.310+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.MedisPoliRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.310+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.MedisProsedurRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.310+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.SupportPenjaminRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.310+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.WilayahKabKotaRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.310+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.WilayahKecamatanRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.310+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.WilayahKelurahanRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.311+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.WilayahProvinsiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.311+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.shared.file.storage.StorageFileRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.314+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.shared.file.temp.TempFileRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.314+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.shared.role.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.315+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.shared.user.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:56:31.315+07:00  INFO 31344 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 0 Redis repository interfaces.
+2026-06-04T05:56:33.944+07:00  INFO 31344 --- [SANTIKA] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9002 (http)
+2026-06-04T05:56:33.966+07:00  INFO 31344 --- [SANTIKA] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T05:56:33.966+07:00  INFO 31344 --- [SANTIKA] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T05:56:34.071+07:00  INFO 31344 --- [SANTIKA] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7556 ms
+2026-06-04T05:56:37.665+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.database                       : Set default schema name to public
+2026-06-04T05:56:40.472+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+2026-06-04T05:56:41.116+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.lockservice                    : Successfully acquired change log lock
+2026-06-04T05:56:41.118+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.command                        : Using deploymentId: 0527394734
+2026-06-04T05:56:41.119+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+2026-06-04T05:56:41.160+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/shared/file/001-temp-files.yaml::shared-temp-files::system
+2026-06-04T05:56:41.589+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table temp_files created
+2026-06-04T05:56:41.741+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Foreign key constraint added to temp_files (uploaded_by)
+2026-06-04T05:56:41.744+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Index idx_temp_files_upload_token created
+2026-06-04T05:56:41.747+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Index idx_temp_files_expires_at created
+2026-06-04T05:56:41.749+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Index idx_temp_files_uploaded_by created
+2026-06-04T05:56:41.990+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/shared/file/001-temp-files.yaml::shared-temp-files::system ran successfully in 828ms
+2026-06-04T05:56:42.099+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/shared/file/002-storage-files.yaml::shared-storage-files::system
+2026-06-04T05:56:42.128+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table storage_files created
+2026-06-04T05:56:42.132+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Foreign key constraint added to storage_files (uploaded_by)
+2026-06-04T05:56:42.135+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Index idx_storage_files_module_entity created
+2026-06-04T05:56:42.138+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Index idx_storage_files_uploaded_by created
+2026-06-04T05:56:42.141+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Index idx_storage_files_deleted_at created
+2026-06-04T05:56:42.180+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/shared/file/002-storage-files.yaml::shared-storage-files::system ran successfully in 81ms
+2026-06-04T05:56:42.216+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/kepegawaian.yaml::kepegawaian-schema::ridlo
+2026-06-04T05:56:42.251+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:42.290+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/kepegawaian.yaml::kepegawaian-schema::ridlo ran successfully in 74ms
+2026-06-04T05:56:42.323+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/001-kelompok-pegawai.yaml::kelompok-pegawai::ridlo
+2026-06-04T05:56:42.327+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table kelompok_pegawai created
+2026-06-04T05:56:42.358+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/001-kelompok-pegawai.yaml::kelompok-pegawai::ridlo ran successfully in 34ms
+2026-06-04T05:56:42.390+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/001-kelompok-pegawai.yaml::kelompok-pegawai-index::ridlo
+2026-06-04T05:56:42.393+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:42.424+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/001-kelompok-pegawai.yaml::kelompok-pegawai-index::ridlo ran successfully in 34ms
+2026-06-04T05:56:42.456+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/002-resiko-pegawai.yaml::resiko-pegawai::ridlo
+2026-06-04T05:56:42.460+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table resiko_pegawai created
+2026-06-04T05:56:42.490+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/002-resiko-pegawai.yaml::resiko-pegawai::ridlo ran successfully in 34ms
+2026-06-04T05:56:42.523+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/002-resiko-pegawai.yaml::resiko-pegawai-index::ridlo
+2026-06-04T05:56:42.527+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:42.561+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/002-resiko-pegawai.yaml::resiko-pegawai-index::ridlo ran successfully in 37ms
+2026-06-04T05:56:42.602+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/003-darurat-pegawai.yaml::darurat-pegawai::ridlo
+2026-06-04T05:56:42.626+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table darurat_pegawai created
+2026-06-04T05:56:42.669+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/003-darurat-pegawai.yaml::darurat-pegawai::ridlo ran successfully in 67ms
+2026-06-04T05:56:42.701+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/003-darurat-pegawai.yaml::darurat-pegawai-index::ridlo
+2026-06-04T05:56:42.705+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:42.735+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/003-darurat-pegawai.yaml::darurat-pegawai-index::ridlo ran successfully in 34ms
+2026-06-04T05:56:42.767+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/004-departemen-pegawai.yaml::departemen-pegawai::ridlo
+2026-06-04T05:56:42.772+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table departemen_pegawai created
+2026-06-04T05:56:42.802+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/004-departemen-pegawai.yaml::departemen-pegawai::ridlo ran successfully in 35ms
+2026-06-04T05:56:42.834+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/004-departemen-pegawai.yaml::departemen-pegawai-index::ridlo
+2026-06-04T05:56:42.837+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:42.868+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/004-departemen-pegawai.yaml::departemen-pegawai-index::ridlo ran successfully in 34ms
+2026-06-04T05:56:42.900+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/005-bidang-pegawai.yaml::bidang-pegawai::ridlo
+2026-06-04T05:56:42.905+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table bidang_pegawai created
+2026-06-04T05:56:42.935+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/005-bidang-pegawai.yaml::bidang-pegawai::ridlo ran successfully in 34ms
+2026-06-04T05:56:42.967+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/005-bidang-pegawai.yaml::bidang-pegawai-index::ridlo
+2026-06-04T05:56:42.973+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:43.012+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/005-bidang-pegawai.yaml::bidang-pegawai-index::ridlo ran successfully in 45ms
+2026-06-04T05:56:43.045+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/006-vendor-tenaga-luar.yaml::vendor-tenaga-luar::ridlo
+2026-06-04T05:56:43.050+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table vendor_tenaga_luar created
+2026-06-04T05:56:43.090+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/006-vendor-tenaga-luar.yaml::vendor-tenaga-luar::ridlo ran successfully in 45ms
+2026-06-04T05:56:43.122+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/007-spesialis.yaml::spesialis::ridlo
+2026-06-04T05:56:43.127+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table spesialis created
+2026-06-04T05:56:43.251+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/007-spesialis.yaml::spesialis::ridlo ran successfully in 128ms
+2026-06-04T05:56:43.299+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/007-spesialis.yaml::spesialis-index::ridlo
+2026-06-04T05:56:43.303+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:43.335+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/007-spesialis.yaml::spesialis-index::ridlo ran successfully in 34ms
+2026-06-04T05:56:43.368+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/008-pegawai.yaml::pegawai::ridlo
+2026-06-04T05:56:43.376+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table pegawai created
+2026-06-04T05:56:43.413+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/008-pegawai.yaml::pegawai::ridlo ran successfully in 44ms
+2026-06-04T05:56:43.444+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/008-pegawai.yaml::pegawai-indexes::ridlo
+2026-06-04T05:56:43.477+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:43.525+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/008-pegawai.yaml::pegawai-indexes::ridlo ran successfully in 81ms
+2026-06-04T05:56:43.556+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/009-dokter.yaml::dokter::ridlo
+2026-06-04T05:56:43.564+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table dokter created
+2026-06-04T05:56:43.602+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/009-dokter.yaml::dokter::ridlo ran successfully in 45ms
+2026-06-04T05:56:43.632+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/009-dokter.yaml::dokter-indexes::ridlo
+2026-06-04T05:56:43.640+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:43.680+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/009-dokter.yaml::dokter-indexes::ridlo ran successfully in 47ms
+2026-06-04T05:56:43.712+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/010-dokumen-pegawai.yaml::dokumen-pegawai::ridlo
+2026-06-04T05:56:43.718+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Table dokumen_pegawai created
+2026-06-04T05:56:43.758+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/010-dokumen-pegawai.yaml::dokumen-pegawai::ridlo ran successfully in 46ms
+2026-06-04T05:56:43.832+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/010-dokumen-pegawai.yaml::dokumen-pegawai-indexes::ridlo
+2026-06-04T05:56:43.837+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:43.898+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/010-dokumen-pegawai.yaml::dokumen-pegawai-indexes::ridlo ran successfully in 65ms
+2026-06-04T05:56:43.947+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/011-fulltext-index.yaml::kepegawaian-pg-trgm-extension::ridlo
+2026-06-04T05:56:44.565+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:44.694+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/011-fulltext-index.yaml::kepegawaian-pg-trgm-extension::ridlo ran successfully in 747ms
+2026-06-04T05:56:44.731+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/011-fulltext-index.yaml::pegawai-search-trgm-index::ridlo
+2026-06-04T05:56:44.737+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:44.771+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/011-fulltext-index.yaml::pegawai-search-trgm-index::ridlo ran successfully in 40ms
+2026-06-04T05:56:44.808+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Running Changeset: db/changelog/kepegawaian/011-fulltext-index.yaml::dokter-search-trgm-index::ridlo
+2026-06-04T05:56:44.815+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Custom SQL executed
+2026-06-04T05:56:44.849+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.changelog                      : ChangeSet db/changelog/kepegawaian/011-fulltext-index.yaml::dokter-search-trgm-index::ridlo ran successfully in 40ms
+2026-06-04T05:56:44.892+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-06-04T05:56:44.892+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.util                           : Run:                         25
+2026-06-04T05:56:44.892+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.util                           : Previously run:              33
+2026-06-04T05:56:44.893+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.util                           : Filtered out:                 1
+2026-06-04T05:56:44.893+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.util                           : -------------------------------
+2026-06-04T05:56:44.893+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.util                           : Total change sets:           59
+2026-06-04T05:56:44.893+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.util                           : FILTERED CHANGE SETS SUMMARY
+2026-06-04T05:56:44.893+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.util                           : DBMS mismatch:                1
+2026-06-04T05:56:44.895+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.util                           : Update summary generated
+2026-06-04T05:56:44.900+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.command                        : Update command completed successfully.
+2026-06-04T05:56:44.901+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.ui                             : Liquibase: Update has been successful. Rows affected: 0
+2026-06-04T05:56:44.977+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.lockservice                    : Successfully released change log lock
+2026-06-04T05:56:44.978+07:00  INFO 31344 --- [SANTIKA] [restartedMain] liquibase.command                        : Command execution complete
+2026-06-04T05:56:45.156+07:00  INFO 31344 --- [SANTIKA] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-04T05:56:45.238+07:00  INFO 31344 --- [SANTIKA] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-04T05:56:45.743+07:00  INFO 31344 --- [SANTIKA] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-04T05:56:45.798+07:00  WARN 31344 --- [SANTIKA] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-04T05:56:45.813+07:00  INFO 31344 --- [SANTIKA] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/simrs]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.0
+	Default catalog/schema: simrs/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-04T05:56:47.213+07:00  INFO 31344 --- [SANTIKA] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-04T05:56:47.220+07:00  INFO 31344 --- [SANTIKA] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T05:56:47.376+07:00  INFO 31344 --- [SANTIKA] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-04T05:57:10.050+07:00  WARN 31344 --- [SANTIKA] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-04T05:57:10.191+07:00  WARN 31344 --- [SANTIKA] [restartedMain] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4174794e-733c-4980-a557-138983044579
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-04T05:57:10.203+07:00  INFO 31344 --- [SANTIKA] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-04T05:57:12.075+07:00  INFO 31344 --- [SANTIKA] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-06-04T05:57:12.240+07:00  INFO 31344 --- [SANTIKA] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9002 (http) with context path '/'
+2026-06-04T05:57:12.260+07:00  INFO 31344 --- [SANTIKA] [restartedMain] com.santika.simrs.SimrsApplicationKt     : Started SimrsApplicationKt in 46.899 seconds (process running for 49.448)
+2026-06-04T05:57:12.264+07:00  INFO 31344 --- [SANTIKA] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-04T05:57:12.270+07:00  INFO 31344 --- [SANTIKA] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-04T05:57:12.298+07:00  INFO 31344 --- [SANTIKA] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T05:57:18.725+07:00  INFO 23740 --- [SANTIKA] [restartedMain] com.santika.simrs.SimrsApplicationKt     : Starting SimrsApplicationKt using Java 24.0.2 with PID 23740 (F:\DevFIle\SANTIKA\simrs\build\classes\kotlin\main started by RACING in F:\DevFIle\SANTIKA\simrs)
+2026-06-04T05:57:18.728+07:00  INFO 23740 --- [SANTIKA] [restartedMain] com.santika.simrs.SimrsApplicationKt     : The following 1 profile is active: "dev"
+2026-06-04T05:57:18.785+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-04T05:57:18.786+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-04T05:57:20.511+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-04T05:57:20.513+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T05:57:20.707+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 186 ms. Found 23 JPA repository interfaces.
+2026-06-04T05:57:20.744+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-04T05:57:20.745+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-06-04T05:57:20.771+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.global.audit.AuditRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.772+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.BidangPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.772+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.DaruratPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.772+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.DepartemenPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.772+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.DokterRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.773+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.DokumenPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.773+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.KelompokPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.773+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.PegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.773+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.ResikoPegawaiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.773+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.SpesialisRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.773+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.kepegawaian.infrastructure.repository.VendorTenagaLuarRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.774+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.MedisDiagnosaRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.774+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.MedisPoliRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.774+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.MedisProsedurRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.774+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.SupportPenjaminRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.774+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.WilayahKabKotaRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.774+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.WilayahKecamatanRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.775+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.WilayahKelurahanRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.775+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.module.master.infrastructure.repository.WilayahProvinsiRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.775+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.shared.file.storage.StorageFileRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.775+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.shared.file.temp.TempFileRepo; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.775+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.shared.role.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.776+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.santika.simrs.shared.user.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-06-04T05:57:20.776+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2026-06-04T05:57:21.938+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9002 (http)
+2026-06-04T05:57:21.949+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T05:57:21.949+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T05:57:22.007+07:00  INFO 23740 --- [SANTIKA] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3221 ms
+2026-06-04T05:57:22.881+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.database                       : Set default schema name to public
+2026-06-04T05:57:24.475+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+2026-06-04T05:57:24.768+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.ui                             : Database is up to date, no changesets to execute
+2026-06-04T05:57:24.770+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+2026-06-04T05:57:24.787+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-06-04T05:57:24.787+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : Run:                          0
+2026-06-04T05:57:24.787+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : Previously run:              58
+2026-06-04T05:57:24.787+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : Filtered out:                 1
+2026-06-04T05:57:24.787+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : -------------------------------
+2026-06-04T05:57:24.787+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : Total change sets:           59
+2026-06-04T05:57:24.787+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : FILTERED CHANGE SETS SUMMARY
+2026-06-04T05:57:24.787+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : DBMS mismatch:                1
+2026-06-04T05:57:24.789+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : Update summary generated
+2026-06-04T05:57:24.790+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.command                        : Command execution complete
+2026-06-04T05:57:24.916+07:00  INFO 23740 --- [SANTIKA] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-04T05:57:24.965+07:00  INFO 23740 --- [SANTIKA] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-04T05:57:25.387+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-04T05:57:25.430+07:00  WARN 23740 --- [SANTIKA] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-04T05:57:25.444+07:00  INFO 23740 --- [SANTIKA] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/simrs]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.0
+	Default catalog/schema: simrs/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-04T05:57:26.719+07:00  INFO 23740 --- [SANTIKA] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-04T05:57:26.728+07:00  INFO 23740 --- [SANTIKA] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T05:57:26.936+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-04T05:58:03.251+07:00  WARN 23740 --- [SANTIKA] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-04T05:58:03.371+07:00  WARN 23740 --- [SANTIKA] [restartedMain] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 0ab5ebe5-34e5-4fbf-b707-388c1fe23b53
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-04T05:58:03.381+07:00  INFO 23740 --- [SANTIKA] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-04T05:58:05.276+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-06-04T05:58:05.416+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9002 (http) with context path '/'
+2026-06-04T05:58:05.430+07:00  INFO 23740 --- [SANTIKA] [restartedMain] com.santika.simrs.SimrsApplicationKt     : Started SimrsApplicationKt in 47.307 seconds (process running for 48.148)
+2026-06-04T05:58:05.677+07:00  INFO 23740 --- [SANTIKA] [restartedMain] org.jooq.Constants                       : 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.19.1 (Build date: 2023-12-20T14:13:25Z)
+                                      
+2026-06-04T05:58:05.678+07:00  INFO 23740 --- [SANTIKA] [restartedMain] org.jooq.Constants                       : 
+
+jOOQ tip of the day: Need a random value from a group? Use the ANY_VALUE aggregate function, which is supported natively in a few dialects: https://www.jooq.org/doc/latest/manual/sql-building/column-expressions/aggregate-functions/any-value-function/
+
+2026-06-04T05:58:05.712+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.j.i.D.logVersionSupport                : Version                  : Database version is supported by dialect POSTGRES: 18.0 (Debian 18.0-1.pgdg13+3)
+2026-06-04T05:58:05.919+07:00  INFO 23740 --- [SANTIKA] [RMI TCP Connection(1)-172.19.80.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-04T05:58:05.919+07:00  INFO 23740 --- [SANTIKA] [RMI TCP Connection(1)-172.19.80.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-04T05:58:05.923+07:00  INFO 23740 --- [SANTIKA] [RMI TCP Connection(1)-172.19.80.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-06-04T06:00:34.509+07:00  INFO 23740 --- [SANTIKA] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2026-06-04T06:00:34.513+07:00  INFO 23740 --- [SANTIKA] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-04T06:00:34.518+07:00  INFO 23740 --- [SANTIKA] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-06-04T06:00:34.542+07:00  INFO 23740 --- [SANTIKA] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T06:00:34.682+07:00  INFO 23740 --- [SANTIKA] [restartedMain] com.santika.simrs.SimrsApplicationKt     : Starting SimrsApplicationKt using Java 24.0.2 with PID 23740 (F:\DevFIle\SANTIKA\simrs\build\classes\kotlin\main started by RACING in F:\DevFIle\SANTIKA\simrs)
+2026-06-04T06:00:34.683+07:00  INFO 23740 --- [SANTIKA] [restartedMain] com.santika.simrs.SimrsApplicationKt     : The following 1 profile is active: "dev"
+2026-06-04T06:00:35.064+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-06-04T06:00:35.064+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-04T06:00:35.139+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 23 JPA repository interfaces.
+2026-06-04T06:00:35.448+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9002 (http)
+2026-06-04T06:00:35.449+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-04T06:00:35.449+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-04T06:00:35.484+07:00  INFO 23740 --- [SANTIKA] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 800 ms
+2026-06-04T06:00:35.730+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.database                       : Set default schema name to public
+2026-06-04T06:00:35.759+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+2026-06-04T06:00:35.962+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.ui                             : Database is up to date, no changesets to execute
+2026-06-04T06:00:35.964+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.changelog                      : Reading from public.databasechangelog
+2026-06-04T06:00:35.974+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : UPDATE SUMMARY
+2026-06-04T06:00:35.974+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : Run:                          0
+2026-06-04T06:00:35.974+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : Previously run:              58
+2026-06-04T06:00:35.974+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : Filtered out:                 1
+2026-06-04T06:00:35.974+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : -------------------------------
+2026-06-04T06:00:35.974+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : Total change sets:           59
+2026-06-04T06:00:35.974+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : FILTERED CHANGE SETS SUMMARY
+2026-06-04T06:00:35.975+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : DBMS mismatch:                1
+2026-06-04T06:00:35.975+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.util                           : Update summary generated
+2026-06-04T06:00:35.975+07:00  INFO 23740 --- [SANTIKA] [restartedMain] liquibase.command                        : Command execution complete
+2026-06-04T06:00:36.047+07:00  INFO 23740 --- [SANTIKA] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-04T06:00:36.083+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-04T06:00:36.084+07:00  WARN 23740 --- [SANTIKA] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-04T06:00:36.087+07:00  INFO 23740 --- [SANTIKA] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/simrs]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.0
+	Default catalog/schema: simrs/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-04T06:00:36.439+07:00  INFO 23740 --- [SANTIKA] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-04T06:00:36.440+07:00  INFO 23740 --- [SANTIKA] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-04T06:01:12.873+07:00  WARN 23740 --- [SANTIKA] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-04T06:01:12.968+07:00  WARN 23740 --- [SANTIKA] [restartedMain] .s.a.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c4f0cc0e-8006-4703-9aa3-e83d2af51931
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-06-04T06:01:12.972+07:00  INFO 23740 --- [SANTIKA] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-06-04T06:01:14.309+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-06-04T06:01:14.411+07:00  INFO 23740 --- [SANTIKA] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9002 (http) with context path '/'
+2026-06-04T06:01:14.415+07:00  INFO 23740 --- [SANTIKA] [restartedMain] com.santika.simrs.SimrsApplicationKt     : Started SimrsApplicationKt in 39.776 seconds (process running for 237.133)
+2026-06-04T06:01:14.419+07:00  INFO 23740 --- [SANTIKA] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   DataRedisRepositoriesAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.data.redis.repositories.enabled=true) found different value in property 'spring.data.redis.repositories.enabled' (OnPropertyCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.data.redis.repository.configuration.EnableRedisRepositories' (OnClassCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup & Panduan — SANTIKA SIMRS</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #222535;
+      --border: #2e3147;
+      --accent: #6c8aff;
+      --accent2: #a78bfa;
+      --green: #34d399;
+      --red: #f87171;
+      --yellow: #fbbf24;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --code-bg: #0d1117;
+      --radius: 8px;
+    }
+
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+    .layout { display: flex; min-height: 100vh; }
+
+    nav {
+      width: 260px; flex-shrink: 0; background: var(--surface);
+      border-right: 1px solid var(--border); padding: 24px 0;
+      position: sticky; top: 0; height: 100vh; overflow-y: auto;
+    }
+    .nav-logo { padding: 0 20px 20px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .nav-logo h2 { font-size: 14px; color: var(--muted); font-weight: 500; }
+    .nav-logo span { font-size: 18px; font-weight: 700; color: var(--text); }
+
+    nav a { display: block; padding: 8px 20px; color: var(--muted); text-decoration: none; font-size: 13.5px; border-left: 2px solid transparent; transition: all .15s; }
+    nav a:hover { color: var(--text); border-left-color: var(--border); }
+    nav a.active { color: var(--accent); border-left-color: var(--accent); background: rgba(108,138,255,.06); }
+    nav a.other-doc { color: var(--accent2); font-size: 13px; }
+    nav a.other-doc:hover { color: var(--accent2); opacity: .8; }
+    .nav-group { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 16px 20px 6px; }
+
+    main { flex: 1; padding: 40px 60px; max-width: 900px; }
+
+    h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+    h2 { font-size: 22px; font-weight: 600; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    h3 { font-size: 16px; font-weight: 600; margin: 28px 0 12px; color: var(--accent2); }
+    h4 { font-size: 14px; font-weight: 600; margin: 20px 0 8px; color: var(--text); }
+    p  { color: var(--muted); margin-bottom: 14px; }
+    strong { color: var(--text); }
+    ul, ol { color: var(--muted); padding-left: 20px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+
+    pre, code { font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace; }
+    code { background: var(--code-bg); border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #c9d1d9; }
+    pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; overflow-x: auto; font-size: 13px; line-height: 1.6; margin: 12px 0 20px; color: #c9d1d9; }
+    pre .c { color: #8b949e; font-style: italic; }
+    pre .k { color: #ff7b72; }
+    pre .s { color: #a5d6ff; }
+    pre .n { color: #d2a8ff; }
+    pre .m { color: #79c0ff; }
+
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 13.5px; }
+    th { text-align: left; padding: 10px 14px; background: var(--surface2); color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--muted); }
+    td:first-child { color: var(--text); font-family: monospace; font-size: 13px; }
+    tr:last-child td { border-bottom: none; }
+
+    .alert { padding: 14px 16px; border-radius: var(--radius); margin: 16px 0; font-size: 13.5px; display: flex; gap: 10px; align-items: flex-start; }
+    .alert.info   { background: rgba(108,138,255,.1); border-left: 3px solid var(--accent); color: #a5b4fc; }
+    .alert.warn   { background: rgba(251,191,36,.1);  border-left: 3px solid var(--yellow); color: #fde68a; }
+    .alert.success{ background: rgba(52,211,153,.1);  border-left: 3px solid var(--green);  color: #6ee7b7; }
+    .alert-icon { font-size: 16px; flex-shrink: 0; }
+
+    .stack-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0 24px; }
+    .stack-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+    .stack-card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+    .stack-card .value { font-size: 14px; font-weight: 600; color: var(--text); }
+    .stack-card .sub   { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    .step { display: flex; gap: 16px; margin-bottom: 28px; align-items: flex-start; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .step-body h4 { margin: 0 0 8px; font-size: 15px; }
+    .step-body p  { margin: 0 0 8px; font-size: 13.5px; }
+
+    .hero-tag { display: inline-block; background: rgba(108,138,255,.12); color: var(--accent); border: 1px solid rgba(108,138,255,.3); padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 500; margin-bottom: 12px; }
+
+    .docs-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px; background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); text-decoration: none; color: var(--text);
+      margin-bottom: 10px; transition: border-color .15s;
+    }
+    .docs-link:hover { border-color: var(--accent); }
+    .docs-link-icon { font-size: 20px; }
+    .docs-link-title { font-weight: 600; font-size: 14px; }
+    .docs-link-desc  { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+    .docs-link-arrow { margin-left: auto; color: var(--muted); }
+
+    .module-tree {
+      background: var(--code-bg); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 18px 20px; font-family: monospace; font-size: 13px; line-height: 1.8;
+      color: #c9d1d9; margin: 12px 0 20px;
+    }
+    .module-tree .dir  { color: var(--accent2); }
+    .module-tree .desc { color: #8b949e; }
+
+    footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <nav>
+    <div class="nav-logo">
+      <h2>SANTIKA SIMRS</h2>
+      <span>Dokumentasi</span>
+    </div>
+
+    <div class="nav-group">Halaman Ini</div>
+    <a href="#overview" class="active">Overview</a>
+    <a href="#stack">Stack Teknologi</a>
+    <a href="#tools">Tools yang Diperlukan</a>
+
+    <div class="nav-group">Setup</div>
+    <a href="#setup-db">Database (PostgreSQL)</a>
+    <a href="#setup-dragonfly">DragonFly</a>
+    <a href="#setup-app">Menjalankan Aplikasi</a>
+
+    <div class="nav-group">Referensi</div>
+    <a href="#env">Environment Variables</a>
+    <a href="#rate-limit">Rate Limiting</a>
+    <a href="#circuit-breaker">Circuit Breaker</a>
+    <a href="#monitoring">Monitoring</a>
+    <a href="#struktur">Struktur Modul</a>
+    <a href="#log">Log</a>
+
+    <div class="nav-group">Dokumen Lain</div>
+    <a href="file/index.html" class="other-doc">↗ File System</a>
+    <a href="signed-url/index.html" class="other-doc">↗ Signed URL</a>
+  </nav>
+
+  <main>
+
+    <!-- OVERVIEW -->
+    <section id="overview">
+      <div class="hero-tag">Setup & Panduan</div>
+      <h1>SANTIKA SIMRS</h1>
+      <p>
+        Sistem Informasi Manajemen Rumah Sakit berbasis <strong>modular monolith</strong>,
+        dibangun dengan Spring Boot 4 + Kotlin. Menggunakan dual ORM (JPA untuk CRUD ringan,
+        jOOQ untuk query kompleks) dengan DragonFly sebagai cache dan rate limiter.
+      </p>
+
+      <h3>Dokumen Tersedia</h3>
+      <a href="index.html" class="docs-link">
+        <span class="docs-link-icon">🚀</span>
+        <div>
+          <div class="docs-link-title">Setup & Panduan</div>
+          <div class="docs-link-desc">Instalasi, konfigurasi, environment variable, cara menjalankan</div>
+        </div>
+        <span class="docs-link-arrow">→</span>
+      </a>
+      <a href="file/index.html" class="docs-link">
+        <span class="docs-link-icon">📁</span>
+        <div>
+          <div class="docs-link-title">File System</div>
+          <div class="docs-link-desc">Upload, storage, rollback, cleanup scheduler, Redis lock</div>
+        </div>
+        <span class="docs-link-arrow">→</span>
+      </a>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack">
+      <h2>Stack Teknologi</h2>
+
+      <div class="stack-grid">
+        <div class="stack-card">
+          <div class="label">Language</div>
+          <div class="value">Kotlin 2.2.21</div>
+          <div class="sub">Java 24</div>
+        </div>
+        <div class="stack-card">
+          <div class="label">Framework</div>
+          <div class="value">Spring Boot 4.0.6</div>
+          <div class="sub">Spring Security + JWT</div>
+        </div>
+        <div class="stack-card">
+          <div class="label">ORM</div>
+          <div class="value">JPA + jOOQ</div>
+          <div class="sub">Dual ORM</div>
+        </div>
+        <div class="stack-card">
+          <div class="label">Database</div>
+          <div class="value">PostgreSQL 17</div>
+          <div class="sub">Liquibase migration</div>
+        </div>
+        <div class="stack-card">
+          <div class="label">Cache / Rate Limit</div>
+          <div class="value">DragonFly</div>
+          <div class="sub">Redis-compatible</div>
+        </div>
+        <div class="stack-card">
+          <div class="label">Resilience</div>
+          <div class="value">Resilience4j</div>
+          <div class="sub">Circuit Breaker, Retry</div>
+        </div>
+      </div>
+
+      <table>
+        <thead><tr><th>Layer</th><th>Teknologi</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>Language</td><td>Kotlin 2.2.21 + Java 24</td><td>Virtual Threads diaktifkan</td></tr>
+          <tr><td>Framework</td><td>Spring Boot 4.0.6</td><td>Jakarta EE 11, Jackson 3.x</td></tr>
+          <tr><td>ORM</td><td>JPA (CRUD) + jOOQ (query kompleks)</td><td>Dual ORM, pakai masing-masing sesuai kebutuhan</td></tr>
+          <tr><td>Database</td><td>PostgreSQL 17</td><td>Migrasi via Liquibase</td></tr>
+          <tr><td>Cache / Rate Limit</td><td>DragonFly</td><td>Redis-compatible, lebih efisien memori</td></tr>
+          <tr><td>Security</td><td>Spring Security + JWT (JJWT)</td><td>Stateless, cookie-based refresh token</td></tr>
+          <tr><td>Resilience</td><td>Resilience4j</td><td>Circuit Breaker, Retry, Time Limiter</td></tr>
+          <tr><td>Build</td><td>Gradle Kotlin DSL</td><td>Wrapper sudah disertakan</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- TOOLS -->
+    <section id="tools">
+      <h2>Tools yang Diperlukan</h2>
+
+      <table>
+        <thead><tr><th>Tool</th><th>Versi</th><th>Cara Dapat</th></tr></thead>
+        <tbody>
+          <tr><td>JDK</td><td>24+</td><td><a href="https://adoptium.net/" style="color:var(--accent)">adoptium.net</a></td></tr>
+          <tr><td>PostgreSQL</td><td>17+</td><td><a href="https://www.postgresql.org/download/" style="color:var(--accent)">postgresql.org</a></td></tr>
+          <tr><td>DragonFly</td><td>Latest</td><td><a href="https://www.dragonflydb.io/docs/getting-started/install-or-upgrade" style="color:var(--accent)">dragonflydb.io</a> atau Docker</td></tr>
+          <tr><td>Gradle</td><td>Disertakan</td><td>Pakai <code>./gradlew</code> — tidak perlu install manual</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SETUP DB -->
+    <section id="setup-db">
+      <h2>Setup Database</h2>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Buat database PostgreSQL</h4>
+          <pre>CREATE DATABASE simrs;</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Konfigurasi koneksi</h4>
+          <p>Default sudah terset di <code>application.yaml</code>. Override lewat env variable:</p>
+          <table>
+            <thead><tr><th>Config</th><th>Default</th></tr></thead>
+            <tbody>
+              <tr><td>DB_URL</td><td>jdbc:postgresql://localhost:5432/simrs</td></tr>
+              <tr><td>DB_USERNAME</td><td>postgres</td></tr>
+              <tr><td>DB_PASSWORD</td><td>root</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Migrasi otomatis via Liquibase</h4>
+          <p>Liquibase berjalan saat aplikasi start. Schema yang dikelola:</p>
+          <ul>
+            <li><code>MASTER</code> — data master (poli, diagnosa, wilayah, penjamin)</li>
+            <li><code>SHARED</code> — lintas modul (user, role, permission, audit, file)</li>
+            <li><code>KEPEGAWAIAN</code> — data kepegawaian</li>
+          </ul>
+          <pre><span class="c"># Tanpa seed data (default)</span>
+LIQUIBASE_SEED=NON
+
+<span class="c"># Dengan seed data development</span>
+LIQUIBASE_SEED=DEV</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETUP DRAGONFLY -->
+    <section id="setup-dragonfly">
+      <h2>Setup DragonFly</h2>
+      <p>DragonFly adalah pengganti Redis yang <strong>sepenuhnya kompatibel</strong> dengan protokol Redis dan lebih efisien dalam penggunaan memori.</p>
+
+      <h3>Cara Install & Jalankan</h3>
+
+      <h4>Native (Linux / Mac)</h4>
+      <pre>dragonfly --requirepass root --maxmemory 512mb --maxmemory-policy allkeys-lru</pre>
+
+      <h4>Docker</h4>
+      <pre>docker run -d \
+  --name simrs-dragonfly \
+  -p 6379:6379 \
+  docker.dragonflydb.io/dragonflydb/dragonfly \
+  --requirepass root \
+  --maxmemory 512mb \
+  --maxmemory-policy allkeys-lru</pre>
+
+      <h3>Konfigurasi Koneksi</h3>
+      <table>
+        <thead><tr><th>Variable</th><th>Default</th></tr></thead>
+        <tbody>
+          <tr><td>DRAGONFLY_HOST</td><td>localhost</td></tr>
+          <tr><td>DRAGONFLY_PORT</td><td>6379</td></tr>
+          <tr><td>DRAGONFLY_PASSWORD</td><td>root</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Fungsi DragonFly di Aplikasi Ini</h3>
+      <table>
+        <thead><tr><th>Fungsi</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Cache auth</td><td><code>userAuthorities</code> dan <code>userPrincipalDetail</code> — TTL 5 menit</td></tr>
+          <tr><td>Rate limiting</td><td>Counter per IP + method + endpoint — window 1 menit</td></tr>
+          <tr><td>File upload lock</td><td>Tracking upload aktif — mencegah cleanup berjalan saat ada upload</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SETUP APP -->
+    <section id="setup-app">
+      <h2>Menjalankan Aplikasi</h2>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Clone & masuk direktori</h4>
+          <pre>git clone &lt;repo-url&gt;
+cd simrs</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Generate jOOQ classes</h4>
+          <p>jOOQ codegen dijalankan dari Liquibase changelog — tidak perlu koneksi DB live.</p>
+          <pre>./gradlew generateJooq</pre>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Jalankan aplikasi</h4>
+          <pre><span class="c"># Development</span>
+./gradlew bootRun
+
+<span class="c"># Production — build JAR dulu</span>
+./gradlew bootJar
+java -jar build/libs/simrs-0.0.1-SNAPSHOT.jar</pre>
+
+          <div class="alert success">
+            <span class="alert-icon">✓</span>
+            Aplikasi berjalan di port <strong>9002</strong> — <code>http://localhost:9002</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENV VARIABLES -->
+    <section id="env">
+      <h2>Environment Variables</h2>
+      <p>Semua nilai punya default yang bisa langsung dipakai saat development. Override di production via env.</p>
+
+      <h3>Aplikasi</h3>
+      <table>
+        <thead><tr><th>Variable</th><th>Default</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>APP_NAME</td><td>SANTIKA</td><td>Nama aplikasi</td></tr>
+          <tr><td>APP_ENV</td><td>dev</td><td>Profile aktif (dev / prod)</td></tr>
+          <tr><td>APP_PORT</td><td>9002</td><td>Port server</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Database</h3>
+      <table>
+        <thead><tr><th>Variable</th><th>Default</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>DB_URL</td><td>jdbc:postgresql://localhost:5432/simrs</td><td>JDBC URL</td></tr>
+          <tr><td>DB_USERNAME</td><td>postgres</td><td>Username DB</td></tr>
+          <tr><td>DB_PASSWORD</td><td>root</td><td>Password DB</td></tr>
+          <tr><td>LIQUIBASE_ENABLED</td><td>true</td><td>Aktifkan migrasi saat startup</td></tr>
+          <tr><td>LIQUIBASE_SEED</td><td>NON</td><td>Context seed: NON atau DEV</td></tr>
+        </tbody>
+      </table>
+
+      <h3>DragonFly</h3>
+      <table>
+        <thead><tr><th>Variable</th><th>Default</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>DRAGONFLY_HOST</td><td>localhost</td><td>Host DragonFly</td></tr>
+          <tr><td>DRAGONFLY_PORT</td><td>6379</td><td>Port DragonFly</td></tr>
+          <tr><td>DRAGONFLY_PASSWORD</td><td>root</td><td>Password DragonFly</td></tr>
+        </tbody>
+      </table>
+
+      <h3>JWT</h3>
+      <table>
+        <thead><tr><th>Variable</th><th>Default</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>JWT_SECRET</td><td><em>(default panjang)</em></td><td>Secret key — wajib diganti di production</td></tr>
+          <tr><td>JWT_EXPIRATION_S</td><td>600</td><td>Expiry access token dalam detik (10 menit)</td></tr>
+          <tr><td>JWT_REFRESH_EXPIRATION_S</td><td>604800</td><td>Expiry refresh token (7 hari)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>File</h3>
+      <table>
+        <thead><tr><th>Variable</th><th>Default</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>MAX_FILE_SIZE</td><td>10MB</td><td>Batas ukuran satu file upload</td></tr>
+          <tr><td>MAX_REQUEST_SIZE</td><td>20MB</td><td>Batas ukuran total request</td></tr>
+          <tr><td>APP_TEMP_DIR</td><td>/tmp/simrs/temp</td><td>Direktori file sementara</td></tr>
+          <tr><td>APP_UPLOAD_DIR</td><td>/tmp/simrs/uploads</td><td>Direktori file permanen</td></tr>
+          <tr><td>TEMP_FILE_EXPIRY_HOURS</td><td>24</td><td>Berapa jam temp file hidup</td></tr>
+          <tr><td>CLEANUP_CRON</td><td>0 0 * * * *</td><td>Jadwal cleanup (tiap jam)</td></tr>
+          <tr><td>CLEANUP_BATCH_SIZE</td><td>100</td><td>Jumlah file per batch cleanup</td></tr>
+        </tbody>
+      </table>
+
+      <div class="alert warn">
+        <span class="alert-icon">⚠</span>
+        Di <strong>production</strong>: ganti <code>JWT_SECRET</code> dengan nilai acak yang panjang,
+        dan ganti semua password default.
+      </div>
+    </section>
+
+    <!-- RATE LIMITING -->
+    <section id="rate-limit">
+      <h2>Rate Limiting</h2>
+      <p>
+        Diterapkan otomatis ke semua endpoint <code>/api/**</code> per kombinasi
+        <strong>IP + HTTP method + endpoint</strong>. Disimpan di DragonFly dengan window 1 menit.
+      </p>
+
+      <table>
+        <thead><tr><th>Grup Endpoint</th><th>Limit</th><th>Alasan</th></tr></thead>
+        <tbody>
+          <tr><td>/api/v1/auth/**</td><td>5 request / menit</td><td>Cegah brute force login</td></tr>
+          <tr><td>Endpoint lainnya</td><td>60 request / menit</td><td>Limit umum per IP</td></tr>
+        </tbody>
+      </table>
+
+      <p>Jika limit terlampaui, client menerima:</p>
+      <pre>HTTP 429 Too Many Requests
+Retry-After: 45
+
+{
+  <span class="s">"status"</span>: 429,
+  <span class="s">"message"</span>: <span class="s">"Terlalu banyak permintaan. Coba lagi dalam 45 detik"</span>
+}</pre>
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ</span>
+        Jika DragonFly tidak tersedia, rate limiter <strong>fail-open</strong> — semua request tetap diizinkan
+        agar aplikasi tidak crash karena Redis down.
+      </div>
+    </section>
+
+    <!-- CIRCUIT BREAKER -->
+    <section id="circuit-breaker">
+      <h2>Circuit Breaker</h2>
+      <p>Hanya aktif untuk <strong>koneksi keluar</strong> (external service). Database internal tidak dipasang CB — baca
+      <a href="#" onclick="return false" style="color:var(--accent)">alasan desain ini</a> di sesi diskusi.</p>
+
+      <h3>Instance yang Tersedia</h3>
+      <table>
+        <thead><tr><th>Instance</th><th>Dipakai untuk</th><th>Perilaku jika mati</th></tr></thead>
+        <tbody>
+          <tr><td>dragonfly</td><td>Koneksi ke DragonFly (rate limit, cache)</td><td>Fail-open — request tetap jalan</td></tr>
+          <tr><td>external</td><td>PDF service / Go service / HTTP eksternal</td><td>Fallback → exception dengan pesan jelas</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Cara Pakai di Service</h3>
+      <pre><span class="k">@CircuitBreaker</span>(name = <span class="s">"external"</span>, fallbackMethod = <span class="s">"generatePdfFallback"</span>)
+<span class="k">@Retry</span>(name = <span class="s">"external"</span>)
+<span class="k">fun</span> <span class="m">generatePdf</span>(data: PdfRequest): ByteArray {
+    <span class="c">// panggil Go service / PDF service</span>
+}
+
+<span class="k">private fun</span> <span class="m">generatePdfFallback</span>(data: PdfRequest, ex: Exception): ByteArray {
+    <span class="k">throw</span> ServiceUnavailableException(<span class="s">"PDF service sedang tidak tersedia"</span>)
+}</pre>
+
+      <h3>CB untuk DB (jika DB Remote)</h3>
+      <p>Jika database dipindah ke jaringan berbeda, aktifkan config yang sudah disiapkan di <code>application.yaml</code>:</p>
+      <pre><span class="c"># Uncomment blok ini di application.yaml</span>
+instances:
+  database:
+    base-config: default
+    sliding-window-size: 10
+    failure-rate-threshold: 50
+    wait-duration-in-open-state: 15s
+    ...</pre>
+      <pre><span class="c">// Tambahkan anotasi di service layer</span>
+<span class="k">@CircuitBreaker</span>(name = <span class="s">"database"</span>, fallbackMethod = <span class="s">"fallback"</span>)
+<span class="k">fun</span> <span class="m">queryDatabase</span>(): T { ... }</pre>
+    </section>
+
+    <!-- MONITORING -->
+    <section id="monitoring">
+      <h2>Monitoring</h2>
+      <p>Spring Boot Actuator tersedia untuk health check dan inspeksi status.</p>
+
+      <table>
+        <thead><tr><th>Endpoint</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>GET /actuator/health</td><td>Status aplikasi + status circuit breaker per instance</td></tr>
+          <tr><td>GET /actuator/info</td><td>Informasi build dan aplikasi</td></tr>
+          <tr><td>GET /actuator/startup</td><td>Waktu startup dan bean yang dimuat</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Contoh Response Health</h3>
+      <pre><span class="k">curl</span> http://localhost:9002/actuator/health
+
+{
+  <span class="s">"components"</span>: {
+    <span class="s">"circuitBreakers"</span>: {
+      <span class="s">"details"</span>: {
+        <span class="s">"dragonfly"</span>: { <span class="s">"state"</span>: <span class="s">"CLOSED"</span> },
+        <span class="s">"external"</span>:  { <span class="s">"state"</span>: <span class="s">"CLOSED"</span> }
+      }
+    },
+    <span class="s">"db"</span>: { <span class="s">"status"</span>: <span class="s">"UP"</span> },
+    <span class="s">"redis"</span>: { <span class="s">"status"</span>: <span class="s">"UP"</span> }
+  }
+}</pre>
+    </section>
+
+    <!-- STRUKTUR MODUL -->
+    <section id="struktur">
+      <h2>Struktur Modul</h2>
+
+      <div class="module-tree">
+src/main/kotlin/com/santika/simrs/<br>
+├── <span class="dir">global/</span>          <span class="desc"># Cross-cutting: cache, rate limit, security, JWT, exception</span><br>
+│   ├── <span class="dir">cache/</span>       <span class="desc"># RedisCacheManager (DragonFly)</span><br>
+│   ├── <span class="dir">config/</span>      <span class="desc"># JooqConfig, WebConfig, SchedulingConfig</span><br>
+│   ├── <span class="dir">exception/</span>   <span class="desc"># GlobalException handler</span><br>
+│   ├── <span class="dir">jwt/</span>         <span class="desc"># JwtTokenProvider, JwtAuthFilter</span><br>
+│   ├── <span class="dir">ratelimit/</span>   <span class="desc"># RateLimitInterceptor (DragonFly)</span><br>
+│   ├── <span class="dir">response/</span>    <span class="desc"># BaseResponse, PageResponse, SliceResponse, OptionsRes</span><br>
+│   └── <span class="dir">security/</span>    <span class="desc"># SecurityConfiguration, UserContext</span><br>
+│<br>
+├── <span class="dir">module/</span><br>
+│   ├── <span class="dir">kepegawaian/</span> <span class="desc"># Modul HR — pegawai, dokter, departemen, dll</span><br>
+│   └── <span class="dir">master/</span>      <span class="desc"># Data master — wilayah, medis, penjamin</span><br>
+│<br>
+└── <span class="dir">shared/</span>          <span class="desc"># Fitur lintas modul</span><br>
+    ├── <span class="dir">auth/</span>        <span class="desc"># AuthService, AuthController (login, refresh)</span><br>
+    ├── <span class="dir">file/</span>        <span class="desc"># File system (temp, storage, lock, cleanup)</span><br>
+    ├── <span class="dir">role/</span>        <span class="desc"># Role & Permission management</span><br>
+    └── <span class="dir">user/</span>        <span class="desc"># User management</span>
+      </div>
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ</span>
+        <strong>Dual ORM:</strong> Gunakan <strong>JPA</strong> untuk operasi CRUD sederhana (save, findById, delete).
+        Gunakan <strong>jOOQ</strong> untuk query dengan join banyak tabel, filter kompleks, atau yang butuh performa tinggi.
+      </div>
+    </section>
+
+    <!-- LOG -->
+    <section id="log">
+      <h2>Log</h2>
+      <p>Log file tersimpan di <code>logs/app.log</code>. Level per logger:</p>
+
+      <table>
+        <thead><tr><th>Logger</th><th>Level</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>Root</td><td>INFO</td><td>Log umum aplikasi</td></tr>
+          <tr><td>org.hibernate.SQL</td><td>DEBUG</td><td>Semua query SQL yang dijalankan</td></tr>
+          <tr><td>org.hibernate.orm.jdbc.bind</td><td>TRACE</td><td>Parameter binding query</td></tr>
+          <tr><td>com.zaxxer.hikari</td><td>DEBUG</td><td>Status connection pool</td></tr>
+        </tbody>
+      </table>
+
+      <div class="alert warn">
+        <span class="alert-icon">⚠</span>
+        Level <code>TRACE</code> pada Hibernate akan mencetak nilai parameter SQL — matikan di production
+        dengan mengubah <code>org.hibernate.orm.jdbc.bind: INFO</code> di <code>application.yaml</code>.
+      </div>
+    </section>
+
+    <footer>
+      <p>SANTIKA SIMRS — Setup & Panduan &nbsp;·&nbsp; Lihat juga: <a href="file/index.html" style="color:var(--accent)">Dokumentasi File System</a></p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('nav a:not(.other-doc)');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

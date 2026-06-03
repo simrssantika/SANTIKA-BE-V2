@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: vendor-tenaga-luar
+      author: ridlo
+      changes:
+        - createTable:
+            schemaName: kepegawaian
+            tableName: vendor_tenaga_luar
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nama_vendor
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: alamat_vendor
+                  type: varchar(200)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: bidang_vendor
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: telephone_vendor
+                  type: varchar(20)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: nama_kontak_darurat
+                  type: varchar(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: kontak_darurat_vendor
+                  type: varchar(20)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true

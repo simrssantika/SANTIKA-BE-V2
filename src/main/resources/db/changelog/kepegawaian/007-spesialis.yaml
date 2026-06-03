@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: spesialis
+      author: ridlo
+      changes:
+        - createTable:
+            schemaName: kepegawaian
+            tableName: spesialis
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: kode_spesialis
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nama_spesialis
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: spesialis-index
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_kode_spesialis ON kepegawaian.spesialis (kode_spesialis) WHERE (deleted_at IS NULL);

@@ -1,0 +1,58 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/shared/file/001-temp-files.yaml
+  - include:
+      file: db/changelog/shared/file/002-storage-files.yaml
+
+  - changeSet:
+      id: shared-file
+      author: system
+      changes:
+        - createTable:
+            schemaName: shared
+            tableName: file
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: path
+                  type: varchar(500)
+              - column:
+                  name: size
+                  type: varchar(50)
+              - column:
+                  name: ext
+                  type: varchar(20)
+              - column:
+                  name: mime_type
+                  type: varchar(100)
+              - column:
+                  name: temp_name
+                  type: varchar(255)
+              - column:
+                  name: is_temp
+                  type: boolean
+                  defaultValueBoolean: true
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true

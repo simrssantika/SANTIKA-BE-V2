@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: h2-gen-random-uuid
+      author: system
+      dbms: h2
+      changes:
+        - sql:
+            splitStatements: false
+            sql: "CREATE ALIAS IF NOT EXISTS GEN_RANDOM_UUID FOR \"java.util.UUID.randomUUID\";"

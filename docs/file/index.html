@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>File System — SANTIKA SIMRS</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #222535;
+      --border: #2e3147;
+      --accent: #6c8aff;
+      --accent2: #a78bfa;
+      --green: #34d399;
+      --red: #f87171;
+      --yellow: #fbbf24;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --code-bg: #0d1117;
+      --radius: 8px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Layout */
+    .layout { display: flex; min-height: 100vh; }
+
+    nav {
+      width: 260px;
+      flex-shrink: 0;
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .nav-logo {
+      padding: 0 20px 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+    .nav-logo h2 { font-size: 14px; color: var(--muted); font-weight: 500; }
+    .nav-logo span { font-size: 18px; font-weight: 700; color: var(--text); }
+
+    nav a {
+      display: block;
+      padding: 8px 20px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13.5px;
+      border-left: 2px solid transparent;
+      transition: all .15s;
+    }
+    nav a:hover { color: var(--text); border-left-color: var(--border); }
+    nav a.active { color: var(--accent); border-left-color: var(--accent); background: rgba(108,138,255,.06); }
+    nav a.other-doc { color: var(--accent2); font-size: 13px; }
+    nav a.other-doc:hover { color: var(--accent2); opacity: .8; }
+    nav .nav-group { font-size: 11px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--muted); padding: 16px 20px 6px; }
+
+    main { flex: 1; padding: 40px 60px; max-width: 900px; }
+
+    h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+    h2 { font-size: 22px; font-weight: 600; margin: 48px 0 16px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    h3 { font-size: 16px; font-weight: 600; margin: 28px 0 12px; color: var(--accent2); }
+    p  { color: var(--muted); margin-bottom: 14px; }
+    strong { color: var(--text); }
+
+    /* Badge */
+    .badge {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-size: 11px; font-weight: 600; letter-spacing: .04em;
+      vertical-align: middle; margin-right: 4px;
+    }
+    .badge.get    { background: rgba(52,211,153,.15); color: var(--green); }
+    .badge.post   { background: rgba(108,138,255,.15); color: var(--accent); }
+    .badge.delete { background: rgba(248,113,113,.15); color: var(--red); }
+
+    /* Code */
+    pre, code {
+      font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
+    }
+    code {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: #c9d1d9;
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      overflow-x: auto;
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 12px 0 20px;
+      color: #c9d1d9;
+    }
+    pre .c  { color: #8b949e; font-style: italic; }   /* comment */
+    pre .k  { color: #ff7b72; }                         /* keyword */
+    pre .s  { color: #a5d6ff; }                         /* string */
+    pre .n  { color: #d2a8ff; }                         /* number/special */
+    pre .m  { color: #79c0ff; }                         /* method */
+    pre .p  { color: var(--green); }                    /* path */
+
+    /* Endpoint card */
+    .endpoint {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .endpoint-header {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+    }
+    .endpoint-path { font-family: monospace; font-size: 14px; color: var(--text); }
+    .endpoint-desc { color: var(--muted); font-size: 13px; margin-left: auto; }
+    .endpoint-body { padding: 18px; }
+
+    /* Flow */
+    .flow {
+      display: flex; flex-direction: column; gap: 0;
+      margin: 16px 0 24px;
+    }
+    .flow-step {
+      display: flex; align-items: stretch; gap: 0;
+    }
+    .flow-left {
+      display: flex; flex-direction: column; align-items: center; width: 36px;
+    }
+    .flow-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; margin-top: 4px;
+    }
+    .flow-dot.green  { background: var(--green); }
+    .flow-dot.yellow { background: var(--yellow); }
+    .flow-dot.red    { background: var(--red); }
+    .flow-line {
+      width: 2px; flex: 1; background: var(--border); margin: 2px 0;
+    }
+    .flow-content {
+      flex: 1; padding: 4px 0 20px 12px;
+    }
+    .flow-content h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .flow-content p  { font-size: 13px; color: var(--muted); margin: 0; }
+    .flow-content code { font-size: 12px; }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 13.5px; }
+    th {
+      text-align: left; padding: 10px 14px;
+      background: var(--surface2); color: var(--muted);
+      font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 10px 14px; border-bottom: 1px solid var(--border);
+      vertical-align: top; color: var(--muted);
+    }
+    td:first-child { color: var(--text); font-family: monospace; font-size: 13px; }
+    tr:last-child td { border-bottom: none; }
+
+    /* Alert */
+    .alert {
+      padding: 14px 16px; border-radius: var(--radius);
+      margin: 16px 0; font-size: 13.5px;
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .alert.info   { background: rgba(108,138,255,.1); border-left: 3px solid var(--accent); color: #a5b4fc; }
+    .alert.warn   { background: rgba(251,191,36,.1);  border-left: 3px solid var(--yellow); color: #fde68a; }
+    .alert.danger { background: rgba(248,113,113,.1); border-left: 3px solid var(--red); color: #fca5a5; }
+    .alert-icon { font-size: 16px; flex-shrink: 0; }
+
+    /* Package boxes */
+    .pkg-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 16px 0 24px; }
+    .pkg-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .pkg-box h4 { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+    .pkg-box h4 span { font-family: monospace; color: var(--accent); }
+    .pkg-box ul { list-style: none; }
+    .pkg-box li { font-size: 12.5px; color: var(--muted); padding: 2px 0; }
+    .pkg-box li::before { content: '→ '; color: var(--border); }
+
+    .hero-tag {
+      display: inline-block; background: rgba(108,138,255,.12);
+      color: var(--accent); border: 1px solid rgba(108,138,255,.3);
+      padding: 3px 10px; border-radius: 20px; font-size: 12px;
+      font-weight: 500; margin-bottom: 12px;
+    }
+
+    footer {
+      margin-top: 80px; padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted); font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <nav>
+    <div class="nav-logo">
+      <h2>SANTIKA SIMRS</h2>
+      <span>File System</span>
+    </div>
+
+    <div class="nav-group">Dokumen Lain</div>
+    <a href="../index.html" class="other-doc">↖ Setup & Panduan</a>
+    <a href="../signed-url/index.html" class="other-doc">↗ Signed URL</a>
+
+    <div class="nav-group">Halaman Ini</div>
+    <a href="#overview" class="active">Overview</a>
+    <a href="#struktur">Struktur Package</a>
+
+    <div class="nav-group">Alur Kerja</div>
+    <a href="#upload-flow">Upload ke Temp</a>
+    <a href="#move-flow">Pindah ke Storage</a>
+    <a href="#rollback-flow">Rollback ke Temp</a>
+
+    <div class="nav-group">API Reference</div>
+    <a href="#api-temp">Temp File</a>
+    <a href="#api-storage">Storage File</a>
+
+    <div class="nav-group">Sistem</div>
+    <a href="#redis-lock">Redis Lock</a>
+    <a href="#cleanup">Cleanup Scheduler</a>
+    <a href="#config">Konfigurasi</a>
+  </nav>
+
+  <!-- Content -->
+  <main>
+
+    <!-- OVERVIEW -->
+    <section id="overview">
+      <div class="hero-tag">Dokumentasi Teknis</div>
+      <h1>File System</h1>
+      <p>
+        Sistem file SIMRS menggunakan <strong>dua tabel terpisah</strong> dengan peran yang berbeda:
+        <code>temp_files</code> untuk upload sementara dan <code>storage_files</code> untuk penyimpanan permanen.
+        Keduanya dikelola oleh komponen yang masing-masing punya tanggung jawab tunggal.
+      </p>
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ</span>
+        <div>
+          <strong>Mengapa dua tabel?</strong><br />
+          <code>temp_files</code> sering dihapus secara massal (cleanup) sehingga dipisah agar tidak
+          mengganggu performa tabel storage yang berisi file permanen. Garbage collection bisa berjalan
+          efisien tanpa lock pada tabel utama.
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr><th>Tabel</th><th>Fungsi</th><th>Hapus</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>shared.temp_files</td>
+            <td>File sementara hasil upload. Punya <code>expires_at</code> dan <code>upload_token</code>.</td>
+            <td>Hard delete — dihapus permanen saat cleanup</td>
+          </tr>
+          <tr>
+            <td>shared.storage_files</td>
+            <td>File permanen yang sudah dikaitkan ke entitas (pegawai, pasien, dll).</td>
+            <td>Soft delete — bisa di-rollback ke temp</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- STRUKTUR PACKAGE -->
+    <section id="struktur">
+      <h2>Struktur Package</h2>
+      <p>Setiap komponen dipisah ke sub-package berdasarkan tugasnya masing-masing.</p>
+
+      <div class="pkg-grid">
+        <div class="pkg-box">
+          <h4><span>temp/</span></h4>
+          <ul>
+            <li>TempFileEntity.kt</li>
+            <li>TempFileRepo.kt</li>
+            <li>TempFileDto.kt</li>
+            <li>TempFileService.kt</li>
+            <li>TempFileController.kt</li>
+          </ul>
+        </div>
+        <div class="pkg-box">
+          <h4><span>storage/</span></h4>
+          <ul>
+            <li>StorageFileEntity.kt</li>
+            <li>StorageFileRepo.kt</li>
+            <li>StorageFileService.kt</li>
+            <li>StorageFileController.kt</li>
+          </ul>
+        </div>
+        <div class="pkg-box">
+          <h4><span>lock/</span></h4>
+          <ul>
+            <li>FileUploadLockService.kt</li>
+          </ul>
+        </div>
+        <div class="pkg-box">
+          <h4><span>cleanup/</span></h4>
+          <ul>
+            <li>FileCleanupService.kt</li>
+          </ul>
+        </div>
+      </div>
+
+      <pre>shared/file/
+├── <span class="n">common/</span>       FileException.kt
+├── <span class="n">temp/</span>         Entity, Repo, Dto, Service, Controller
+├── <span class="n">storage/</span>      Entity, Repo, Service, Controller
+├── <span class="n">lock/</span>         FileUploadLockService (Redis)
+└── <span class="n">cleanup/</span>      FileCleanupService (@Scheduled)</pre>
+    </section>
+
+    <!-- UPLOAD FLOW -->
+    <section id="upload-flow">
+      <h2>Alur Upload ke Temp</h2>
+      <p>Client mengirim file → masuk <code>temp_files</code> → mendapat <code>id</code> dan <code>token</code>.</p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>1. Client POST file</h4>
+            <p><code>POST /api/v1/files/temp</code> dengan <code>multipart/form-data</code>, field <code>file</code></p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>2. Server generate token</h4>
+            <p>UUID baru sebagai <code>upload_token</code>. Token didaftarkan ke Redis ZSET
+            <code>file:uploads:active</code> dengan TTL 10 menit.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>3. File disimpan ke filesystem</h4>
+            <p>Di-copy ke direktori <code>app.temp-dir</code>. Nama disimpan sebagai
+            <code>{timestamp}-{uuid}.{ext}</code>.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot green"></div></div>
+          <div class="flow-content">
+            <h4>4. Response ke client</h4>
+            <p>Server mengembalikan <code>{ id, token, storedName }</code>. Client wajib menyimpan
+            <code>id</code> untuk langkah berikutnya.</p>
+          </div>
+        </div>
+      </div>
+
+      <pre><span class="c"># Request</span>
+POST /api/v1/files/temp
+Content-Type: multipart/form-data
+
+file: [binary]
+
+<span class="c"># Response 201</span>
+{
+  <span class="s">"status"</span>: 201,
+  <span class="s">"message"</span>: <span class="s">"Upload berhasil"</span>,
+  <span class="s">"data"</span>: {
+    <span class="s">"id"</span>: <span class="s">"550e8400-e29b-41d4-a716-446655440000"</span>,
+    <span class="s">"token"</span>: <span class="s">"a1b2c3d4-..."</span>,
+    <span class="s">"stored_name"</span>: <span class="s">"1717000000-uuid.jpg"</span>
+  }
+}</pre>
+    </section>
+
+    <!-- MOVE TO STORAGE -->
+    <section id="move-flow">
+      <h2>Pindah ke Storage</h2>
+      <p>Dipanggil dari service lain (misal: <code>PegawaiService</code>) setelah entitas berhasil disimpan.</p>
+
+      <div class="alert warn">
+        <span class="alert-icon">⚠</span>
+        <div>
+          <strong>Penting:</strong> Operasi ini bersifat <strong>transaksional</strong>.
+          Jika gagal, record temp tidak terhapus dan token tetap aktif di Redis.
+        </div>
+      </div>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>1. Service memanggil moveToStorage()</h4>
+            <p>Kirim <code>tempId</code>, nama modul (<code>"kepegawaian"</code>), dan <code>entityId</code></p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>2. Record dipindah ke storage_files</h4>
+            <p>Kolom <code>module</code>, <code>entity_id</code>, dan <code>moved_from_temp_id</code> diisi.
+            File fisik tidak dipindah — path-nya sama.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot green"></div></div>
+          <div class="flow-content">
+            <h4>3. Temp dihapus, token dilepas</h4>
+            <p>Record <code>temp_files</code> dihapus permanen. Token dibuang dari Redis ZSET.</p>
+          </div>
+        </div>
+      </div>
+
+      <pre><span class="c">// Contoh di PegawaiService</span>
+<span class="k">@Transactional</span>
+<span class="k">fun</span> <span class="m">save</span>(request: PegawaiReq) {
+    <span class="k">val</span> pegawai = repo.<span class="m">save</span>(PegawaiEntity().<span class="m">applyFrom</span>(request))
+
+    <span class="c">// Pindah foto ke storage dan kaitkan ke pegawai</span>
+    request.fotoTempId?.<span class="m">let</span> { tempId ->
+        <span class="k">val</span> stored = tempFileService.<span class="m">moveToStorage</span>(
+            tempId  = tempId,
+            module  = <span class="s">"kepegawaian"</span>,
+            entityId = pegawai.id!!
+        )
+        pegawai.fotoId = stored.id
+        repo.<span class="m">save</span>(pegawai)
+    }
+}</pre>
+    </section>
+
+    <!-- ROLLBACK -->
+    <section id="rollback-flow">
+      <h2>Rollback ke Temp</h2>
+      <p>File permanen dikembalikan ke temp — berguna saat entitas diedit dan file perlu diganti.</p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot yellow"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>1. POST /api/v1/files/storage/{id}/rollback</h4>
+            <p>Minta rollback file storage ke temp</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot yellow"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>2. Storage di-soft delete</h4>
+            <p><code>deleted_at</code> diisi. File fisik tidak dihapus. Record tetap ada di DB untuk audit.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot green"></div></div>
+          <div class="flow-content">
+            <h4>3. Temp baru dibuat, token baru didaftarkan</h4>
+            <p>Client mendapat <code>{ id, token, storedName }</code> baru. Alur dilanjutkan seperti upload biasa.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ</span>
+        Setelah rollback, entitas (misal <code>pegawai.foto_id</code>) masih menunjuk ke storage lama.
+        Update referensi ke <code>null</code> atau ke ID storage baru setelah <code>moveToStorage()</code> selesai.
+      </div>
+    </section>
+
+    <!-- API TEMP -->
+    <section id="api-temp">
+      <h2>API — Temp File</h2>
+      <p>Base URL: <code>/api/v1/files/temp</code></p>
+
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="badge post">POST</span>
+          <span class="endpoint-path">/api/v1/files/temp</span>
+          <span class="endpoint-desc">Upload file ke temp</span>
+        </div>
+        <div class="endpoint-body">
+          <p><strong>Content-Type:</strong> <code>multipart/form-data</code></p>
+          <table>
+            <thead><tr><th>Field</th><th>Tipe</th><th>Wajib</th><th>Keterangan</th></tr></thead>
+            <tbody>
+              <tr><td>file</td><td>File</td><td>Ya</td><td>File yang diupload</td></tr>
+            </tbody>
+          </table>
+          <pre><span class="c"># Response 201</span>
+{
+  <span class="s">"data"</span>: {
+    <span class="s">"id"</span>: <span class="s">"uuid"</span>,          <span class="c">// simpan ini, kirim saat save entitas</span>
+    <span class="s">"token"</span>: <span class="s">"uuid"</span>,      <span class="c">// pakai untuk cancel jika batal</span>
+    <span class="s">"stored_name"</span>: <span class="s">"..."</span>  <span class="c">// nama file di disk</span>
+  }
+}</pre>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="badge get">GET</span>
+          <span class="endpoint-path">/api/v1/files/temp/{id}</span>
+          <span class="endpoint-desc">Preview file temp (sebelum disimpan)</span>
+        </div>
+        <div class="endpoint-body">
+          <p>Mengembalikan file sebagai binary response. Cocok untuk preview gambar/dokumen sebelum form disimpan.</p>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="badge delete">DELETE</span>
+          <span class="endpoint-path">/api/v1/files/temp/{token}</span>
+          <span class="endpoint-desc">Batalkan upload</span>
+        </div>
+        <div class="endpoint-body">
+          <p>Menghapus file dari filesystem + DB + melepas token dari Redis. Panggil ini jika user membatalkan form.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- API STORAGE -->
+    <section id="api-storage">
+      <h2>API — Storage File</h2>
+      <p>Base URL: <code>/api/v1/files/storage</code></p>
+
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="badge get">GET</span>
+          <span class="endpoint-path">/api/v1/files/storage/{id}</span>
+          <span class="endpoint-desc">Serve file permanen</span>
+        </div>
+        <div class="endpoint-body">
+          <p>Mengembalikan file sebagai binary response dengan header <code>Content-Disposition: inline</code>.</p>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="badge post">POST</span>
+          <span class="endpoint-path">/api/v1/files/storage/{id}/rollback</span>
+          <span class="endpoint-desc">Rollback storage → temp</span>
+        </div>
+        <div class="endpoint-body">
+          <p>Soft delete storage file dan buat temp file baru dari data yang sama.</p>
+          <pre><span class="c"># Response 200</span>
+{
+  <span class="s">"data"</span>: {
+    <span class="s">"id"</span>: <span class="s">"uuid-temp-baru"</span>,
+    <span class="s">"token"</span>: <span class="s">"uuid-token-baru"</span>,
+    <span class="s">"stored_name"</span>: <span class="s">"..."</span>
+  }
+}</pre>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="badge delete">DELETE</span>
+          <span class="endpoint-path">/api/v1/files/storage/{id}</span>
+          <span class="endpoint-desc">Hapus file permanen (soft delete)</span>
+        </div>
+        <div class="endpoint-body">
+          <p>Mengisi <code>deleted_at</code> dan menghapus file fisik dari disk. File tidak bisa di-recover setelah ini.</p>
+          <div class="alert danger">
+            <span class="alert-icon">✕</span>
+            Operasi ini bersifat <strong>final</strong>. File fisik ikut terhapus. Berbeda dengan rollback yang masih menyimpan file di disk.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REDIS LOCK -->
+    <section id="redis-lock">
+      <h2>Redis Lock — Upload Tracking</h2>
+      <p>
+        Setiap upload aktif didaftarkan ke Redis <strong>Sorted Set</strong> <code>file:uploads:active</code>.
+        Scheduler cleanup membaca set ini sebelum memulai penghapusan.
+      </p>
+
+      <h3>Struktur Redis</h3>
+      <table>
+        <thead><tr><th>Key</th><th>Tipe</th><th>Isi</th><th>TTL</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>file:uploads:active</td>
+            <td>Sorted Set (ZSET)</td>
+            <td>Token upload. Score = timestamp expire.</td>
+            <td>Per member: 10 menit</td>
+          </tr>
+          <tr>
+            <td>file:cleanup:lock</td>
+            <td>String</td>
+            <td><code>"1"</code> saat cleanup berjalan</td>
+            <td>1 jam (auto-release jika crash)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Kenapa Sorted Set?</h3>
+      <p>
+        Jika upload crash dan <code>ZREM</code> tidak terpanggil, token akan otomatis diabaikan
+        karena score-nya (expire timestamp) sudah lewat. Cleanup membersihkan token basi dengan
+        <code>ZREMRANGEBYSCORE ... 0 {now}</code> sebelum mengecek jumlah aktif.
+      </p>
+
+      <pre><span class="c"># Saat upload dimulai</span>
+ZADD file:uploads:active {expire_timestamp} {token}
+
+<span class="c"># Saat upload selesai / dibatalkan</span>
+ZREM file:uploads:active {token}
+
+<span class="c"># Scheduler cek sebelum cleanup (hapus expired dulu)</span>
+ZREMRANGEBYSCORE file:uploads:active 0 {now}
+ZCARD file:uploads:active   <span class="c"># harus 0 untuk lanjut</span>
+
+<span class="c"># Distributed lock — cegah dua instance cleanup bersamaan</span>
+SET file:cleanup:lock 1 NX EX 3600</pre>
+    </section>
+
+    <!-- CLEANUP -->
+    <section id="cleanup">
+      <h2>Cleanup Scheduler</h2>
+      <p>
+        <code>FileCleanupService</code> berjalan otomatis sesuai cron, menghapus semua
+        <code>temp_files</code> yang sudah melewati <code>expires_at</code>.
+      </p>
+
+      <h3>Logika Eksekusi</h3>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>1. Cek upload aktif (Redis)</h4>
+            <p>Jika <code>ZCARD file:uploads:active > 0</code> → <strong>stop</strong>, log "ditunda".</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>2. Ambil distributed lock</h4>
+            <p><code>SET file:cleanup:lock 1 NX EX 3600</code>. Jika gagal → instance lain sedang jalan, skip.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>3. Hapus per batch</h4>
+            <p>Default 100 file per batch. Di antara batch, Redis dicek ulang. Jika tiba-tiba ada upload masuk → berhenti sekarang.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot green"></div></div>
+          <div class="flow-content">
+            <h4>4. Lepas lock</h4>
+            <p><code>DEL file:cleanup:lock</code> di blok <code>finally</code> — berjalan meski terjadi error.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert warn">
+        <span class="alert-icon">⚠</span>
+        <strong>Skenario gagal:</strong> jika aplikasi crash di tengah cleanup, lock akan auto-expire setelah 1 jam. Cleanup selanjutnya bisa jalan normal.
+      </div>
+    </section>
+
+    <!-- CONFIG -->
+    <section id="config">
+      <h2>Konfigurasi</h2>
+      <p>Semua setting bisa di-override via environment variable.</p>
+
+      <table>
+        <thead><tr><th>Env Variable</th><th>Default</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>APP_TEMP_DIR</td><td>/tmp/simrs/temp</td><td>Direktori penyimpanan temp file</td></tr>
+          <tr><td>APP_UPLOAD_DIR</td><td>/tmp/simrs/uploads</td><td>Direktori penyimpanan storage file</td></tr>
+          <tr><td>TEMP_FILE_EXPIRY_HOURS</td><td>24</td><td>Berapa jam temp file hidup sebelum bisa dihapus</td></tr>
+          <tr><td>CLEANUP_CRON</td><td>0 0 * * * *</td><td>Jadwal cleanup (default: tiap jam)</td></tr>
+          <tr><td>CLEANUP_BATCH_SIZE</td><td>100</td><td>Jumlah file yang dihapus per iterasi batch</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Contoh Override di Production</h3>
+      <pre><span class="c"># .env atau environment container</span>
+APP_TEMP_DIR=/mnt/nas/simrs/temp
+APP_UPLOAD_DIR=/mnt/nas/simrs/storage
+TEMP_FILE_EXPIRY_HOURS=12
+CLEANUP_CRON=0 30 2 * * *    <span class="c"># jam 02:30 tiap hari</span>
+CLEANUP_BATCH_SIZE=500</pre>
+
+      <h3>Cron Format</h3>
+      <pre><span class="c"># Spring Cron — 6 field: detik menit jam hari bulan day-of-week</span>
+<span class="s">"0 0 * * * *"</span>      <span class="c"># tiap jam (detik=0, menit=0)</span>
+<span class="s">"0 30 2 * * *"</span>     <span class="c"># jam 02:30 tiap hari</span>
+<span class="s">"0 0 1 * * MON"</span>   <span class="c"># jam 01:00 tiap Senin</span></pre>
+    </section>
+
+    <footer>
+      <p>SANTIKA SIMRS — File System Documentation &nbsp;·&nbsp; Diperbarui: 2026</p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('nav a:not(.other-doc)');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

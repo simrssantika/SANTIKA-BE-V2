@@ -1,0 +1,98 @@
+databaseChangeLog:
+  - changeSet:
+      id: dokter
+      author: ridlo
+      changes:
+        - createTable:
+            schemaName: kepegawaian
+            tableName: dokter
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: pegawai_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_dokter_pegawai
+                    references: kepegawaian.pegawai(id)
+              - column:
+                  name: nama_dokter
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nip
+                  type: varchar(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: telephone_dokter
+                  type: varchar(20)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: email_dokter
+                  type: varchar(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: spesialis_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+                    foreignKeyName: fk_dokter_spesialis
+                    references: kepegawaian.spesialis(id)
+              - column:
+                  name: alumni
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: no_ijin_praktek
+                  type: varchar(120)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: dokumen_ijin_praktik_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: is_active
+                  type: boolean
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: dokter-indexes
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE INDEX idx_dokter_pegawai ON kepegawaian.dokter (pegawai_id);
+              CREATE INDEX idx_dokter_spesialis ON kepegawaian.dokter (spesialis_id);
+              CREATE INDEX idx_dokter_dokumen ON kepegawaian.dokter (dokumen_ijin_praktik_id);

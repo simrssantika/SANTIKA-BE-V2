@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: shared-user-has-role
+      author: system
+      changes:
+        - createTable:
+            schemaName: shared
+            tableName: user_has_role
+            columns:
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_uhr_user_id
+                    referencedTableSchemaName: shared
+                    referencedTableName: users
+                    referencedColumnNames: id
+              - column:
+                  name: role_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_uhr_role_id
+                    referencedTableSchemaName: shared
+                    referencedTableName: roles
+                    referencedColumnNames: id
+
+  - changeSet:
+      id: shared-user-has-role-pk
+      author: system
+      changes:
+        - addPrimaryKey:
+            schemaName: shared
+            tableName: user_has_role
+            columnNames: user_id, role_id
+            constraintName: pk_user_has_role

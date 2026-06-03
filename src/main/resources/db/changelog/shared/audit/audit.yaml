@@ -1,0 +1,58 @@
+databaseChangeLog:
+  - changeSet:
+      id: shared-audit
+      author: system
+      changes:
+        - createTable:
+            schemaName: shared
+            tableName: audit
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: action
+                  type: varchar(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: payload
+                  type: clob
+                  constraints:
+                    nullable: false
+              - column:
+                  name: timestamp
+                  type: timestamp
+                  defaultValueComputed: now()
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: shared-audit-payload-to-jsonb
+      author: system
+      dbms: postgresql
+      changes:
+        - sql:
+            splitStatements: false
+            sql: |
+              ALTER TABLE shared.audit ALTER COLUMN payload TYPE jsonb USING payload::jsonb;
+
+  - changeSet:
+      id: shared-audit-index
+      author: system
+      dbms: postgresql
+      changes:
+        - sql:
+            splitStatements: true
+            sql: |
+              CREATE INDEX idx_audit_username ON shared.audit (username);
+              CREATE INDEX idx_audit_timestamp ON shared.audit (timestamp DESC);

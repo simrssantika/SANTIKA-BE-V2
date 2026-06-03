@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signed URL — SANTIKA SIMRS</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117; --surface: #1a1d27; --surface2: #222535; --border: #2e3147;
+      --accent: #6c8aff; --accent2: #a78bfa; --green: #34d399; --red: #f87171;
+      --yellow: #fbbf24; --text: #e2e8f0; --muted: #94a3b8; --code-bg: #0d1117; --radius: 8px;
+    }
+
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    .layout { display: flex; min-height: 100vh; }
+
+    nav { width: 260px; flex-shrink: 0; background: var(--surface); border-right: 1px solid var(--border); padding: 24px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    .nav-logo { padding: 0 20px 20px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .nav-logo h2 { font-size: 14px; color: var(--muted); font-weight: 500; }
+    .nav-logo span { font-size: 18px; font-weight: 700; color: var(--text); }
+    nav a { display: block; padding: 8px 20px; color: var(--muted); text-decoration: none; font-size: 13.5px; border-left: 2px solid transparent; transition: all .15s; }
+    nav a:hover { color: var(--text); border-left-color: var(--border); }
+    nav a.active { color: var(--accent); border-left-color: var(--accent); background: rgba(108,138,255,.06); }
+    nav a.other-doc { color: var(--accent2); font-size: 13px; }
+    .nav-group { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); padding: 16px 20px 6px; }
+
+    main { flex: 1; padding: 40px 60px; max-width: 900px; }
+    h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+    h2 { font-size: 22px; font-weight: 600; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    h3 { font-size: 16px; font-weight: 600; margin: 28px 0 12px; color: var(--accent2); }
+    h4 { font-size: 14px; font-weight: 600; margin: 20px 0 8px; color: var(--text); }
+    p  { color: var(--muted); margin-bottom: 14px; }
+    strong { color: var(--text); }
+    ul, ol { color: var(--muted); padding-left: 20px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+
+    pre, code { font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace; }
+    code { background: var(--code-bg); border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #c9d1d9; }
+    pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; overflow-x: auto; font-size: 13px; line-height: 1.6; margin: 12px 0 20px; color: #c9d1d9; }
+    pre .c { color: #8b949e; font-style: italic; }
+    pre .k { color: #ff7b72; }
+    pre .s { color: #a5d6ff; }
+    pre .n { color: #d2a8ff; }
+    pre .m { color: #79c0ff; }
+
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 24px; font-size: 13.5px; }
+    th { text-align: left; padding: 10px 14px; background: var(--surface2); color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; border-bottom: 1px solid var(--border); }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--muted); }
+    td:first-child { color: var(--text); font-family: monospace; font-size: 13px; }
+    tr:last-child td { border-bottom: none; }
+
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: .04em; vertical-align: middle; margin-right: 4px; }
+    .badge.get { background: rgba(52,211,153,.15); color: var(--green); }
+
+    .endpoint { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 16px; overflow: hidden; }
+    .endpoint-header { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--surface2); border-bottom: 1px solid var(--border); }
+    .endpoint-path { font-family: monospace; font-size: 14px; color: var(--text); }
+    .endpoint-desc { color: var(--muted); font-size: 13px; margin-left: auto; }
+    .endpoint-body { padding: 18px; }
+
+    .alert { padding: 14px 16px; border-radius: var(--radius); margin: 16px 0; font-size: 13.5px; display: flex; gap: 10px; align-items: flex-start; }
+    .alert.info   { background: rgba(108,138,255,.1); border-left: 3px solid var(--accent); color: #a5b4fc; }
+    .alert.warn   { background: rgba(251,191,36,.1);  border-left: 3px solid var(--yellow); color: #fde68a; }
+    .alert.danger { background: rgba(248,113,113,.1); border-left: 3px solid var(--red); color: #fca5a5; }
+    .alert.success{ background: rgba(52,211,153,.1);  border-left: 3px solid var(--green); color: #6ee7b7; }
+    .alert-icon { font-size: 16px; flex-shrink: 0; }
+
+    .flow { display: flex; flex-direction: column; margin: 16px 0 24px; }
+    .flow-step { display: flex; align-items: stretch; }
+    .flow-left { display: flex; flex-direction: column; align-items: center; width: 36px; }
+    .flow-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 4px; }
+    .flow-dot.green { background: var(--green); }
+    .flow-dot.red { background: var(--red); }
+    .flow-line { width: 2px; flex: 1; background: var(--border); margin: 2px 0; }
+    .flow-content { flex: 1; padding: 4px 0 20px 12px; }
+    .flow-content h4 { font-size: 14px; font-weight: 600; color: var(--text); margin: 0 0 4px; }
+    .flow-content p { font-size: 13px; color: var(--muted); margin: 0; }
+    .flow-content code { font-size: 12px; }
+
+    .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 24px; }
+    .mode-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+    .mode-card h4 { margin: 0 0 6px; font-size: 14px; }
+    .mode-card .api { font-family: monospace; font-size: 12px; color: var(--accent); margin-bottom: 8px; }
+    .mode-card p { font-size: 12.5px; margin: 0; }
+
+    .hero-tag { display: inline-block; background: rgba(108,138,255,.12); color: var(--accent); border: 1px solid rgba(108,138,255,.3); padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 500; margin-bottom: 12px; }
+    footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <nav>
+    <div class="nav-logo">
+      <h2>SANTIKA SIMRS</h2>
+      <span>Signed URL</span>
+    </div>
+
+    <div class="nav-group">Dokumen Lain</div>
+    <a href="../index.html" class="other-doc">↖ Setup &amp; Panduan</a>
+    <a href="../file/index.html" class="other-doc">↖ File System</a>
+
+    <div class="nav-group">Halaman Ini</div>
+    <a href="#overview" class="active">Overview</a>
+    <a href="#mode">Dua Mode</a>
+    <a href="#cara-kerja">Cara Kerja</a>
+
+    <div class="nav-group">Pemakaian</div>
+    <a href="#service">Dari Service (Kotlin)</a>
+    <a href="#cross-service">Validasi Lintas Service</a>
+    <a href="#file">Akses File</a>
+    <a href="#frontend">Contoh Frontend</a>
+
+    <div class="nav-group">Detail</div>
+    <a href="#interceptor">Interceptor Global</a>
+    <a href="#signature">Skema Signature</a>
+    <a href="#config">Konfigurasi</a>
+    <a href="#security">Catatan Keamanan</a>
+  </nav>
+
+  <main>
+
+    <!-- OVERVIEW -->
+    <section id="overview">
+      <div class="hero-tag">Dokumentasi Teknis</div>
+      <h1>Signed URL</h1>
+      <p>
+        Utilitas signing <strong>global</strong> berbasis HMAC-SHA256 di package
+        <code>global/signedurl</code>. Bisa dipakai <strong>semua resource & service</strong> —
+        bukan khusus file. Validasinya <strong>independen dari user/JWT</strong>: cukup berbasis
+        <em>shared secret</em>, sehingga cocok untuk transaksi berat lintas service yang butuh validasi.
+      </p>
+
+      <h3>Kapan dipakai?</h3>
+      <table>
+        <thead><tr><th>Use case</th><th>Contoh</th></tr></thead>
+        <tbody>
+          <tr><td>Validasi lintas service</td><td>Spring Boot ↔ Go PDF service ↔ Gotenberg — request callback divalidasi tanpa JWT user</td></tr>
+          <tr><td>Akses file</td><td>Embed foto pegawai di <code>&lt;img src&gt;</code>, link download sementara</td></tr>
+          <tr><td>Tanda tangan payload</td><td>Sign transaction id / body antar service untuk cegah tampering</td></tr>
+        </tbody>
+      </table>
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ</span>
+        <div>
+          <strong>Independen dari user.</strong> Tidak butuh JWT, tidak terikat sesi login.
+          Yang dipercaya hanya secret bersama (<code>app.signed-url.secret</code>). Inilah yang
+          membuatnya bisa dipakai service-to-service.
+        </div>
+      </div>
+    </section>
+
+    <!-- DUA MODE -->
+    <section id="mode">
+      <h2>Dua Mode</h2>
+      <div class="mode-grid">
+        <div class="mode-card">
+          <h4>1. Signed URL</h4>
+          <div class="api">signUrl(path, ttl) · verifyUrl(path, expires, sig)</div>
+          <p>Menempelkan <code>?expires=&amp;signature=</code> ke sebuah URI. Untuk akses resource via link berbatas waktu.</p>
+        </div>
+        <div class="mode-card">
+          <h4>2. Raw HMAC</h4>
+          <div class="api">sign(payload) · verify(payload, sig)</div>
+          <p>Tanda tangan string/payload bebas. Untuk validasi body request, transaction id, atau callback antar service.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARA KERJA -->
+    <section id="cara-kerja">
+      <h2>Cara Kerja</h2>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>1. Pihak A menandatangani</h4>
+            <p>Service memanggil <code>signUrl(path)</code> atau <code>sign(payload)</code> dengan secret bersama.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
+          <div class="flow-content">
+            <h4>2. Signature dikirim</h4>
+            <p>Lewat query URL (<code>?expires=&amp;signature=</code>) atau header/body untuk payload.</p>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-left"><div class="flow-dot green"></div></div>
+          <div class="flow-content">
+            <h4>3. Pihak B memvalidasi</h4>
+            <p>Untuk URL: <code>SignedUrlInterceptor</code> global validasi otomatis. Untuk payload: panggil <code>verify()</code>. Tanpa perlu JWT.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DARI SERVICE -->
+    <section id="service">
+      <h2>Dari Service (Kotlin)</h2>
+      <p>Inject <code>SignedUrlService</code> di service mana pun.</p>
+
+      <pre><span class="k">import</span> com.santika.simrs.global.signedurl.SignedUrlService
+
+<span class="k">@Service</span>
+<span class="k">class</span> PegawaiService(
+    <span class="k">private val</span> signedUrlService: SignedUrlService
+) {
+    <span class="k">fun</span> <span class="m">detailWithFoto</span>(id: UUID): PegawaiDetailRes {
+        <span class="k">val</span> pegawai = ...
+        <span class="c">// Sisipkan signed URL foto, berlaku 10 menit</span>
+        <span class="k">val</span> foto = signedUrlService.<span class="m">signUrl</span>(
+            <span class="s">"/api/v1/files/signed/storage/${'$'}{pegawai.fotoId}"</span>, ttlSeconds = 600
+        )
+        <span class="k">return</span> pegawai.copy(fotoUrl = foto.url)
+    }
+}</pre>
+    </section>
+
+    <!-- CROSS SERVICE -->
+    <section id="cross-service">
+      <h2>Validasi Lintas Service</h2>
+      <p>
+        Skenario: Spring Boot memicu Go PDF service untuk render dokumen. Go service perlu
+        memanggil balik (callback) atau mengakses data, dan Spring perlu memastikan request
+        itu sah — <strong>tanpa</strong> menyertakan JWT user.
+      </p>
+
+      <h3>Mode URL — Go service akses data</h3>
+      <pre><span class="c">// Spring: buat signed URL untuk Go service</span>
+<span class="k">val</span> dataUrl = signedUrlService.<span class="m">signUrl</span>(
+    <span class="s">"/api/v1/laporan/${'$'}{laporanId}/data"</span>, ttlSeconds = 120
+)
+<span class="c">// kirim dataUrl.url ke Go service → Go fetch URL itu</span>
+<span class="c">// SignedUrlInterceptor di Spring otomatis memvalidasi saat Go memanggilnya</span></pre>
+
+      <h3>Mode Raw — tanda tangan payload callback</h3>
+      <pre><span class="c">// Spring: tanda tangani transaction id sebelum kirim ke Go</span>
+<span class="k">val</span> sig = signedUrlService.<span class="m">sign</span>(<span class="s">"trx:${'$'}{trxId}:render"</span>)
+<span class="c">// Go mengirim balik trxId + sig saat callback</span>
+
+<span class="c">// Spring: validasi callback dari Go</span>
+<span class="k">if</span> (!signedUrlService.<span class="m">verify</span>(<span class="s">"trx:${'$'}{trxId}:render"</span>, sig))
+    <span class="k">throw</span> UnauthorizedException(<span class="s">"Callback tidak sah"</span>)</pre>
+
+      <div class="alert success">
+        <span class="alert-icon">✓</span>
+        Kedua sisi cukup berbagi <code>app.signed-url.secret</code> yang sama. Tidak ada ketergantungan
+        ke sesi user, jadi aman untuk job/transaksi panjang yang berjalan di background.
+      </div>
+    </section>
+
+    <!-- FILE -->
+    <section id="file">
+      <h2>Akses File</h2>
+      <p>File adalah salah satu konsumen. Endpoint di <code>SignedFileController</code>.</p>
+
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="badge get">GET</span>
+          <span class="endpoint-path">/api/v1/files/signed/generate/{type}/{id}</span>
+          <span class="endpoint-desc">Mint URL — wajib login</span>
+        </div>
+        <div class="endpoint-body">
+          <p><code>type</code> = <code>temp</code> | <code>storage</code>. Param opsional <code>ttl</code> (detik).
+          Endpoint ini <strong>butuh JWT</strong> — hanya user terautentikasi yang boleh membuat signed URL.</p>
+          <pre><span class="c"># Response 200</span>
+{
+  <span class="s">"data"</span>: {
+    <span class="s">"url"</span>: <span class="s">"/api/v1/files/signed/storage/uuid?expires=1717003600&amp;signature=aB3xK..."</span>,
+    <span class="s">"expires_at"</span>: 1717003600,
+    <span class="s">"signature"</span>: <span class="s">"aB3xK..."</span>
+  }
+}</pre>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <div class="endpoint-header">
+          <span class="badge get">GET</span>
+          <span class="endpoint-path">/api/v1/files/signed/{type}/{id}</span>
+          <span class="endpoint-desc">Serve file — publik, validasi signature</span>
+        </div>
+        <div class="endpoint-body">
+          <p>Membawa <code>?expires=&amp;signature=</code>. Divalidasi oleh interceptor global sebelum file dikirim. Tidak butuh JWT.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRONTEND -->
+    <section id="frontend">
+      <h2>Contoh Frontend</h2>
+      <pre><span class="c">// 1. Mint signed URL (pakai token JWT yang ada)</span>
+<span class="k">const</span> res = <span class="k">await</span> fetch(
+  <span class="s">`/api/v1/files/signed/generate/storage/${'$'}{fileId}?ttl=600`</span>,
+  { headers: { Authorization: <span class="s">`Bearer ${'$'}{token}`</span> } }
+);
+<span class="k">const</span> { data } = <span class="k">await</span> res.json();
+
+<span class="c">// 2. Pakai langsung — tanpa header lagi</span>
+imgElement.src = data.url;</pre>
+    </section>
+
+    <!-- INTERCEPTOR -->
+    <section id="interceptor">
+      <h2>Interceptor Global</h2>
+      <p>
+        <code>SignedUrlInterceptor</code> terdaftar untuk semua <code>/api/**</code> (lihat <code>WebConfig</code>).
+        Logikanya <strong>opt-in</strong>:
+      </p>
+      <ul>
+        <li>Request <strong>tanpa</strong> param <code>signature</code> → dilewatkan ke auth normal (JWT)</li>
+        <li>Request <strong>dengan</strong> <code>signature</code> → wajib valid, kalau tidak ditolak <strong>401</strong></li>
+      </ul>
+      <p>
+        Artinya endpoint apa pun bisa diakses via signed URL hanya dengan menyertakan
+        <code>?expires=...&amp;signature=...</code> — validasinya terpusat di satu tempat.
+      </p>
+
+      <div class="alert warn">
+        <span class="alert-icon">⚠</span>
+        <div>
+          Endpoint yang ingin diakses via signed URL <strong>tanpa JWT</strong> harus masuk
+          <code>permitAll</code> di <code>SecurityConfiguration</code> (filter security jalan sebelum interceptor).
+          <code>/api/v1/files/**</code> sudah di-permit.
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE -->
+    <section id="signature">
+      <h2>Skema Signature</h2>
+      <pre><span class="c"># Mode URL — canonical string</span>
+{path}:{expires}
+<span class="c"># contoh: /api/v1/files/signed/storage/uuid:1717003600</span>
+
+<span class="c"># Mode Raw — payload apa adanya</span>
+{payload}
+
+<span class="c"># Algoritma (sama untuk keduanya)</span>
+signature = BASE64URL( HMAC_SHA256(secret, data) )</pre>
+
+      <h3>Validasi</h3>
+      <ol>
+        <li>(URL) Cek <code>expires &gt; now</code> — kalau lewat tolak</li>
+        <li>Hitung ulang HMAC dari data yang sama</li>
+        <li>Bandingkan constant-time (<code>MessageDigest.isEqual</code>) — cegah timing attack</li>
+      </ol>
+
+      <div class="alert info">
+        <span class="alert-icon">ℹ</span>
+        <code>expires</code> ikut ditandatangani, jadi client tidak bisa memperpanjang masa berlaku
+        dengan mengubah nilai di URL — signature langsung tidak cocok.
+      </div>
+    </section>
+
+    <!-- CONFIG -->
+    <section id="config">
+      <h2>Konfigurasi</h2>
+      <pre>app:
+  signed-url:
+    secret: ${'$'}{SIGNED_URL_SECRET:...}
+    default-ttl-seconds: ${'$'}{SIGNED_URL_TTL_S:300}</pre>
+
+      <table>
+        <thead><tr><th>Env Variable</th><th>Default</th><th>Keterangan</th></tr></thead>
+        <tbody>
+          <tr><td>SIGNED_URL_SECRET</td><td><em>(default dev)</em></td><td>Secret HMAC bersama — wajib diganti di production, minimal 32 karakter acak. Service lain (Go) memakai secret yang sama.</td></tr>
+          <tr><td>SIGNED_URL_TTL_S</td><td>300</td><td>Masa berlaku default signed URL dalam detik</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SECURITY -->
+    <section id="security">
+      <h2>Catatan Keamanan</h2>
+
+      <div class="alert warn">
+        <span class="alert-icon">⚠</span>
+        <div>
+          <strong>Secret adalah kunci kepercayaan.</strong> Jika bocor, siapa pun bisa membuat signed
+          URL / signature yang valid. Simpan di environment variable, rotasi berkala, dan jangan commit ke repo.
+        </div>
+      </div>
+
+      <table>
+        <thead><tr><th>Aspek</th><th>Penanganan</th></tr></thead>
+        <tbody>
+          <tr><td>Tamper expires / path / payload</td><td>Semua ikut ditandatangani — tidak bisa diubah</td></tr>
+          <tr><td>Timing attack</td><td>Constant-time comparison</td></tr>
+          <tr><td>Path traversal (file)</td><td>File dicari by-UUID di DB, bukan dari path mentah</td></tr>
+          <tr><td>Mint URL sembarangan</td><td>Endpoint generate butuh JWT — hanya user login yang bisa mint</td></tr>
+          <tr><td>Link bocor</td><td>Set <code>ttl</code> pendek untuk resource sensitif (mis. 60 detik)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p>SANTIKA SIMRS — Signed URL Documentation &nbsp;·&nbsp;
+        Lihat juga: <a href="../file/index.html" style="color:var(--accent)">File System</a></p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('nav a:not(.other-doc)');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

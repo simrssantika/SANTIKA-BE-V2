@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: diagnosa
+      author: ridlo
+      changes:
+        - createTable:
+            schemaName: master
+            tableName: medis_diagnosa_icd10
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: kode_diagnosa
+                  type: varchar(30)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nama_diagnosa
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+
+  - changeSet:
+      id: diagnosa-index
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            stripComments: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_kode_diagnosa ON master.medis_diagnosa_icd10 (kode_diagnosa) WHERE (deleted_at IS NULL);
+

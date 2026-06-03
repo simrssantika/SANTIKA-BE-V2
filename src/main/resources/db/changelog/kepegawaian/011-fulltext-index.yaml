@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: kepegawaian-pg-trgm-extension
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            sql: CREATE EXTENSION IF NOT EXISTS pg_trgm;
+
+  # Trigram GIN index untuk mempercepat pencarian LIKE '%...%' (ILIKE) pada
+  # tabel pegawai & dokter. Ekspresi index dibuat PERSIS sama dengan ekspresi
+  # search di jOOQ repo (lower(concat(...))) agar planner benar-benar memakai
+  # index ini tanpa perlu mengubah kode query.
+  - changeSet:
+      id: pegawai-search-trgm-index
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              -- cocok dengan buildConditions() findAll: lower(coalesce(nama,'') || coalesce(nip,''))
+              CREATE INDEX idx_pegawai_search_trgm ON kepegawaian.pegawai
+                USING gin ((lower(coalesce(nama, '') || coalesce(nip, ''))) gin_trgm_ops);
+              -- cocok dengan findOptions(): lower(coalesce(nip,'') || coalesce(nama,''))
+              CREATE INDEX idx_pegawai_options_trgm ON kepegawaian.pegawai
+                USING gin ((lower(coalesce(nip, '') || coalesce(nama, ''))) gin_trgm_ops);
+
+  - changeSet:
+      id: dokter-search-trgm-index
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              -- cocok dengan buildConditions() findAll: lower(coalesce(nama_dokter,'') || coalesce(nip,''))
+              CREATE INDEX idx_dokter_search_trgm ON kepegawaian.dokter
+                USING gin ((lower(coalesce(nama_dokter, '') || coalesce(nip, ''))) gin_trgm_ops);
+              -- cocok dengan findOptions(): lower(coalesce(nip,'') || coalesce(nama_dokter,''))
+              CREATE INDEX idx_dokter_options_trgm ON kepegawaian.dokter
+                USING gin ((lower(coalesce(nip, '') || coalesce(nama_dokter, ''))) gin_trgm_ops);

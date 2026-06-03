@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: dokumen-pegawai
+      author: ridlo
+      changes:
+        - createTable:
+            schemaName: kepegawaian
+            tableName: dokumen_pegawai
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: pegawai_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_dokumen_pegawai_pegawai
+                    references: kepegawaian.pegawai(id)
+              - column:
+                  name: nama_dokumen
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: file_id
+                  type: uuid
+                  constraints:
+                    nullable: true
+              - column:
+                  name: is_active
+                  type: boolean
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: dokumen-pegawai-indexes
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE INDEX idx_dokumen_pegawai_pegawai ON kepegawaian.dokumen_pegawai (pegawai_id);
+              CREATE INDEX idx_dokumen_pegawai_file ON kepegawaian.dokumen_pegawai (file_id);

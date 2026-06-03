@@ -1,0 +1,72 @@
+databaseChangeLog:
+  - changeSet:
+      id: penjamin
+      author: ridlo
+      changes:
+        - createTable:
+            schemaName: master
+            tableName: support_penjamin
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: penjamin
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nama_perusahaan_penjamin
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: alamat_penjamin
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: telepon_penjamin
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: penerima_tagihan
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: is_active
+                  type: boolean
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: penjamin-index
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_penjamin ON master.support_penjamin (penjamin) WHERE (deleted_at IS NULL);

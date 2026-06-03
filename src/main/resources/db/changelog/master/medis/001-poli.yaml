@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: poli
+      author: ridlo
+      changes:
+        - createTable:
+            schemaName: master
+            tableName: medis_poli
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: kode_poli
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nama_poli
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: poli-index
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_kode_poli ON master.medis_poli (kode_poli) WHERE (deleted_at IS NULL);

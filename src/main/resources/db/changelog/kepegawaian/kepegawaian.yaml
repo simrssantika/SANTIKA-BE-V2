@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: kepegawaian-schema
+      author: ridlo
+      changes:
+        - sql:
+            sql: CREATE SCHEMA IF NOT EXISTS kepegawaian;
+
+  - include:
+      file: db/changelog/kepegawaian/001-kelompok-pegawai.yaml
+  - include:
+      file: db/changelog/kepegawaian/002-resiko-pegawai.yaml
+  - include:
+      file: db/changelog/kepegawaian/003-darurat-pegawai.yaml
+  - include:
+      file: db/changelog/kepegawaian/004-departemen-pegawai.yaml
+  - include:
+      file: db/changelog/kepegawaian/005-bidang-pegawai.yaml
+  - include:
+      file: db/changelog/kepegawaian/006-vendor-tenaga-luar.yaml
+  - include:
+      file: db/changelog/kepegawaian/007-spesialis.yaml
+  - include:
+      file: db/changelog/kepegawaian/008-pegawai.yaml
+  - include:
+      file: db/changelog/kepegawaian/009-dokter.yaml
+  - include:
+      file: db/changelog/kepegawaian/010-dokumen-pegawai.yaml
+  - include:
+      file: db/changelog/kepegawaian/011-fulltext-index.yaml

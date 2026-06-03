@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: shared-role-has-permission
+      author: system
+      changes:
+        - createTable:
+            schemaName: shared
+            tableName: role_has_permission
+            columns:
+              - column:
+                  name: role_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_rhp_role_id
+                    referencedTableSchemaName: shared
+                    referencedTableName: roles
+                    referencedColumnNames: id
+              - column:
+                  name: permission_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_rhp_permission_id
+                    referencedTableSchemaName: shared
+                    referencedTableName: permissions
+                    referencedColumnNames: id
+
+  - changeSet:
+      id: shared-role-has-permission-pk
+      author: system
+      changes:
+        - addPrimaryKey:
+            schemaName: shared
+            tableName: role_has_permission
+            columnNames: role_id, permission_id
+            constraintName: pk_role_has_permission

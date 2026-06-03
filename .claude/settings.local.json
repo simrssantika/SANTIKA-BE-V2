@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"F:\\\\DevFIle\\\\SANTIKA\\\\simrs\" -Depth 2 -Directory)",
+      "Bash(Select-Object -Property FullName)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(./gradlew compileKotlin)",
+      "WebSearch",
+      "WebFetch(domain:central.sonatype.com)",
+      "Bash(Remove-Item *)",
+      "Bash(del *)",
+      "Bash(python -c ' *)",
+      "WebFetch(domain:docs.usebruno.com)",
+      "Bash(bash *)"
+    ]
+  }
+}

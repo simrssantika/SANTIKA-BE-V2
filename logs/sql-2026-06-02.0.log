@@ -1,0 +1,1021 @@
+2026-06-02T21:31:22.823+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@ebc2d18
+
+2026-06-02T21:31:22.900+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:31:22.902+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:31:22.903+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:31:22.903+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:31:22.903+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:31:22.903+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:31:22.903+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:31:22.903+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@1842737c
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:31:22.904+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:31:22.905+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:31:22.906+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:31:22.906+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:31:22.906+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:31:22.906+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:31:22.906+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:31:22.906+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:31:22.906+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:31:22.906+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:31:22.906+07:00  INFO 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:31:22.917+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (94cc6291-eb07-4dd9-95c3-e1c523735a3b)
+2026-06-02T21:31:23.115+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (94cc6291-eb07-4dd9-95c3-e1c523735a3b)
+2026-06-02T21:31:23.116+07:00  INFO 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@7a29e4a6
+2026-06-02T21:31:23.117+07:00  INFO 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:31:23.218+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:31:23.218+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:31:23.218+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (33a91a18-b54d-46a5-b342-ddaf5c2388ff)
+2026-06-02T21:31:23.238+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (33a91a18-b54d-46a5-b342-ddaf5c2388ff)
+2026-06-02T21:31:23.239+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@77426d3
+2026-06-02T21:31:23.270+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:31:23.270+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (e7943933-0dfd-4426-b18d-ec89fabd4eb1)
+2026-06-02T21:31:23.289+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (e7943933-0dfd-4426-b18d-ec89fabd4eb1)
+2026-06-02T21:31:23.290+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@d8c4da3
+2026-06-02T21:31:23.320+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:31:23.320+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (9e61d4d7-be1b-4af3-ac40-8a9c399b2996)
+2026-06-02T21:31:23.338+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (9e61d4d7-be1b-4af3-ac40-8a9c399b2996)
+2026-06-02T21:31:23.339+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@488ed276
+2026-06-02T21:31:23.370+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:31:23.370+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (9be9e83a-1163-4954-9779-97338c74cba9)
+2026-06-02T21:31:23.389+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (9be9e83a-1163-4954-9779-97338c74cba9)
+2026-06-02T21:31:23.389+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@6e6a370a
+2026-06-02T21:31:23.420+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:31:23.420+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (c8386cfb-3e6b-4643-9f98-615fa7a1586c)
+2026-06-02T21:31:23.439+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (c8386cfb-3e6b-4643-9f98-615fa7a1586c)
+2026-06-02T21:31:23.440+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@790cfb3a
+2026-06-02T21:31:23.472+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:31:25.429+07:00  INFO 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:31:25.429+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:31:25.430+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@7a29e4a6: (connection evicted)
+2026-06-02T21:31:25.430+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@77426d3: (connection evicted)
+2026-06-02T21:31:25.431+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@d8c4da3: (connection evicted)
+2026-06-02T21:31:25.431+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@488ed276: (connection evicted)
+2026-06-02T21:31:25.431+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@6e6a370a: (connection evicted)
+2026-06-02T21:31:25.431+07:00 DEBUG 14060 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@790cfb3a: (connection evicted)
+2026-06-02T21:31:25.431+07:00 DEBUG 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:31:25.431+07:00  INFO 14060 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:32:32.922+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@51971e8c
+
+2026-06-02T21:32:32.990+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:32:32.992+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:32:32.992+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:32:32.992+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:32:32.992+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:32:32.992+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:32:32.992+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:32:32.992+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@b20f1d4
+2026-06-02T21:32:32.992+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:32:32.992+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:32:32.993+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:32:32.993+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:32:32.993+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:32:32.993+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:32:32.993+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:32:32.993+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:32:32.993+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:32:32.993+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:32:32.993+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:32:32.993+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:32:32.994+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:32:32.995+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:32:32.995+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:32:32.995+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:32:32.995+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:32:32.995+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:32:32.995+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:32:32.995+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:32:32.995+07:00  INFO 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:32:33.005+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (28f2b68c-e2e5-4292-a999-f7c3f9e873d4)
+2026-06-02T21:32:33.094+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (28f2b68c-e2e5-4292-a999-f7c3f9e873d4)
+2026-06-02T21:32:33.095+07:00  INFO 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@2ed05137
+2026-06-02T21:32:33.096+07:00  INFO 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:32:33.197+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:32:33.197+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:32:33.197+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (f4997b8f-b253-46fc-94ce-cce28fe4ebf0)
+2026-06-02T21:32:33.215+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (f4997b8f-b253-46fc-94ce-cce28fe4ebf0)
+2026-06-02T21:32:33.215+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@612e60d6
+2026-06-02T21:32:33.246+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:32:33.246+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (d7f6f8f4-bcc0-4742-b4eb-24198281c77f)
+2026-06-02T21:32:33.263+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (d7f6f8f4-bcc0-4742-b4eb-24198281c77f)
+2026-06-02T21:32:33.263+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@6bd60ba6
+2026-06-02T21:32:33.295+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:32:33.295+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (0fb89c7f-a5dc-4521-8d95-802f1fc893e5)
+2026-06-02T21:32:33.312+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (0fb89c7f-a5dc-4521-8d95-802f1fc893e5)
+2026-06-02T21:32:33.312+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@2ed498b8
+2026-06-02T21:32:33.342+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:32:33.342+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (a9bf0187-a689-4502-ac07-77b943466aa2)
+2026-06-02T21:32:33.359+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (a9bf0187-a689-4502-ac07-77b943466aa2)
+2026-06-02T21:32:33.359+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@3cee7564
+2026-06-02T21:32:33.392+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:32:33.392+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (0532cdd9-85df-45f9-88a7-b3157a34ae8b)
+2026-06-02T21:32:33.476+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (0532cdd9-85df-45f9-88a7-b3157a34ae8b)
+2026-06-02T21:32:33.476+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@1f3095f0
+2026-06-02T21:32:33.508+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:32:37.446+07:00  INFO 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:32:37.446+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:32:37.446+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@2ed05137: (connection evicted)
+2026-06-02T21:32:37.448+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@612e60d6: (connection evicted)
+2026-06-02T21:32:37.448+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@6bd60ba6: (connection evicted)
+2026-06-02T21:32:37.448+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@2ed498b8: (connection evicted)
+2026-06-02T21:32:37.448+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@3cee7564: (connection evicted)
+2026-06-02T21:32:37.448+07:00 DEBUG 25804 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@1f3095f0: (connection evicted)
+2026-06-02T21:32:37.449+07:00 DEBUG 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:32:37.449+07:00  INFO 25804 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:36:25.685+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a1dd3c9
+
+2026-06-02T21:36:25.751+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:36:25.753+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@6148251d
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:36:25.754+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:36:25.755+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:36:25.755+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:36:25.755+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:36:25.755+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:36:25.755+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:36:25.755+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:36:25.755+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:36:25.755+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:36:25.755+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:36:25.755+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:36:25.756+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:36:25.757+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:36:25.757+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:36:25.757+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:36:25.757+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:36:25.757+07:00  INFO 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:36:25.768+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (b3b33aa7-6576-44f2-bf0b-9cfb6c2c7828)
+2026-06-02T21:36:25.864+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (b3b33aa7-6576-44f2-bf0b-9cfb6c2c7828)
+2026-06-02T21:36:25.866+07:00  INFO 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@5bd29ce7
+2026-06-02T21:36:25.867+07:00  INFO 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:36:25.969+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:36:25.969+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:36:25.970+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (f5183efb-7113-42c2-b679-b8668f388b7e)
+2026-06-02T21:36:25.997+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (f5183efb-7113-42c2-b679-b8668f388b7e)
+2026-06-02T21:36:25.997+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@540c2597
+2026-06-02T21:36:26.028+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:36:26.028+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (72756bac-8e16-47a3-bbe7-48a9ff823e83)
+2026-06-02T21:36:26.046+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (72756bac-8e16-47a3-bbe7-48a9ff823e83)
+2026-06-02T21:36:26.046+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@5ef44ee7
+2026-06-02T21:36:26.076+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:36:26.076+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (5aebe0ba-20c3-491d-94ad-5d1ed9ef815b)
+2026-06-02T21:36:26.095+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (5aebe0ba-20c3-491d-94ad-5d1ed9ef815b)
+2026-06-02T21:36:26.095+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@1bf6db5d
+2026-06-02T21:36:26.126+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:36:26.126+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (ae6cf3fb-8279-415a-803c-e31d668a5379)
+2026-06-02T21:36:26.144+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (ae6cf3fb-8279-415a-803c-e31d668a5379)
+2026-06-02T21:36:26.145+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@2ee37529
+2026-06-02T21:36:26.176+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:36:26.176+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (59ffa1db-4f78-454e-b1b5-9d0bf868ddea)
+2026-06-02T21:36:26.196+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (59ffa1db-4f78-454e-b1b5-9d0bf868ddea)
+2026-06-02T21:36:26.196+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@2a27c172
+2026-06-02T21:36:26.227+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:36:28.364+07:00  INFO 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:36:28.364+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:36:28.365+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@5bd29ce7: (connection evicted)
+2026-06-02T21:36:28.366+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@540c2597: (connection evicted)
+2026-06-02T21:36:28.366+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@5ef44ee7: (connection evicted)
+2026-06-02T21:36:28.366+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@1bf6db5d: (connection evicted)
+2026-06-02T21:36:28.366+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@2ee37529: (connection evicted)
+2026-06-02T21:36:28.366+07:00 DEBUG 26528 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@2a27c172: (connection evicted)
+2026-06-02T21:36:28.367+07:00 DEBUG 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:36:28.367+07:00  INFO 26528 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:36:55.784+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a1dd3c9
+
+2026-06-02T21:36:55.851+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:36:55.853+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:36:55.853+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:36:55.853+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:36:55.853+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:36:55.853+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:36:55.853+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:36:55.853+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@6148251d
+2026-06-02T21:36:55.853+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:36:55.853+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:36:55.854+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:36:55.854+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:36:55.854+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:36:55.854+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:36:55.854+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:36:55.854+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:36:55.854+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:36:55.854+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:36:55.854+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:36:55.854+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:36:55.855+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:36:55.856+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:36:55.856+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:36:55.856+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:36:55.856+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:36:55.856+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:36:55.856+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:36:55.856+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:36:55.856+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:36:55.856+07:00  INFO 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:36:55.867+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (eb69240d-4408-4314-88d4-c19928b4c453)
+2026-06-02T21:36:55.980+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (eb69240d-4408-4314-88d4-c19928b4c453)
+2026-06-02T21:36:55.981+07:00  INFO 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@5bd29ce7
+2026-06-02T21:36:55.982+07:00  INFO 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:36:56.083+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:36:56.083+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:36:56.083+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (8f5f2a95-13fd-4f96-915c-f94523c1ff6e)
+2026-06-02T21:36:56.101+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (8f5f2a95-13fd-4f96-915c-f94523c1ff6e)
+2026-06-02T21:36:56.101+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@585c9f98
+2026-06-02T21:36:56.133+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:36:56.133+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (3c3c3e52-f581-4dca-b36e-03023fce776f)
+2026-06-02T21:36:56.151+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (3c3c3e52-f581-4dca-b36e-03023fce776f)
+2026-06-02T21:36:56.152+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@52a4f4e8
+2026-06-02T21:36:56.182+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:36:56.182+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (0918a96a-82b0-465e-942f-519fb63b64b0)
+2026-06-02T21:36:56.203+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (0918a96a-82b0-465e-942f-519fb63b64b0)
+2026-06-02T21:36:56.203+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@17a660d8
+2026-06-02T21:36:56.233+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:36:56.233+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (9e3ff5a3-fbe4-44a1-a9ae-3a3481f70628)
+2026-06-02T21:36:56.251+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (9e3ff5a3-fbe4-44a1-a9ae-3a3481f70628)
+2026-06-02T21:36:56.251+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@2bba8deb
+2026-06-02T21:36:56.283+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:36:56.283+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (f7bee2dd-efa0-4cce-874c-e63f0480b360)
+2026-06-02T21:36:56.301+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (f7bee2dd-efa0-4cce-874c-e63f0480b360)
+2026-06-02T21:36:56.301+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@267b360d
+2026-06-02T21:36:56.332+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:36:58.237+07:00  INFO 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:36:58.237+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:36:58.238+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@5bd29ce7: (connection evicted)
+2026-06-02T21:36:58.239+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@585c9f98: (connection evicted)
+2026-06-02T21:36:58.239+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@52a4f4e8: (connection evicted)
+2026-06-02T21:36:58.239+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@17a660d8: (connection evicted)
+2026-06-02T21:36:58.239+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@2bba8deb: (connection evicted)
+2026-06-02T21:36:58.239+07:00 DEBUG 30088 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@267b360d: (connection evicted)
+2026-06-02T21:36:58.239+07:00 DEBUG 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:36:58.239+07:00  INFO 30088 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:39:08.525+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a1dd3c9
+
+2026-06-02T21:39:08.586+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:39:08.588+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:39:08.588+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:39:08.588+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@6148251d
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:39:08.589+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:39:08.590+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:39:08.591+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:39:08.591+07:00  INFO 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:39:08.600+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (4ac420ee-5a7d-4c93-8a99-cf9f180d0e2b)
+2026-06-02T21:39:08.691+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (4ac420ee-5a7d-4c93-8a99-cf9f180d0e2b)
+2026-06-02T21:39:08.692+07:00  INFO 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@5bd29ce7
+2026-06-02T21:39:08.693+07:00  INFO 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:39:08.794+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:39:08.794+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:39:08.795+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (2ab84e6e-ba16-4c8a-9a7b-e3935561c282)
+2026-06-02T21:39:08.811+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (2ab84e6e-ba16-4c8a-9a7b-e3935561c282)
+2026-06-02T21:39:08.811+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@55720793
+2026-06-02T21:39:08.844+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:39:08.844+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (b18209ac-1148-4187-ab40-c9041c466afd)
+2026-06-02T21:39:08.860+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (b18209ac-1148-4187-ab40-c9041c466afd)
+2026-06-02T21:39:08.860+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@5f8a6ce3
+2026-06-02T21:39:08.891+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:39:08.891+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (78256ac5-df45-43b6-8c79-40c4c1e4187e)
+2026-06-02T21:39:08.908+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (78256ac5-df45-43b6-8c79-40c4c1e4187e)
+2026-06-02T21:39:08.908+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@1a88e976
+2026-06-02T21:39:08.939+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:39:08.939+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (1fd0e1b8-87ef-4c18-bafe-465c11569da8)
+2026-06-02T21:39:08.955+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (1fd0e1b8-87ef-4c18-bafe-465c11569da8)
+2026-06-02T21:39:08.955+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@5f833b2b
+2026-06-02T21:39:08.987+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:39:08.987+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (0608a6e4-5cef-4e0e-8f3e-9e4b420b66d9)
+2026-06-02T21:39:09.003+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (0608a6e4-5cef-4e0e-8f3e-9e4b420b66d9)
+2026-06-02T21:39:09.003+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@2bd8141d
+2026-06-02T21:39:09.034+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:39:10.806+07:00  INFO 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:39:10.806+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:39:10.808+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@5bd29ce7: (connection evicted)
+2026-06-02T21:39:10.808+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@55720793: (connection evicted)
+2026-06-02T21:39:10.808+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@5f8a6ce3: (connection evicted)
+2026-06-02T21:39:10.808+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@1a88e976: (connection evicted)
+2026-06-02T21:39:10.809+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@5f833b2b: (connection evicted)
+2026-06-02T21:39:10.809+07:00 DEBUG 27240 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@2bd8141d: (connection evicted)
+2026-06-02T21:39:10.809+07:00 DEBUG 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:39:10.809+07:00  INFO 27240 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:40:49.753+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@15fd1e69
+
+2026-06-02T21:40:49.814+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:40:49.816+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:40:49.816+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:40:49.816+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:40:49.816+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:40:49.816+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:40:49.816+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:40:49.816+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@5aa34388
+2026-06-02T21:40:49.816+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:40:49.816+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:40:49.817+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:40:49.817+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:40:49.817+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:40:49.817+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:40:49.817+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:40:49.817+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:40:49.817+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:40:49.817+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:40:49.817+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:40:49.817+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:40:49.818+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:40:49.819+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:40:49.819+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:40:49.819+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:40:49.819+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:40:49.819+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:40:49.819+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:40:49.819+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:40:49.819+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:40:49.819+07:00  INFO 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:40:49.829+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (37d41762-bd4e-4a4d-941a-0e4c8ad97888)
+2026-06-02T21:40:49.918+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (37d41762-bd4e-4a4d-941a-0e4c8ad97888)
+2026-06-02T21:40:49.919+07:00  INFO 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@4b03ad9d
+2026-06-02T21:40:49.920+07:00  INFO 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:40:50.021+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:40:50.021+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:40:50.022+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (784cd1f0-36b1-4159-99ff-ece5a8fae0fe)
+2026-06-02T21:40:50.039+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (784cd1f0-36b1-4159-99ff-ece5a8fae0fe)
+2026-06-02T21:40:50.039+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@620c85b6
+2026-06-02T21:40:50.071+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:40:50.071+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (dba41560-d5e4-41c0-a2d8-a99739579285)
+2026-06-02T21:40:50.087+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (dba41560-d5e4-41c0-a2d8-a99739579285)
+2026-06-02T21:40:50.087+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@68f4eec6
+2026-06-02T21:40:50.120+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:40:50.120+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (b4734909-37ad-452b-b0b4-78c74855c60d)
+2026-06-02T21:40:50.136+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (b4734909-37ad-452b-b0b4-78c74855c60d)
+2026-06-02T21:40:50.136+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@2df67dbc
+2026-06-02T21:40:50.167+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:40:50.167+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (8bdf1d65-dc47-4872-b70a-f333e150bdbc)
+2026-06-02T21:40:50.184+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (8bdf1d65-dc47-4872-b70a-f333e150bdbc)
+2026-06-02T21:40:50.184+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@2bd17c81
+2026-06-02T21:40:50.215+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:40:50.215+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (57aac99c-8c27-4841-9244-98f718fc5dd7)
+2026-06-02T21:40:50.231+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (57aac99c-8c27-4841-9244-98f718fc5dd7)
+2026-06-02T21:40:50.231+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@1c115133
+2026-06-02T21:40:50.264+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:40:51.615+07:00  INFO 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:40:51.615+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:40:51.616+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@4b03ad9d: (connection evicted)
+2026-06-02T21:40:51.616+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@620c85b6: (connection evicted)
+2026-06-02T21:40:51.616+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@68f4eec6: (connection evicted)
+2026-06-02T21:40:51.616+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@2df67dbc: (connection evicted)
+2026-06-02T21:40:51.617+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@2bd17c81: (connection evicted)
+2026-06-02T21:40:51.617+07:00 DEBUG 29608 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@1c115133: (connection evicted)
+2026-06-02T21:40:51.617+07:00 DEBUG 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:40:51.617+07:00  INFO 29608 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:42:03.872+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a1dd3c9
+
+2026-06-02T21:42:03.956+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:42:03.957+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@25b11891
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:42:03.958+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:42:03.959+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:42:03.960+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:42:03.960+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:42:03.960+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:42:03.960+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:42:03.960+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:42:03.960+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:42:03.960+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:42:03.960+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:42:03.960+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:42:03.960+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:42:03.961+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:42:03.961+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:42:03.961+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:42:03.961+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:42:03.961+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:42:03.961+07:00  INFO 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:42:03.971+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (48c8cb51-9b13-4b32-a91c-e18d2f7f5f1f)
+2026-06-02T21:42:04.067+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (48c8cb51-9b13-4b32-a91c-e18d2f7f5f1f)
+2026-06-02T21:42:04.068+07:00  INFO 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@f2b6832
+2026-06-02T21:42:04.069+07:00  INFO 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:42:04.170+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:42:04.170+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:42:04.171+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (2fbb7219-fb16-41fb-92b6-fcd9fb8f2ea7)
+2026-06-02T21:42:04.190+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (2fbb7219-fb16-41fb-92b6-fcd9fb8f2ea7)
+2026-06-02T21:42:04.191+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@36254ef5
+2026-06-02T21:42:04.222+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:42:04.222+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (5c99e664-4fc2-4a69-ab21-7efd7bedee4e)
+2026-06-02T21:42:04.240+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (5c99e664-4fc2-4a69-ab21-7efd7bedee4e)
+2026-06-02T21:42:04.241+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@3cdd2585
+2026-06-02T21:42:04.272+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:42:04.272+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (b878150e-52f7-4a3f-8b56-daee5cb59ecd)
+2026-06-02T21:42:04.290+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (b878150e-52f7-4a3f-8b56-daee5cb59ecd)
+2026-06-02T21:42:04.290+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@79dfbc7a
+2026-06-02T21:42:04.321+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:42:04.321+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (35a4ef13-0214-445e-8cf5-8399df4e8190)
+2026-06-02T21:42:04.339+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (35a4ef13-0214-445e-8cf5-8399df4e8190)
+2026-06-02T21:42:04.339+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@65911752
+2026-06-02T21:42:04.370+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:42:04.370+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (9d9af09a-aae2-4f5b-b135-28236689591e)
+2026-06-02T21:42:04.389+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (9d9af09a-aae2-4f5b-b135-28236689591e)
+2026-06-02T21:42:04.389+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@486ce51f
+2026-06-02T21:42:04.422+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:42:09.574+07:00  INFO 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:42:09.575+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:42:09.576+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@f2b6832: (connection evicted)
+2026-06-02T21:42:09.576+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@36254ef5: (connection evicted)
+2026-06-02T21:42:09.576+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@3cdd2585: (connection evicted)
+2026-06-02T21:42:09.577+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@79dfbc7a: (connection evicted)
+2026-06-02T21:42:09.577+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@65911752: (connection evicted)
+2026-06-02T21:42:09.577+07:00 DEBUG 5976 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@486ce51f: (connection evicted)
+2026-06-02T21:42:09.577+07:00 DEBUG 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:42:09.577+07:00  INFO 5976 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:42:56.789+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a1dd3c9
+
+2026-06-02T21:42:56.854+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:42:56.856+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:42:56.856+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:42:56.856+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:42:56.856+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:42:56.856+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@6148251d
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:42:56.857+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:42:56.858+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:42:56.858+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:42:56.858+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:42:56.858+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:42:56.858+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:42:56.858+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:42:56.858+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:42:56.858+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:42:56.858+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:42:56.858+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:42:56.859+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:42:56.859+07:00  INFO 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:42:56.869+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (69251923-23d0-4df9-ad7d-4eb27d7fc2f0)
+2026-06-02T21:42:56.969+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (69251923-23d0-4df9-ad7d-4eb27d7fc2f0)
+2026-06-02T21:42:56.970+07:00  INFO 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@5bd29ce7
+2026-06-02T21:42:56.971+07:00  INFO 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:42:57.072+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:42:57.072+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:42:57.073+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (22bcdea6-c92a-410b-9be3-1e8227d72155)
+2026-06-02T21:42:57.091+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (22bcdea6-c92a-410b-9be3-1e8227d72155)
+2026-06-02T21:42:57.091+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@77d1b85c
+2026-06-02T21:42:57.122+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:42:57.122+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (69ea995b-2063-44ae-8a98-74aabacc912b)
+2026-06-02T21:42:57.139+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (69ea995b-2063-44ae-8a98-74aabacc912b)
+2026-06-02T21:42:57.140+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@7d29d32c
+2026-06-02T21:42:57.170+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:42:57.170+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (08583e0c-6ad8-418e-b3e1-d3ff2921ad8e)
+2026-06-02T21:42:57.190+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (08583e0c-6ad8-418e-b3e1-d3ff2921ad8e)
+2026-06-02T21:42:57.190+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@382b42ed
+2026-06-02T21:42:57.221+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:42:57.221+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (f0478bb5-a633-4143-b71d-a3a7dfea4bf0)
+2026-06-02T21:42:57.241+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (f0478bb5-a633-4143-b71d-a3a7dfea4bf0)
+2026-06-02T21:42:57.241+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@42c21eec
+2026-06-02T21:42:57.272+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:42:57.272+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (b3ab9473-aefc-426d-9fba-80698b8f4a92)
+2026-06-02T21:42:57.289+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (b3ab9473-aefc-426d-9fba-80698b8f4a92)
+2026-06-02T21:42:57.289+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@9d9be9a
+2026-06-02T21:42:57.320+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:43:00.256+07:00  INFO 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:43:00.256+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:43:00.257+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@5bd29ce7: (connection evicted)
+2026-06-02T21:43:00.257+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@77d1b85c: (connection evicted)
+2026-06-02T21:43:00.257+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@7d29d32c: (connection evicted)
+2026-06-02T21:43:00.258+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@382b42ed: (connection evicted)
+2026-06-02T21:43:00.258+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@42c21eec: (connection evicted)
+2026-06-02T21:43:00.258+07:00 DEBUG 26072 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@9d9be9a: (connection evicted)
+2026-06-02T21:43:00.258+07:00 DEBUG 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:43:00.258+07:00  INFO 26072 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:46:46.936+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a1dd3c9
+
+2026-06-02T21:46:46.998+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:46:46.999+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:46:46.999+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:46:46.999+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:46:46.999+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:46:46.999+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:46:46.999+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@6148251d
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:46:47.000+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:46:47.001+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:46:47.002+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:46:47.002+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:46:47.002+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:46:47.002+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:46:47.002+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:46:47.002+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:46:47.002+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:46:47.002+07:00  INFO 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:46:47.012+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (af6792d1-604d-4106-9999-34c4733b9bbf)
+2026-06-02T21:46:47.108+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (af6792d1-604d-4106-9999-34c4733b9bbf)
+2026-06-02T21:46:47.109+07:00  INFO 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@5bd29ce7
+2026-06-02T21:46:47.111+07:00  INFO 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:46:47.213+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:46:47.213+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:46:47.214+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (06fbe4eb-24c2-4524-8b38-312810dfe57f)
+2026-06-02T21:46:47.232+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (06fbe4eb-24c2-4524-8b38-312810dfe57f)
+2026-06-02T21:46:47.232+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@66184ce8
+2026-06-02T21:46:47.264+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:46:47.264+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (b5337172-5a0a-46be-aec0-657fadbcfd97)
+2026-06-02T21:46:47.287+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (b5337172-5a0a-46be-aec0-657fadbcfd97)
+2026-06-02T21:46:47.287+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@6ce02798
+2026-06-02T21:46:47.318+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:46:47.318+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (78426c22-8f98-427c-b993-1b1e10edfd66)
+2026-06-02T21:46:47.338+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (78426c22-8f98-427c-b993-1b1e10edfd66)
+2026-06-02T21:46:47.338+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@29e2a460
+2026-06-02T21:46:47.370+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:46:47.370+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (6b471599-5973-45a9-901f-4ef7c94897b6)
+2026-06-02T21:46:47.386+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (6b471599-5973-45a9-901f-4ef7c94897b6)
+2026-06-02T21:46:47.387+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@db9d2b8
+2026-06-02T21:46:47.418+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:46:47.418+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (e0e20207-ef22-4e83-9c83-b9de62757bfe)
+2026-06-02T21:46:47.437+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (e0e20207-ef22-4e83-9c83-b9de62757bfe)
+2026-06-02T21:46:47.437+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@18810822
+2026-06-02T21:46:47.468+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:46:49.674+07:00  INFO 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:46:49.674+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:46:49.675+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@5bd29ce7: (connection evicted)
+2026-06-02T21:46:49.675+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@66184ce8: (connection evicted)
+2026-06-02T21:46:49.676+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@6ce02798: (connection evicted)
+2026-06-02T21:46:49.676+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@29e2a460: (connection evicted)
+2026-06-02T21:46:49.676+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@db9d2b8: (connection evicted)
+2026-06-02T21:46:49.676+07:00 DEBUG 10724 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@18810822: (connection evicted)
+2026-06-02T21:46:49.676+07:00 DEBUG 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:46:49.677+07:00  INFO 10724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:48:08.653+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a1dd3c9
+
+2026-06-02T21:48:08.716+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:48:08.717+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:48:08.717+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:48:08.717+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:48:08.717+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:48:08.717+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:48:08.717+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:48:08.717+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@6148251d
+2026-06-02T21:48:08.717+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:48:08.718+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:48:08.718+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:48:08.718+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:48:08.718+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:48:08.718+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:48:08.718+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:48:08.718+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:48:08.718+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:48:08.718+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:48:08.718+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:48:08.719+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:48:08.720+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:48:08.720+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:48:08.720+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:48:08.720+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:48:08.720+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:48:08.720+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:48:08.720+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:48:08.720+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:48:08.720+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:48:08.720+07:00  INFO 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:48:08.730+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (7f5115a0-6670-4956-a050-453ae8afa279)
+2026-06-02T21:48:08.819+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (7f5115a0-6670-4956-a050-453ae8afa279)
+2026-06-02T21:48:08.820+07:00  INFO 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@5bd29ce7
+2026-06-02T21:48:08.822+07:00  INFO 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:48:08.924+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:48:08.924+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:48:08.925+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (5977471a-0b51-4754-83ce-e6c7e6919cf3)
+2026-06-02T21:48:08.941+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (5977471a-0b51-4754-83ce-e6c7e6919cf3)
+2026-06-02T21:48:08.942+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@29ba904d
+2026-06-02T21:48:08.973+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:48:08.973+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (0df41094-3ebf-4222-9831-8c9a7a7bd349)
+2026-06-02T21:48:08.989+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (0df41094-3ebf-4222-9831-8c9a7a7bd349)
+2026-06-02T21:48:08.990+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@2342fb3d
+2026-06-02T21:48:09.020+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:48:09.020+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (c7c6f4e2-5de4-4dba-903a-a212f3ef03d7)
+2026-06-02T21:48:09.037+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (c7c6f4e2-5de4-4dba-903a-a212f3ef03d7)
+2026-06-02T21:48:09.037+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@66407131
+2026-06-02T21:48:09.068+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:48:09.068+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (a2108bb5-933b-431c-8842-a093334a877c)
+2026-06-02T21:48:09.085+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (a2108bb5-933b-431c-8842-a093334a877c)
+2026-06-02T21:48:09.085+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@1b05bd4c
+2026-06-02T21:48:09.116+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:48:09.116+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (ea82d4db-a235-40fb-a410-d21708441159)
+2026-06-02T21:48:09.133+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (ea82d4db-a235-40fb-a410-d21708441159)
+2026-06-02T21:48:09.133+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@576c300d
+2026-06-02T21:48:09.166+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:48:10.952+07:00  INFO 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:48:10.952+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:48:10.953+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@5bd29ce7: (connection evicted)
+2026-06-02T21:48:10.954+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@29ba904d: (connection evicted)
+2026-06-02T21:48:10.954+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@2342fb3d: (connection evicted)
+2026-06-02T21:48:10.954+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@66407131: (connection evicted)
+2026-06-02T21:48:10.954+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@1b05bd4c: (connection evicted)
+2026-06-02T21:48:10.954+07:00 DEBUG 6012 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@576c300d: (connection evicted)
+2026-06-02T21:48:10.954+07:00 DEBUG 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:48:10.954+07:00  INFO 6012 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:48:51.093+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a1dd3c9
+
+2026-06-02T21:48:51.157+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@6148251d
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:48:51.159+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:48:51.160+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:48:51.160+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:48:51.160+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:48:51.160+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:48:51.160+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:48:51.160+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:48:51.160+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:48:51.160+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:48:51.160+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:48:51.160+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:48:51.161+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:48:51.162+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:48:51.162+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:48:51.162+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:48:51.162+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:48:51.162+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:48:51.162+07:00  INFO 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:48:51.172+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (bbf627dc-6408-4689-89aa-e17a804bc63e)
+2026-06-02T21:48:51.261+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (bbf627dc-6408-4689-89aa-e17a804bc63e)
+2026-06-02T21:48:51.262+07:00  INFO 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@5bd29ce7
+2026-06-02T21:48:51.263+07:00  INFO 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:48:51.365+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:48:51.365+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:48:51.366+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (cc8d6226-2b29-4a2f-a4c2-24385c9aaa87)
+2026-06-02T21:48:51.386+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (cc8d6226-2b29-4a2f-a4c2-24385c9aaa87)
+2026-06-02T21:48:51.386+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@78f84411
+2026-06-02T21:48:51.417+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:48:51.417+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (5cba8f67-3782-464d-8b93-9b8d69110b6a)
+2026-06-02T21:48:51.441+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (5cba8f67-3782-464d-8b93-9b8d69110b6a)
+2026-06-02T21:48:51.441+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@72002f61
+2026-06-02T21:48:51.473+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:48:51.473+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (195676bc-2ac8-430e-8a44-4f246e195645)
+2026-06-02T21:48:51.505+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (195676bc-2ac8-430e-8a44-4f246e195645)
+2026-06-02T21:48:51.505+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@3702af45
+2026-06-02T21:48:51.536+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:48:51.536+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (32ace324-a699-4756-80fe-54601270ff33)
+2026-06-02T21:48:51.573+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (32ace324-a699-4756-80fe-54601270ff33)
+2026-06-02T21:48:51.573+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@de0bd78
+2026-06-02T21:48:51.604+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:48:51.604+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (e6c4c117-7272-402c-a27a-58054f9cb000)
+2026-06-02T21:48:51.632+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (e6c4c117-7272-402c-a27a-58054f9cb000)
+2026-06-02T21:48:51.633+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@67ffdef
+2026-06-02T21:48:51.664+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:48:58.002+07:00  INFO 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown initiated...
+2026-06-02T21:48:58.002+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before shutdown stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:48:58.003+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@5bd29ce7: (connection evicted)
+2026-06-02T21:48:58.003+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@78f84411: (connection evicted)
+2026-06-02T21:48:58.004+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@72002f61: (connection evicted)
+2026-06-02T21:48:58.004+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@3702af45: (connection evicted)
+2026-06-02T21:48:58.004+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@de0bd78: (connection evicted)
+2026-06-02T21:48:58.004+07:00 DEBUG 17720 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@67ffdef: (connection evicted)
+2026-06-02T21:48:58.004+07:00 DEBUG 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  shutdown stats (total=0/10, idle=0/5, active=0, waiting=0)
+2026-06-02T21:48:58.004+07:00  INFO 17720 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Shutdown completed.
+2026-06-02T21:50:58.801+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.util.UtilityElf        : Class org.postgresql.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@4a1dd3c9
+
+2026-06-02T21:50:58.860+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : santika-pool - configuration:
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension.............false
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : autoCommit......................true
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : catalog.........................none
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionInitSql...............none
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTestQuery.............none
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : connectionTimeout...............20000
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentials.....................com.zaxxer.hikari.util.Credentials@6b67a2e7
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProvider.............none
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : credentialsProviderClassName....none
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSource......................none
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceClassName.............none
+2026-06-02T21:50:58.861+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI..................none
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : dataSourceProperties............{password=<masked>}
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : driverClassName................."org.postgresql.Driver"
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverride...............none
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName......none
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckProperties...........{}
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry.............none
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : idleTimeout.....................30000
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout.......1
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries..........false
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : jdbcUrl.........................jdbc:postgresql://localhost:5432/simrs
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : keepaliveTime...................120000
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold..........0
+2026-06-02T21:50:58.863+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maxLifetime.....................1800000
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : maximumPoolSize.................10
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricRegistry..................none
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory...........none
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : minimumIdle.....................5
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : password........................<masked>
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : poolName........................"santika-pool"
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : readOnly........................false
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : registerMbeans..................false
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : scheduledExecutor...............none
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : schema..........................none
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : threadFactory...................internal
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : transactionIsolation............default
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : username........................"postgres"
+2026-06-02T21:50:58.864+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariConfig           : validationTimeout...............5000
+2026-06-02T21:50:58.864+07:00  INFO 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Starting...
+2026-06-02T21:50:58.873+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (f9d7299d-f0a2-48a2-b52c-54de1de3fea1)
+2026-06-02T21:50:58.970+07:00 DEBUG 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (f9d7299d-f0a2-48a2-b52c-54de1de3fea1)
+2026-06-02T21:50:58.971+07:00  INFO 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@775c3be7
+2026-06-02T21:50:58.972+07:00  INFO 13724 --- [SANTIKA] [restartedMain] com.zaxxer.hikari.HikariDataSource       : santika-pool - Start completed.
+2026-06-02T21:50:59.073+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:50:59.073+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=1/10, idle=0/5, active=1, waiting=0)
+2026-06-02T21:50:59.074+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (2ade4871-f149-47e9-a53b-0efe80abbf16)
+2026-06-02T21:50:59.089+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (2ade4871-f149-47e9-a53b-0efe80abbf16)
+2026-06-02T21:50:59.089+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@29ba904d
+2026-06-02T21:50:59.121+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=2/10, idle=1/5, active=1, waiting=0)
+2026-06-02T21:50:59.121+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (0ea34f31-5bce-4892-b083-a5a19de3de16)
+2026-06-02T21:50:59.137+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (0ea34f31-5bce-4892-b083-a5a19de3de16)
+2026-06-02T21:50:59.137+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@2342fb3d
+2026-06-02T21:50:59.168+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=3/10, idle=2/5, active=1, waiting=0)
+2026-06-02T21:50:59.168+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (94243344-1ef6-4d57-b4b0-96f143a9d28e)
+2026-06-02T21:50:59.189+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (94243344-1ef6-4d57-b4b0-96f143a9d28e)
+2026-06-02T21:50:59.189+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@66407131
+2026-06-02T21:50:59.221+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=4/10, idle=3/5, active=1, waiting=0)
+2026-06-02T21:50:59.221+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (27757818-179f-4610-881a-0b3fe70e159e)
+2026-06-02T21:50:59.238+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (27757818-179f-4610-881a-0b3fe70e159e)
+2026-06-02T21:50:59.238+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@1b05bd4c
+2026-06-02T21:50:59.270+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=5/10, idle=4/5, active=1, waiting=0)
+2026-06-02T21:50:59.270+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Attempting to create/setup new connection (e885887a-0ea4-47a2-bf28-dac68d247577)
+2026-06-02T21:50:59.287+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Established new connection (e885887a-0ea4-47a2-bf28-dac68d247577)
+2026-06-02T21:50:59.287+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Added connection org.postgresql.jdbc.PgConnection@576c300d
+2026-06-02T21:50:59.318+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-adder] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After adding stats (total=6/10, idle=5/5, active=1, waiting=0)
+2026-06-02T21:51:29.075+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:51:29.075+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:51:29.075+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-02T21:51:59.075+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=6/10, idle=6/5, active=0, waiting=0)
+2026-06-02T21:51:59.075+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:51:59.075+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-02T21:51:59.075+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:connection-closer] com.zaxxer.hikari.pool.PoolBase          : santika-pool - Closing connection org.postgresql.jdbc.PgConnection@576c300d: (connection has passed idleTimeout)
+2026-06-02T21:52:29.076+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:52:29.076+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:52:29.076+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-02T21:52:38.562+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - keepalive: connection org.postgresql.jdbc.PgConnection@66407131 is alive
+2026-06-02T21:52:39.948+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - keepalive: connection org.postgresql.jdbc.PgConnection@775c3be7 is alive
+2026-06-02T21:52:42.306+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - keepalive: connection org.postgresql.jdbc.PgConnection@29ba904d is alive
+2026-06-02T21:52:49.901+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - keepalive: connection org.postgresql.jdbc.PgConnection@2342fb3d is alive
+2026-06-02T21:52:51.372+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - keepalive: connection org.postgresql.jdbc.PgConnection@1b05bd4c is alive
+2026-06-02T21:52:59.077+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:52:59.077+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:52:59.077+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-02T21:53:29.079+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:53:29.079+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:53:29.079+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-02T21:53:59.080+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:53:59.080+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:53:59.080+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-02T21:54:17.936+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - keepalive: connection org.postgresql.jdbc.PgConnection@66407131 is alive
+2026-06-02T21:54:20.924+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - keepalive: connection org.postgresql.jdbc.PgConnection@775c3be7 is alive
+2026-06-02T21:54:25.523+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - keepalive: connection org.postgresql.jdbc.PgConnection@29ba904d is alive
+2026-06-02T21:54:29.081+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:54:29.081+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:54:29.081+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-02T21:54:40.667+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - keepalive: connection org.postgresql.jdbc.PgConnection@2342fb3d is alive
+2026-06-02T21:54:43.509+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - keepalive: connection org.postgresql.jdbc.PgConnection@1b05bd4c is alive
+2026-06-02T21:54:59.081+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Before cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:54:59.081+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - After  cleanup stats (total=5/10, idle=5/5, active=0, waiting=0)
+2026-06-02T21:54:59.081+07:00 DEBUG 13724 --- [SANTIKA] [santika-pool:housekeeper] com.zaxxer.hikari.pool.HikariPool        : santika-pool - Fill pool skipped, pool has sufficient level or currently being filled.

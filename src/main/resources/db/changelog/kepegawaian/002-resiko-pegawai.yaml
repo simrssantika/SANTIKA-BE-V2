@@ -1,0 +1,51 @@
+databaseChangeLog:
+  - changeSet:
+      id: resiko-pegawai
+      author: ridlo
+      changes:
+        - createTable:
+            schemaName: kepegawaian
+            tableName: resiko_pegawai
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: kode_resiko
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: nama_resiko
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: resiko-pegawai-index
+      author: ridlo
+      changes:
+        - sql:
+            dbms: postgresql
+            splitStatements: true
+            sql: |
+              CREATE UNIQUE INDEX idx_unique_kode_resiko_pegawai ON kepegawaian.resiko_pegawai (kode_resiko) WHERE (deleted_at IS NULL);

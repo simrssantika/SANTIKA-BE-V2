@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/master/medis/001-poli.yaml
+  - include:
+      file: db/changelog/master/medis/002-diagnosa.yaml
+  - include:
+      file: db/changelog/master/medis/003-prosedur.yaml

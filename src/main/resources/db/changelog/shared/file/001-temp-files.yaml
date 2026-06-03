@@ -1,0 +1,91 @@
+databaseChangeLog:
+  - changeSet:
+      id: shared-temp-files
+      author: system
+      changes:
+        - createTable:
+            schemaName: shared
+            tableName: temp_files
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  defaultValueComputed: gen_random_uuid()
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: original_name
+                  type: varchar(255)
+              - column:
+                  name: stored_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: path
+                  type: varchar(500)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: ext
+                  type: varchar(50)
+              - column:
+                  name: size
+                  type: bigint
+              - column:
+                  name: mime_type
+                  type: varchar(100)
+              - column:
+                  name: upload_token
+                  type: varchar(100)
+                  constraints:
+                    unique: true
+              - column:
+                  name: uploaded_by
+                  type: uuid
+              - column:
+                  name: expires_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+
+        - addForeignKeyConstraint:
+            baseTableSchemaName: shared
+            baseTableName: temp_files
+            baseColumnNames: uploaded_by
+            referencedTableSchemaName: shared
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_temp_files_uploaded_by
+            onDelete: SET NULL
+
+        - createIndex:
+            schemaName: shared
+            tableName: temp_files
+            indexName: idx_temp_files_upload_token
+            columns:
+              - column:
+                  name: upload_token
+
+        - createIndex:
+            schemaName: shared
+            tableName: temp_files
+            indexName: idx_temp_files_expires_at
+            columns:
+              - column:
+                  name: expires_at
+
+        - createIndex:
+            schemaName: shared
+            tableName: temp_files
+            indexName: idx_temp_files_uploaded_by
+            columns:
+              - column:
+                  name: uploaded_by

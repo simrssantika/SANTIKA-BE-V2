@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/master/wilayah/001-provinsi.yaml
+  - include:
+      file: db/changelog/master/wilayah/002-kabupaten.yaml
+  - include:
+      file: db/changelog/master/wilayah/003-kecamatan.yaml
+  - include:
+      file: db/changelog/master/wilayah/004-kelurahan.yaml
