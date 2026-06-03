@@ -82,6 +82,13 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+// Redam warning deprecation `sun.misc.Unsafe::allocateMemory` yang dipanggil Netty
+// (via Lettuce/Redis) di JDK 24+. Flag ini hanya menyenyapkan peringatan, performa
+// Netty tetap penuh. Untuk run jar produksi, pasang flag yang sama saat `java -jar`.
+tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
+    jvmArgs("--sun-misc-unsafe-memory-access=allow")
+}
+
 
 jooq {
     configurations {
