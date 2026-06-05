@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationEventPublisher
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import java.time.LocalDateTime
-import java.util.UUID
+import java.util.*
 
 @Service
 class StorageFileService(
@@ -26,30 +26,47 @@ class StorageFileService(
         storageFileRepo.findByModuleAndEntityId(module, entityId)
 
     @Transactional
-    fun rollbackToTemp(storageId: UUID, uploadedBy: UUID? = null): TempFileDto {
-        val storage = storageFileRepo.findById(storageId)
-            .orElseThrow { DataNotFoundException("Storage file tidak ditemukan") }
+    fun rollbackToTemp(storageId: List<UUID?>, uploadedBy: UUID? = null): List<TempFileDto> {
 
-        val token = UUID.randomUUID().toString()
-        val saved = tempFileRepo.save(TempFileEntity().also {
-            it.originalName = storage.originalName
-            it.storedName   = storage.storedName
-            it.path         = storage.path
-            it.ext          = storage.ext
-            it.size         = storage.size
-            it.mimeType     = storage.mimeType
-            it.uploadToken  = token
-            it.uploadedBy   = uploadedBy ?: storage.uploadedBy
-            it.expiresAt    = LocalDateTime.now().plusHours(expiryHours)
-        })
+        if (storageId.isEmpty()) return emptyList()
 
-        storage.softDelete()
-        storageFileRepo.save(storage)
+        val storage = storageFileRepo.findByIdIn(storageId)
+
+        if (storage.size != storageId.distinct().size) {
+            return emptyList()
+        }
+
+        val data = storage.map { storage ->
+            val token = UUID.randomUUID().toString()
+            TempFileEntity().also {
+                it.originalName = storage.originalName
+                it.storedName = storage.storedName
+                it.path = storage.path
+                it.ext = storage.ext
+                it.size = storage.size
+                it.mimeType = storage.mimeType
+                it.uploadToken = token
+                it.uploadedBy = uploadedBy ?: storage.uploadedBy
+                it.expiresAt = LocalDateTime.now().plusHours(expiryHours)
+            }
+
+        }
+
+
+        val saved = tempFileRepo.saveAll(data)
+
+        storage.forEach { it.softDelete() }
+        storageFileRepo.saveAll(storage)
+
 
         // AFTER_COMMIT → registerUpload(token) di Redis
-        eventPublisher.publishEvent(StorageFileEvent.RolledBack(token))
+        data.forEach {
+            eventPublisher.publishEvent(StorageFileEvent.RolledBack(it.uploadToken.toString()))
+        }
 
-        return TempFileDto(id = saved.id!!, token = token, storedName = saved.storedName)
+        return saved.map {
+            TempFileDto(id = it.id!!, token = it.uploadToken!!, storedName = it.storedName)
+        }
     }
 
     @Transactional

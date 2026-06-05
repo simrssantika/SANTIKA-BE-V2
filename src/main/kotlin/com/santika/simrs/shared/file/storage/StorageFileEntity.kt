@@ -3,7 +3,7 @@ package com.santika.simrs.shared.file.storage
 import com.santika.simrs.global.entity.BaseEntity
 import jakarta.persistence.*
 import org.hibernate.annotations.SQLRestriction
-import java.util.UUID
+import java.util.*
 
 @Entity
 @Table(name = "storage_files", schema = "shared")

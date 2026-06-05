@@ -1,6 +1,7 @@
 package com.santika.simrs.shared.file.temp
 
 import com.santika.simrs.shared.file.lock.FileUploadLockService
+import com.santika.simrs.shared.file.support.FileParallel
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import org.springframework.transaction.event.TransactionPhase
@@ -15,40 +16,46 @@ class TempFileEventHandler(
 ) {
     private val log = LoggerFactory.getLogger(javaClass)
 
-    // TX commit → daftarkan token ke Redis
+    // TX commit → daftarkan semua token ke Redis
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     fun onStored(event: TempFileEvent.Stored) {
-        lockService.registerUpload(event.token)
+        event.files.forEach { lockService.registerUpload(it.token) }
     }
 
-    // TX rollback → file sudah ada di disk tapi record gagal disimpan → hapus file
+    // TX rollback → file sudah ada di disk tapi record gagal disimpan → hapus semua file (paralel)
     @TransactionalEventListener(phase = TransactionPhase.AFTER_ROLLBACK)
     fun onStoredRollback(event: TempFileEvent.Stored) {
-        runCatching { Files.deleteIfExists(Paths.get(event.path)) }
-            .onSuccess { log.info("File dihapus setelah rollback: ${event.path}") }
-            .onFailure { log.warn("Gagal hapus file setelah rollback: ${event.path} — ${it.message}") }
+        FileParallel.forEach(event.files) { ref ->
+            runCatching { Files.deleteIfExists(Paths.get(ref.path)) }
+                .onSuccess { log.info("File dihapus setelah rollback: ${ref.path}") }
+                .onFailure { log.warn("Gagal hapus file setelah rollback: ${ref.path} — ${it.message}") }
+        }
     }
 
-    // TX commit → pindahkan file fisik dari temp ke storage + lepas token Redis
+    // TX commit → pindahkan semua file fisik temp → storage (paralel) + lepas token Redis
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     fun onMovedToStorage(event: TempFileEvent.MovedToStorage) {
-        val dest = Paths.get(event.destPath)
-        runCatching {
-            Files.createDirectories(dest.parent)
-            Files.move(Paths.get(event.sourcePath), dest, StandardCopyOption.REPLACE_EXISTING)
-            log.info("File dipindah: ${event.sourcePath} → ${event.destPath}")
-        }.onFailure {
-            // DB sudah commit, file gagal dipindah — log untuk reconciliation manual
-            log.error("SYNC ERROR: DB commit tapi file gagal dipindah: ${event.sourcePath} → ${event.destPath}. Perlu reconciliation.")
+        FileParallel.forEach(event.moves) { move ->
+            val dest = Paths.get(move.destPath)
+            runCatching {
+                Files.createDirectories(dest.parent)
+                Files.move(Paths.get(move.sourcePath), dest, StandardCopyOption.REPLACE_EXISTING)
+                log.info("File dipindah: ${move.sourcePath} → ${move.destPath}")
+            }.onFailure {
+                // DB sudah commit, file gagal dipindah — log untuk reconciliation manual
+                log.error("SYNC ERROR: DB commit tapi file gagal dipindah: ${move.sourcePath} → ${move.destPath}. Perlu reconciliation.")
+            }
         }
-        lockService.deregisterUpload(event.token)
+        event.moves.forEach { lockService.deregisterUpload(it.token) }
     }
 
-    // TX commit → hapus file fisik + lepas token Redis
+    // TX commit → hapus semua file fisik (paralel) + lepas token Redis
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     fun onCancelled(event: TempFileEvent.Cancelled) {
-        runCatching { Files.deleteIfExists(Paths.get(event.path)) }
-            .onFailure { log.warn("Gagal hapus file saat cancel: ${event.path} — ${it.message}") }
-        lockService.deregisterUpload(event.token)
+        FileParallel.forEach(event.files) { ref ->
+            runCatching { Files.deleteIfExists(Paths.get(ref.path)) }
+                .onFailure { log.warn("Gagal hapus file saat cancel: ${ref.path} — ${it.message}") }
+        }
+        event.files.forEach { lockService.deregisterUpload(it.token) }
     }
 }

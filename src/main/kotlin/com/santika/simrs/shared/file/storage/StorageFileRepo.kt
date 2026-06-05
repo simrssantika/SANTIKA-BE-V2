@@ -3,7 +3,7 @@ package com.santika.simrs.shared.file.storage
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
 import org.springframework.stereotype.Repository
-import java.util.UUID
+import java.util.*
 
 @Repository
 interface StorageFileRepo : JpaRepository<StorageFileEntity, UUID> {
@@ -16,4 +16,8 @@ interface StorageFileRepo : JpaRepository<StorageFileEntity, UUID> {
         nativeQuery = true
     )
     fun findByIdIncludeDeleted(id: UUID): StorageFileEntity?
+
+
+    fun findByIdIn(ids: List<UUID?>): List<StorageFileEntity>
+
 }

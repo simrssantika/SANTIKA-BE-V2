@@ -1,6 +1,7 @@
 package com.santika.simrs.shared.file.cleanup
 
 import com.santika.simrs.shared.file.lock.FileUploadLockService
+import com.santika.simrs.shared.file.support.FileParallel
 import com.santika.simrs.shared.file.temp.TempFileEntity
 import com.santika.simrs.shared.file.temp.TempFileRepo
 import org.slf4j.LoggerFactory
@@ -59,7 +60,8 @@ class FileCleanupService(
 
     @Transactional
     fun deleteBatch(files: List<TempFileEntity>) {
-        files.forEach { temp ->
+        // Hapus file fisik paralel (virtual threads); operasi DB tetap di thread transaksi
+        FileParallel.forEach(files) { temp ->
             runCatching { Files.deleteIfExists(Paths.get(temp.path)) }
                 .onFailure { log.warn("Gagal hapus file fisik: ${temp.path} — ${it.message}") }
         }

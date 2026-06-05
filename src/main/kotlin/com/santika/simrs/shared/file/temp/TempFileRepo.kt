@@ -11,6 +11,8 @@ interface TempFileRepo : JpaRepository<TempFileEntity, UUID> {
 
     fun findByUploadToken(token: String): TempFileEntity?
 
+    fun findByUploadTokenIn(tokens: List<String>): List<TempFileEntity>
+
     @Query("select t from TempFileEntity t where t.expiresAt < :now")
     fun findAllExpired(now: LocalDateTime): List<TempFileEntity>
 }

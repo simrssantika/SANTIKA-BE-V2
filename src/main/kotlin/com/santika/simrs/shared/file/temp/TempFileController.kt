@@ -18,12 +18,13 @@ class TempFileController(private val tempFileService: TempFileService) {
 
     @PostMapping(consumes = [MediaType.MULTIPART_FORM_DATA_VALUE])
     fun upload(
-        @RequestPart("file") file: MultipartFile
-    ): BaseResponse<TempFileDto> {
+        @RequestPart("files") files: List<MultipartFile>
+    ): BaseResponse<List<TempFileDto>> {
         val userId = runCatching { UUID.fromString(UserContext.getCurrentUserId()) }.getOrNull()
-        return tempFileService.store(file, userId).isSuccess("Upload berhasil", 201)
+        return tempFileService.store(files, userId).isSuccess("Upload berhasil", 201)
     }
 
+    // Get file by token JWT — preview temp file sebelum di-commit ke storage
     @GetMapping("/{id}")
     fun preview(@PathVariable id: UUID): ResponseEntity<UrlResource> {
         val temp = tempFileService.findById(id)
@@ -32,11 +33,5 @@ class TempFileController(private val tempFileService: TempFileService) {
             .contentType(MediaType.parseMediaType(temp.mimeType ?: "application/octet-stream"))
             .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"${temp.originalName}\"")
             .body(resource)
-    }
-
-    @DeleteMapping("/{token}")
-    fun cancel(@PathVariable token: String): BaseResponse<Nothing?> {
-        tempFileService.cancelUpload(token)
-        return null.isSuccess("Upload dibatalkan")
     }
 }

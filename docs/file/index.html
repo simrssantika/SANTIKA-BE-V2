@@ -351,7 +351,8 @@
           <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
           <div class="flow-content">
             <h4>1. Client POST file</h4>
-            <p><code>POST /api/v1/files/temp</code> dengan <code>multipart/form-data</code>, field <code>file</code></p>
+            <p><code>POST /api/v1/files/temp</code> dengan <code>multipart/form-data</code>, field <code>files</code>
+            (bisa lebih dari satu — single = list berisi 1).</p>
           </div>
         </div>
         <div class="flow-step">
@@ -367,15 +368,16 @@
           <div class="flow-content">
             <h4>3. File disimpan ke filesystem</h4>
             <p>Di-copy ke direktori <code>app.temp-dir</code>. Nama disimpan sebagai
-            <code>{timestamp}-{uuid}.{ext}</code>.</p>
+            <code>{timestamp}-{uuid}.{ext}</code>. Untuk multiple file, tulis-disk dijalankan
+            <strong>paralel via virtual threads</strong> (JDK 21+) — operasi DB tetap sinkron di thread transaksi.</p>
           </div>
         </div>
         <div class="flow-step">
           <div class="flow-left"><div class="flow-dot green"></div></div>
           <div class="flow-content">
             <h4>4. Response ke client</h4>
-            <p>Server mengembalikan <code>{ id, token, storedName }</code>. Client wajib menyimpan
-            <code>id</code> untuk langkah berikutnya.</p>
+            <p>Server mengembalikan <strong>array</strong> <code>[{ id, token, storedName }]</code>. Client wajib menyimpan
+            tiap <code>id</code> untuk langkah berikutnya.</p>
           </div>
         </div>
       </div>
@@ -384,17 +386,19 @@
 POST /api/v1/files/temp
 Content-Type: multipart/form-data
 
-file: [binary]
+files: [binary]        <span class="c"># boleh banyak field "files"</span>
 
 <span class="c"># Response 201</span>
 {
   <span class="s">"status"</span>: 201,
   <span class="s">"message"</span>: <span class="s">"Upload berhasil"</span>,
-  <span class="s">"data"</span>: {
-    <span class="s">"id"</span>: <span class="s">"550e8400-e29b-41d4-a716-446655440000"</span>,
-    <span class="s">"token"</span>: <span class="s">"a1b2c3d4-..."</span>,
-    <span class="s">"stored_name"</span>: <span class="s">"1717000000-uuid.jpg"</span>
-  }
+  <span class="s">"data"</span>: [
+    {
+      <span class="s">"id"</span>: <span class="s">"550e8400-e29b-41d4-a716-446655440000"</span>,
+      <span class="s">"token"</span>: <span class="s">"a1b2c3d4-..."</span>,
+      <span class="s">"stored_name"</span>: <span class="s">"1717000000-uuid.jpg"</span>
+    }
+  ]
 }</pre>
     </section>
 
@@ -416,7 +420,7 @@ file: [binary]
           <div class="flow-left"><div class="flow-dot"></div><div class="flow-line"></div></div>
           <div class="flow-content">
             <h4>1. Service memanggil moveToStorage()</h4>
-            <p>Kirim <code>tempId</code>, nama modul (<code>"kepegawaian"</code>), dan <code>entityId</code></p>
+            <p>Kirim <code>tempIds</code> (list, bisa satu/banyak), nama modul (<code>"kepegawaian"</code>), dan <code>entityId</code></p>
           </div>
         </div>
         <div class="flow-step">
@@ -441,14 +445,14 @@ file: [binary]
 <span class="k">fun</span> <span class="m">save</span>(request: PegawaiReq) {
     <span class="k">val</span> pegawai = repo.<span class="m">save</span>(PegawaiEntity().<span class="m">applyFrom</span>(request))
 
-    <span class="c">// Pindah foto ke storage dan kaitkan ke pegawai</span>
-    request.fotoTempId?.<span class="m">let</span> { tempId ->
+    <span class="c">// Pindah foto ke storage dan kaitkan ke pegawai (bisa banyak file sekaligus)</span>
+    <span class="k">if</span> (request.fotoTempIds.<span class="m">isNotEmpty</span>()) {
         <span class="k">val</span> stored = tempFileService.<span class="m">moveToStorage</span>(
-            tempId  = tempId,
-            module  = <span class="s">"kepegawaian"</span>,
+            tempIds  = request.fotoTempIds,
+            module   = <span class="s">"kepegawaian"</span>,
             entityId = pegawai.id!!
         )
-        pegawai.fotoId = stored.id
+        pegawai.fotoId = stored.<span class="m">first</span>().id
         repo.<span class="m">save</span>(pegawai)
     }
 }</pre>
@@ -457,14 +461,15 @@ file: [binary]
     <!-- ROLLBACK -->
     <section id="rollback-flow">
       <h2>Rollback ke Temp</h2>
-      <p>File permanen dikembalikan ke temp — berguna saat entitas diedit dan file perlu diganti.</p>
+      <p>File permanen dikembalikan ke temp — berguna saat entitas diedit dan file perlu diganti.
+      Bersifat <strong>internal</strong> (tanpa endpoint HTTP): dipanggil otomatis oleh <code>updateFile()</code> saat update entitas.</p>
 
       <div class="flow">
         <div class="flow-step">
           <div class="flow-left"><div class="flow-dot yellow"></div><div class="flow-line"></div></div>
           <div class="flow-content">
-            <h4>1. POST /api/v1/files/storage/{id}/rollback</h4>
-            <p>Minta rollback file storage ke temp</p>
+            <h4>1. updateFile() memanggil rollbackToTemp()</h4>
+            <p>Dipicu dari service domain saat file lama perlu diganti (bukan endpoint publik)</p>
           </div>
         </div>
         <div class="flow-step">
@@ -506,16 +511,18 @@ file: [binary]
           <table>
             <thead><tr><th>Field</th><th>Tipe</th><th>Wajib</th><th>Keterangan</th></tr></thead>
             <tbody>
-              <tr><td>file</td><td>File</td><td>Ya</td><td>File yang diupload</td></tr>
+              <tr><td>files</td><td>File[]</td><td>Ya</td><td>Satu atau banyak file (ulangi field <code>files</code> untuk tiap file)</td></tr>
             </tbody>
           </table>
-          <pre><span class="c"># Response 201</span>
+          <pre><span class="c"># Response 201 — selalu array</span>
 {
-  <span class="s">"data"</span>: {
-    <span class="s">"id"</span>: <span class="s">"uuid"</span>,          <span class="c">// simpan ini, kirim saat save entitas</span>
-    <span class="s">"token"</span>: <span class="s">"uuid"</span>,      <span class="c">// pakai untuk cancel jika batal</span>
-    <span class="s">"stored_name"</span>: <span class="s">"..."</span>  <span class="c">// nama file di disk</span>
-  }
+  <span class="s">"data"</span>: [
+    {
+      <span class="s">"id"</span>: <span class="s">"uuid"</span>,          <span class="c">// simpan ini, kirim saat save entitas</span>
+      <span class="s">"token"</span>: <span class="s">"uuid"</span>,      <span class="c">// identifier internal (Redis lock)</span>
+      <span class="s">"stored_name"</span>: <span class="s">"..."</span>  <span class="c">// nama file di disk</span>
+    }
+  ]
 }</pre>
         </div>
       </div>
@@ -531,16 +538,6 @@ file: [binary]
         </div>
       </div>
 
-      <div class="endpoint">
-        <div class="endpoint-header">
-          <span class="badge delete">DELETE</span>
-          <span class="endpoint-path">/api/v1/files/temp/{token}</span>
-          <span class="endpoint-desc">Batalkan upload</span>
-        </div>
-        <div class="endpoint-body">
-          <p>Menghapus file dari filesystem + DB + melepas token dari Redis. Panggil ini jika user membatalkan form.</p>
-        </div>
-      </div>
     </section>
 
     <!-- API STORAGE -->
@@ -559,38 +556,10 @@ file: [binary]
         </div>
       </div>
 
-      <div class="endpoint">
-        <div class="endpoint-header">
-          <span class="badge post">POST</span>
-          <span class="endpoint-path">/api/v1/files/storage/{id}/rollback</span>
-          <span class="endpoint-desc">Rollback storage → temp</span>
-        </div>
-        <div class="endpoint-body">
-          <p>Soft delete storage file dan buat temp file baru dari data yang sama.</p>
-          <pre><span class="c"># Response 200</span>
-{
-  <span class="s">"data"</span>: {
-    <span class="s">"id"</span>: <span class="s">"uuid-temp-baru"</span>,
-    <span class="s">"token"</span>: <span class="s">"uuid-token-baru"</span>,
-    <span class="s">"stored_name"</span>: <span class="s">"..."</span>
-  }
-}</pre>
-        </div>
-      </div>
-
-      <div class="endpoint">
-        <div class="endpoint-header">
-          <span class="badge delete">DELETE</span>
-          <span class="endpoint-path">/api/v1/files/storage/{id}</span>
-          <span class="endpoint-desc">Hapus file permanen (soft delete)</span>
-        </div>
-        <div class="endpoint-body">
-          <p>Mengisi <code>deleted_at</code> dan menghapus file fisik dari disk. File tidak bisa di-recover setelah ini.</p>
-          <div class="alert danger">
-            <span class="alert-icon">✕</span>
-            Operasi ini bersifat <strong>final</strong>. File fisik ikut terhapus. Berbeda dengan rollback yang masih menyimpan file di disk.
-          </div>
-        </div>
+      <div class="alert info">
+        <span class="alert-icon">ℹ</span>
+        Rollback &amp; delete storage tidak dibuka sebagai endpoint HTTP — keduanya operasi internal
+        (<code>rollbackToTemp()</code> / <code>delete()</code>) yang dipanggil dari service domain.
       </div>
     </section>
 
