@@ -12,6 +12,5 @@ fun DokterEntity.applyFrom(req: DokterReq): DokterEntity = apply {
     spesialisId          = req.spesialisId
     alumni               = req.alumni
     noIjinPraktek        = req.noIjinPraktek
-    dokumenIjinPraktikId = req.dokumenIjinPraktikId
     isActive             = req.isActive
 }

@@ -14,5 +14,5 @@ data class PegawaiListRes(
     val foto: FotoRef?
 ) {
     data class DepartemenRef(val id: UUID?, val namaDepartemen: String?)
-    data class FotoRef(val id: UUID?, val file: String?)
+    data class FotoRef(val id: UUID?, val name: String?)
 }

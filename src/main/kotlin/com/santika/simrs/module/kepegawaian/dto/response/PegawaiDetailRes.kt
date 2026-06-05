@@ -33,7 +33,7 @@ data class PegawaiDetailRes(
     val bidang: BidangRef?,
     val vendorTenagaLuar: VendorRef?,
     val foto: FotoRef?,
-    val dokter: Any? = null
+    val dokter: DokterDetailRes? = null
 ) {
     data class ProvinsiRef(val id: UUID?, val namaProvinsi: String?)
     data class KabupatenRef(val id: UUID?, val namaKabKota: String?)
@@ -45,5 +45,5 @@ data class PegawaiDetailRes(
     data class DepartemenRef(val id: UUID?, val namaDepartemen: String?)
     data class BidangRef(val id: UUID?, val namaBidang: String?)
     data class VendorRef(val id: UUID?, val namaVendor: String?)
-    data class FotoRef(val id: UUID?, val file: String?, val status: String?)
+    data class FotoRef(val id: UUID?, val name: String?)
 }

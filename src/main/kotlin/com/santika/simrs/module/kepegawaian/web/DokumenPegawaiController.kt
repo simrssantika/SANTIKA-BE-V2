@@ -1,58 +1,28 @@
 package com.santika.simrs.module.kepegawaian.web
 
 import com.santika.simrs.global.response.BaseResponse
-import com.santika.simrs.global.response.PageResponse
 import com.santika.simrs.global.response.Response.isSuccess
-import com.santika.simrs.module.kepegawaian.dto.request.DokumenPegawaiReq
 import com.santika.simrs.module.kepegawaian.dto.response.DokumenPegawaiRes
 import com.santika.simrs.module.kepegawaian.service.DokumenPegawaiService
-import org.springframework.data.domain.PageRequest
-import org.springframework.http.HttpStatus
-import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.RestController
 import java.util.UUID
 
+/**
+ * Read-only. Lifecycle dokumen (create/update/delete) ikut pegawai lewat
+ * [com.santika.simrs.module.kepegawaian.service.PegawaiService].
+ * Dapat diakses by pegawaiId atau dokterId (di-resolve ke pegawai-nya).
+ */
 @RestController
-@RequestMapping("/api/kepegawaian/pegawai/{pegawaiId}/dokumen")
+@RequestMapping("/api/kepegawaian/dokumen")
 class DokumenPegawaiController(private val service: DokumenPegawaiService) {
 
     @GetMapping
     fun findAll(
-        @PathVariable pegawaiId: UUID,
-        @RequestParam(defaultValue = "0") page: Int,
-        @RequestParam(defaultValue = "10") size: Int,
-        @RequestParam(required = false) search: String?
-    ): BaseResponse<PageResponse<DokumenPegawaiRes>> {
-        val result = service.findAllByPegawai(PageRequest.of(page, size), pegawaiId, search)
-        return PageResponse.of(result.map { DokumenPegawaiRes.of(it) }).isSuccess("Dokumen retrieved successfully")
-    }
-
-    @GetMapping("/{id}")
-    fun findById(@PathVariable pegawaiId: UUID, @PathVariable id: UUID): BaseResponse<DokumenPegawaiRes> =
-        DokumenPegawaiRes.of(service.findById(id)).isSuccess("Dokumen retrieved successfully")
-
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    fun save(
-        @PathVariable pegawaiId: UUID,
-        @RequestBody request: DokumenPegawaiReq
-    ): BaseResponse<Nothing?> {
-        service.save(pegawaiId, request)
-        return null.isSuccess("Dokumen created successfully", 201)
-    }
-
-    @PatchMapping("/{id}")
-    fun update(
-        @PathVariable pegawaiId: UUID,
-        @PathVariable id: UUID,
-        @RequestBody request: DokumenPegawaiReq
-    ): BaseResponse<Nothing?> {
-        service.update(request, id)
-        return null.isSuccess("Dokumen updated successfully")
-    }
-
-    @DeleteMapping("/{id}")
-    fun delete(@PathVariable pegawaiId: UUID, @PathVariable id: UUID): BaseResponse<Nothing?> {
-        service.delete(id)
-        return null.isSuccess("Dokumen deleted successfully")
-    }
+        @RequestParam(required = false) pegawaiId: UUID?,
+        @RequestParam(required = false) dokterId: UUID?
+    ): BaseResponse<List<DokumenPegawaiRes>> =
+        service.findAll(pegawaiId, dokterId).isSuccess("Dokumen retrieved successfully")
 }

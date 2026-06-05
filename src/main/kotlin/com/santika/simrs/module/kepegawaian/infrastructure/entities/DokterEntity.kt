@@ -23,6 +23,5 @@ class DokterEntity : BaseEntity() {
     var spesialisId: UUID? = null
     var alumni: String? = null
     var noIjinPraktek: String? = null
-    var dokumenIjinPraktikId: UUID? = null
     var isActive: Boolean = true
 }

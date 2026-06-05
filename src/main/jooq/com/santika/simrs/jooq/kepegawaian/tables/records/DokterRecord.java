@@ -148,73 +148,59 @@ public class DokterRecord extends UpdatableRecordImpl<DokterRecord> {
     }
 
     /**
-     * Setter for <code>KEPEGAWAIAN.DOKTER.DOKUMEN_IJIN_PRAKTIK_ID</code>.
-     */
-    public void setDokumenIjinPraktikId(UUID value) {
-        set(9, value);
-    }
-
-    /**
-     * Getter for <code>KEPEGAWAIAN.DOKTER.DOKUMEN_IJIN_PRAKTIK_ID</code>.
-     */
-    public UUID getDokumenIjinPraktikId() {
-        return (UUID) get(9);
-    }
-
-    /**
      * Setter for <code>KEPEGAWAIAN.DOKTER.IS_ACTIVE</code>.
      */
     public void setIsActive(Boolean value) {
-        set(10, value);
+        set(9, value);
     }
 
     /**
      * Getter for <code>KEPEGAWAIAN.DOKTER.IS_ACTIVE</code>.
      */
     public Boolean getIsActive() {
-        return (Boolean) get(10);
+        return (Boolean) get(9);
     }
 
     /**
      * Setter for <code>KEPEGAWAIAN.DOKTER.DELETED_AT</code>.
      */
     public void setDeletedAt(LocalDateTime value) {
-        set(11, value);
+        set(10, value);
     }
 
     /**
      * Getter for <code>KEPEGAWAIAN.DOKTER.DELETED_AT</code>.
      */
     public LocalDateTime getDeletedAt() {
-        return (LocalDateTime) get(11);
+        return (LocalDateTime) get(10);
     }
 
     /**
      * Setter for <code>KEPEGAWAIAN.DOKTER.CREATED_AT</code>.
      */
     public void setCreatedAt(LocalDateTime value) {
-        set(12, value);
+        set(11, value);
     }
 
     /**
      * Getter for <code>KEPEGAWAIAN.DOKTER.CREATED_AT</code>.
      */
     public LocalDateTime getCreatedAt() {
-        return (LocalDateTime) get(12);
+        return (LocalDateTime) get(11);
     }
 
     /**
      * Setter for <code>KEPEGAWAIAN.DOKTER.UPDATED_AT</code>.
      */
     public void setUpdatedAt(LocalDateTime value) {
-        set(13, value);
+        set(12, value);
     }
 
     /**
      * Getter for <code>KEPEGAWAIAN.DOKTER.UPDATED_AT</code>.
      */
     public LocalDateTime getUpdatedAt() {
-        return (LocalDateTime) get(13);
+        return (LocalDateTime) get(12);
     }
 
     // -------------------------------------------------------------------------
@@ -240,7 +226,7 @@ public class DokterRecord extends UpdatableRecordImpl<DokterRecord> {
     /**
      * Create a detached, initialised DokterRecord
      */
-    public DokterRecord(UUID id, UUID pegawaiId, String namaDokter, String nip, String telephoneDokter, String emailDokter, UUID spesialisId, String alumni, String noIjinPraktek, UUID dokumenIjinPraktikId, Boolean isActive, LocalDateTime deletedAt, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public DokterRecord(UUID id, UUID pegawaiId, String namaDokter, String nip, String telephoneDokter, String emailDokter, UUID spesialisId, String alumni, String noIjinPraktek, Boolean isActive, LocalDateTime deletedAt, LocalDateTime createdAt, LocalDateTime updatedAt) {
         super(Dokter.DOKTER);
 
         setId(id);
@@ -252,7 +238,6 @@ public class DokterRecord extends UpdatableRecordImpl<DokterRecord> {
         setSpesialisId(spesialisId);
         setAlumni(alumni);
         setNoIjinPraktek(noIjinPraktek);
-        setDokumenIjinPraktikId(dokumenIjinPraktikId);
         setIsActive(isActive);
         setDeletedAt(deletedAt);
         setCreatedAt(createdAt);

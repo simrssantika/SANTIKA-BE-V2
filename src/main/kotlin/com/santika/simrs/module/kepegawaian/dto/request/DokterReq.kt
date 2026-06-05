@@ -11,6 +11,5 @@ data class DokterReq(
     val spesialisId: UUID?,
     val alumni: String?,
     val noIjinPraktek: String?,
-    val dokumenIjinPraktikId: UUID?,
     val isActive: Boolean = true
 )

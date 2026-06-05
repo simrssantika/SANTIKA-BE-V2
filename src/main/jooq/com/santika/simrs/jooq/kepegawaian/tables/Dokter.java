@@ -105,11 +105,6 @@ public class Dokter extends TableImpl<DokterRecord> {
     public final TableField<DokterRecord, String> NO_IJIN_PRAKTEK = createField(DSL.name("NO_IJIN_PRAKTEK"), SQLDataType.VARCHAR(120), this, "");
 
     /**
-     * The column <code>KEPEGAWAIAN.DOKTER.DOKUMEN_IJIN_PRAKTIK_ID</code>.
-     */
-    public final TableField<DokterRecord, UUID> DOKUMEN_IJIN_PRAKTIK_ID = createField(DSL.name("DOKUMEN_IJIN_PRAKTIK_ID"), SQLDataType.UUID, this, "");
-
-    /**
      * The column <code>KEPEGAWAIAN.DOKTER.IS_ACTIVE</code>.
      */
     public final TableField<DokterRecord, Boolean> IS_ACTIVE = createField(DSL.name("IS_ACTIVE"), SQLDataType.BOOLEAN.nullable(false).defaultValue(DSL.field(DSL.raw("TRUE"), SQLDataType.BOOLEAN)), this, "");

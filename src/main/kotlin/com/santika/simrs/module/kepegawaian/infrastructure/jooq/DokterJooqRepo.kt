@@ -20,7 +20,6 @@ class DokterJooqRepo(private val dsl: DSLContext) {
     private val d = DSL.table(DSL.name("kepegawaian", "dokter")).`as`("d")
     private val s = DSL.table(DSL.name("kepegawaian", "spesialis")).`as`("s")
     private val p = DSL.table(DSL.name("kepegawaian", "pegawai")).`as`("p")
-    private val df = DSL.table(DSL.name("shared", "file")).`as`("df")
 
     // ── dokter fields ──────────────────────────────────────────────────────────
     private val dId = DSL.field(DSL.name("d", "id"), UUID::class.java)
@@ -32,7 +31,6 @@ class DokterJooqRepo(private val dsl: DSLContext) {
     private val dSpesialisId = DSL.field(DSL.name("d", "spesialis_id"), UUID::class.java)
     private val dAlumni = DSL.field(DSL.name("d", "alumni"), String::class.java)
     private val dNoIjinPraktek = DSL.field(DSL.name("d", "no_ijin_praktek"), String::class.java)
-    private val dDokumenIjinPraktikId = DSL.field(DSL.name("d", "dokumen_ijin_praktik_id"), UUID::class.java)
     private val dIsActive = DSL.field(DSL.name("d", "is_active"), Boolean::class.javaObjectType)
     private val dDeletedAt = DSL.field(DSL.name("d", "deleted_at"))
 
@@ -46,11 +44,6 @@ class DokterJooqRepo(private val dsl: DSLContext) {
     private val pNip = DSL.field(DSL.name("p", "nip"), String::class.java)
     private val pNama = DSL.field(DSL.name("p", "nama"), String::class.java)
     private val pDeletedAt = DSL.field(DSL.name("p", "deleted_at"))
-
-    // ── file fields (shared.file) untuk dokumen ijin ───────────────────────────
-    private val dfId = DSL.field(DSL.name("df", "id"), UUID::class.java)
-    private val dfPath = DSL.field(DSL.name("df", "path"), String::class.java)
-    private val dfDeletedAt = DSL.field(DSL.name("df", "deleted_at"))
 
     // alias untuk menghindari ambiguitas nama pada join
     private val pNamaAlias = pNama.`as`("nama_pegawai")
@@ -110,19 +103,24 @@ class DokterJooqRepo(private val dsl: DSLContext) {
         return SliceImpl(content, pageable, hasNext)
     }
 
-    fun findById(id: UUID): DokterDetailRes? {
+    fun findById(id: UUID): DokterDetailRes? =
+        fetchDetail(dId.eq(id).and(dDeletedAt.isNull))
+
+    /** Dipakai PegawaiService untuk embed dokter di detail pegawai (double query). */
+    fun findByPegawaiId(pegawaiId: UUID): DokterDetailRes? =
+        fetchDetail(dPegawaiId.eq(pegawaiId).and(dDeletedAt.isNull))
+
+    private fun fetchDetail(condition: Condition): DokterDetailRes? {
         val r = dsl.select(
             dId, dPegawaiId, dNamaDokter, dNip, dTelephoneDokter, dEmailDokter,
-            dAlumni, dNoIjinPraktek, dDokumenIjinPraktikId, dIsActive,
+            dAlumni, dNoIjinPraktek, dIsActive,
             dSpesialisId, sNamaSpesialis,
-            pNamaAlias, pNipAlias,
-            dfId, dfPath
+            pNamaAlias, pNipAlias
         )
             .from(d)
             .leftJoin(s).on(dSpesialisId.eq(sId).and(sDeletedAt.isNull))
             .leftJoin(p).on(dPegawaiId.eq(pId).and(pDeletedAt.isNull))
-            .leftJoin(df).on(dDokumenIjinPraktikId.eq(dfId).and(dfDeletedAt.isNull))
-            .where(dId.eq(id).and(dDeletedAt.isNull))
+            .where(condition)
             .fetchOne() ?: return null
 
         return mapToDetail(r)
@@ -162,9 +160,6 @@ class DokterJooqRepo(private val dsl: DSLContext) {
         isActive = r[dIsActive],
         spesialis = r[dSpesialisId]?.let {
             DokterDetailRes.SpesialisRef(it, r[sNamaSpesialis])
-        },
-        documentIjinPraktek = r[dDokumenIjinPraktikId]?.let {
-            DokterDetailRes.FileRef(it, r[dfPath])
         },
         pegawai = r[dPegawaiId]?.let {
             DokterDetailRes.PegawaiRef(it, r[pNipAlias], r[pNamaAlias])

@@ -31,6 +31,15 @@ class DokterService(
     fun findById(id: UUID): DokterDetailRes =
         jooqRepo.findById(id) ?: throw DataNotFoundException("Dokter tidak ditemukan")
 
+    /** Embed dokter ke detail pegawai — null bila pegawai bukan dokter. */
+    fun findByPegawaiId(pegawaiId: UUID): DokterDetailRes? =
+        jooqRepo.findByPegawaiId(pegawaiId)
+
+    /** Resolusi dokter → pegawai (dipakai get dokumen by dokterId). */
+    fun getPegawaiId(dokterId: UUID): UUID =
+        findEntityById(dokterId).pegawaiId
+            ?: throw DataNotFoundException("Dokter belum terhubung ke pegawai")
+
     private fun findEntityById(id: UUID): DokterEntity =
         repo.findById(id).orElseThrow { DataNotFoundException("Dokter tidak ditemukan") }
 

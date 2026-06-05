@@ -13,7 +13,6 @@ data class DokterRes(
     val spesialisId: UUID?,
     val alumni: String?,
     val noIjinPraktek: String?,
-    val dokumenIjinPraktikId: UUID?,
     val isActive: Boolean
 ) {
     companion object {
@@ -27,7 +26,6 @@ data class DokterRes(
             spesialisId = entity.spesialisId,
             alumni = entity.alumni,
             noIjinPraktek = entity.noIjinPraktek,
-            dokumenIjinPraktikId = entity.dokumenIjinPraktikId,
             isActive = entity.isActive
         )
     }

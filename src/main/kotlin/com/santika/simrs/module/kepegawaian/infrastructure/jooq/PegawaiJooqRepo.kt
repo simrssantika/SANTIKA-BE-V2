@@ -29,7 +29,7 @@ class PegawaiJooqRepo(private val dsl: DSLContext) {
     private val kab = DSL.table(DSL.name("master", "wilayah_kab_kota")).`as`("kab")
     private val kec = DSL.table(DSL.name("master", "wilayah_kecamatan")).`as`("kec")
     private val kel = DSL.table(DSL.name("master", "wilayah_kelurahan")).`as`("kel")
-    private val f = DSL.table(DSL.name("shared", "file")).`as`("f")
+    private val f = DSL.table(DSL.name("shared", "storage_files")).`as`("f")
 
     // ── pegawai fields ─────────────────────────────────────────────────────────
     private val pId = DSL.field(DSL.name("p", "id"), UUID::class.java)
@@ -110,10 +110,9 @@ class PegawaiJooqRepo(private val dsl: DSLContext) {
     private val kelNama = DSL.field(DSL.name("kel", "nama_kelurahan"), String::class.java)
     private val kelDeletedAt = DSL.field(DSL.name("kel", "deleted_at"))
 
-    // ── file fields (shared.file) ──────────────────────────────────────────────
+    // ── file fields (shared.storage_files) ─────────────────────────────────────
     private val fId = DSL.field(DSL.name("f", "id"), UUID::class.java)
-    private val fPath = DSL.field(DSL.name("f", "path"), String::class.java)
-    private val fStatus = DSL.field(DSL.name("f", "mime_type"), String::class.java)
+    private val fName = DSL.field(DSL.name("f", "original_name"), String::class.java)
     private val fDeletedAt = DSL.field(DSL.name("f", "deleted_at"))
 
     // ── public methods ─────────────────────────────────────────────────────────
@@ -129,7 +128,7 @@ class PegawaiJooqRepo(private val dsl: DSLContext) {
         val rows = dsl.select(
             pId, pNip, pNama, pKelamin, pJabatan, pStatusPegawai, pIsActive,
             pDepartemenId, depNama,
-            pFotoId, fPath
+            pFotoId, fName
         )
             .from(p)
             .leftJoin(dep).on(pDepartemenId.eq(depId).and(depDeletedAt.isNull))
@@ -154,7 +153,7 @@ class PegawaiJooqRepo(private val dsl: DSLContext) {
                     PegawaiListRes.DepartemenRef(id = it, namaDepartemen = r[depNama])
                 },
                 foto = r[pFotoId]?.let {
-                    PegawaiListRes.FotoRef(id = it, file = r[fPath])
+                    PegawaiListRes.FotoRef(id = it, name = r[fName])
                 }
             )
         }
@@ -194,7 +193,7 @@ class PegawaiJooqRepo(private val dsl: DSLContext) {
             pDepartemenId, depNama,
             pBidangId, bpNama,
             pVendorId, vNama,
-            pFotoId, fPath, fStatus
+            pFotoId, fName
         )
             .from(p)
             .leftJoin(dep).on(pDepartemenId.eq(depId).and(depDeletedAt.isNull))
@@ -268,7 +267,7 @@ class PegawaiJooqRepo(private val dsl: DSLContext) {
         departemen = r[pDepartemenId]?.let { PegawaiDetailRes.DepartemenRef(it, r[depNama]) },
         bidang = r[pBidangId]?.let { PegawaiDetailRes.BidangRef(it, r[bpNama]) },
         vendorTenagaLuar = r[pVendorId]?.let { PegawaiDetailRes.VendorRef(it, r[vNama]) },
-        foto = r[pFotoId]?.let { PegawaiDetailRes.FotoRef(it, r[fPath], r[fStatus]) },
+        foto = r[pFotoId]?.let { PegawaiDetailRes.FotoRef(it, r[fName]) },
         dokter = null
     )
 }

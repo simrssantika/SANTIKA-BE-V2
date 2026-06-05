@@ -1,7 +1,7 @@
 package com.santika.simrs.module.kepegawaian.dto.request
 
 import java.time.LocalDate
-import java.util.UUID
+import java.util.*
 
 data class PegawaiReq(
     val nama: String,
@@ -30,6 +30,9 @@ data class PegawaiReq(
     val kelurahanId: UUID?,
     val alamat: String?,
     val mulaiBekerja: LocalDate?,
+    val isDokter: Boolean = false,
     val fotoId: UUID?,
+    val dokumen: List<DokumenPegawaiReq>? = null,
+    val dokter: DokterReq? = null,
     val isActive: Boolean = true
 )

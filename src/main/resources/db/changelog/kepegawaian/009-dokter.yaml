@@ -59,11 +59,6 @@ databaseChangeLog:
                   constraints:
                     nullable: true
               - column:
-                  name: dokumen_ijin_praktik_id
-                  type: uuid
-                  constraints:
-                    nullable: true
-              - column:
                   name: is_active
                   type: boolean
                   defaultValueBoolean: true
@@ -95,4 +90,3 @@ databaseChangeLog:
             sql: |
               CREATE INDEX idx_dokter_pegawai ON kepegawaian.dokter (pegawai_id);
               CREATE INDEX idx_dokter_spesialis ON kepegawaian.dokter (spesialis_id);
-              CREATE INDEX idx_dokter_dokumen ON kepegawaian.dokter (dokumen_ijin_praktik_id);
