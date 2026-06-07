@@ -12,6 +12,7 @@ import com.santika.simrs.jooq.shared.tables.Roles;
 import com.santika.simrs.jooq.shared.tables.StorageFiles;
 import com.santika.simrs.jooq.shared.tables.TempFiles;
 import com.santika.simrs.jooq.shared.tables.UserHasRole;
+import com.santika.simrs.jooq.shared.tables.UserSessions;
 import com.santika.simrs.jooq.shared.tables.Users;
 
 
@@ -60,6 +61,11 @@ public class Tables {
      * The table <code>SHARED.USER_HAS_ROLE</code>.
      */
     public static final UserHasRole USER_HAS_ROLE = UserHasRole.USER_HAS_ROLE;
+
+    /**
+     * The table <code>SHARED.USER_SESSIONS</code>.
+     */
+    public static final UserSessions USER_SESSIONS = UserSessions.USER_SESSIONS;
 
     /**
      * The table <code>SHARED.USERS</code>.

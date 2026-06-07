@@ -1,6 +1,6 @@
 package com.santika.simrs.global.jwt
 
-import com.santika.simrs.global.response.BaseResponse
+import com.santika.simrs.global.utils.ACCESS_TOKEN_COOKIE
 import com.santika.simrs.shared.auth.AuthService
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
@@ -16,7 +16,8 @@ import tools.jackson.module.kotlin.jacksonObjectMapper
 @Component
 class JwtAuthFilter(
     private val jwtTokenProvider: JwtTokenProvider,
-    private val authService: AuthService
+    private val authService: AuthService,
+    private val revocationStore: SessionRevocationStore
 ) : OncePerRequestFilter() {
 
     override fun doFilterInternal(
@@ -24,28 +25,45 @@ class JwtAuthFilter(
         response: HttpServletResponse,
         filterChain: FilterChain
     ) {
-        try {
-            val authHeader = request.getHeader("Authorization")
-            authHeader?.let {
-                if (it.startsWith("Bearer ")) {
-                    val token = it.substring(7)
-                    if (jwtTokenProvider.validateToken(token)) {
-                        val username = jwtTokenProvider.getUsername(token)
-                        val authorities = authService.getRolePermissionUser(username)
-                            .map { auth -> SimpleGrantedAuthority(auth) }
-                        val principal = authService.userPrincipalDetail(username)
-                        val auth = UsernamePasswordAuthenticationToken(principal, null, authorities)
-                        auth.details = WebAuthenticationDetailsSource().buildDetails(request)
-                        SecurityContextHolder.getContext().authentication = auth
+        val token = readAccessToken(request)
+        if (token != null) {
+            try {
+                if (jwtTokenProvider.validateToken(token)) {
+                    val jti = jwtTokenProvider.getJti(token)
+                    // Sesi sudah di-kick (login device lain / logout / rotasi) → tolak tegas.
+                    if (revocationStore.isRevoked(jti)) {
+                        writeSessionRevoked(response)
+                        return
                     }
+                    val username = jwtTokenProvider.getUsername(token)
+                    val authorities = authService.getRolePermissionUser(username)
+                        .map { SimpleGrantedAuthority(it) }
+                    val principal = authService.userPrincipalDetail(username)
+                    val auth = UsernamePasswordAuthenticationToken(principal, null, authorities)
+                    auth.details = WebAuthenticationDetailsSource().buildDetails(request)
+                    SecurityContextHolder.getContext().authentication = auth
                 }
+            } catch (e: Exception) {
+                // Access token invalid/kedaluwarsa: jangan 401 di sini (cookie ikut terkirim
+                // ke endpoint publik & ke /auth/refresh). Biarkan tak terautentikasi —
+                // endpoint terlindungi akan 401 lewat CustomAuthEntryPoint.
+                SecurityContextHolder.clearContext()
             }
-            filterChain.doFilter(request, response)
-        } catch (e: Exception) {
-            response.status = HttpServletResponse.SC_UNAUTHORIZED
-            response.contentType = "application/json"
-            val body = BaseResponse("error", HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized", null)
-            response.writer?.write(jacksonObjectMapper().writeValueAsString(body))
         }
+        filterChain.doFilter(request, response)
+    }
+
+    private fun readAccessToken(request: HttpServletRequest): String? =
+        request.cookies?.firstOrNull { it.name == ACCESS_TOKEN_COOKIE }?.value?.takeIf { it.isNotBlank() }
+
+    private fun writeSessionRevoked(response: HttpServletResponse) {
+        response.status = HttpServletResponse.SC_UNAUTHORIZED
+        response.contentType = "application/json"
+        response.characterEncoding = "UTF-8"
+        val body = mapOf(
+            "error" to "session_revoked",
+            "reason" to "logged_in_from_another_device"
+        )
+        response.writer?.write(jacksonObjectMapper().writeValueAsString(body))
     }
 }

@@ -14,9 +14,11 @@ class JwtTokenProvider(jwtConfig: JwtConfig) {
     private val validityInMs = jwtConfig.expiration.toLong() * 1000
     private val refreshValidityInMs = jwtConfig.refreshExpiration.toLong() * 1000
 
-    fun generateToken(username: String?, profile: UserResponseDto): String {
+    /** [jti] mengikat token ke baris user_sessions (lihat single-session enforcement). */
+    fun generateToken(username: String?, profile: UserResponseDto, jti: String): String {
         val now = Date()
         return Jwts.builder()
+            .id(jti)
             .subject(username)
             .claims().add("profile", profile).add("iat", now)
             .expiration(Date(now.time + validityInMs)).and()
@@ -24,9 +26,10 @@ class JwtTokenProvider(jwtConfig: JwtConfig) {
             .compact()
     }
 
-    fun generateRefreshToken(username: String?): String {
+    fun generateRefreshToken(username: String?, jti: String): String {
         val now = Date()
         return Jwts.builder()
+            .id(jti)
             .subject(username)
             .issuedAt(now)
             .expiration(Date(now.time + refreshValidityInMs))
@@ -45,4 +48,7 @@ class JwtTokenProvider(jwtConfig: JwtConfig) {
 
     fun getUsername(token: String?): String =
         Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).payload.subject
+
+    fun getJti(token: String?): String =
+        Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).payload.id
 }

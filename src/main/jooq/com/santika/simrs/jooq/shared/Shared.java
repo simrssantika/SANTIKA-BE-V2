@@ -13,6 +13,7 @@ import com.santika.simrs.jooq.shared.tables.Roles;
 import com.santika.simrs.jooq.shared.tables.StorageFiles;
 import com.santika.simrs.jooq.shared.tables.TempFiles;
 import com.santika.simrs.jooq.shared.tables.UserHasRole;
+import com.santika.simrs.jooq.shared.tables.UserSessions;
 import com.santika.simrs.jooq.shared.tables.Users;
 
 import java.util.Arrays;
@@ -77,6 +78,11 @@ public class Shared extends SchemaImpl {
     public final UserHasRole USER_HAS_ROLE = UserHasRole.USER_HAS_ROLE;
 
     /**
+     * The table <code>SHARED.USER_SESSIONS</code>.
+     */
+    public final UserSessions USER_SESSIONS = UserSessions.USER_SESSIONS;
+
+    /**
      * The table <code>SHARED.USERS</code>.
      */
     public final Users USERS = Users.USERS;
@@ -105,6 +111,7 @@ public class Shared extends SchemaImpl {
             StorageFiles.STORAGE_FILES,
             TempFiles.TEMP_FILES,
             UserHasRole.USER_HAS_ROLE,
+            UserSessions.USER_SESSIONS,
             Users.USERS
         );
     }

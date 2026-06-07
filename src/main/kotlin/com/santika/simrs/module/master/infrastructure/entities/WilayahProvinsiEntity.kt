@@ -1,7 +1,11 @@
 ﻿package com.santika.simrs.module.master.infrastructure.entities
 
+import com.santika.simrs.global.annotation.uuid.UuidV7
 import com.santika.simrs.global.entity.BaseEntity
-import jakarta.persistence.*
+import jakarta.persistence.Entity
+import jakarta.persistence.Id
+import jakarta.persistence.OneToMany
+import jakarta.persistence.Table
 import org.hibernate.annotations.SQLRestriction
 import java.util.*
 
@@ -11,7 +15,7 @@ import java.util.*
 @SQLRestriction("deleted_at is null")
 class WilayahProvinsiEntity : BaseEntity() {
     @Id
-    @GeneratedValue
+    @UuidV7
     var id: UUID? = null
     var kodeProvinsi: String? = null
     var namaProvinsi: String? = null

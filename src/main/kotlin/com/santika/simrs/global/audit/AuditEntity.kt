@@ -1,17 +1,21 @@
 package com.santika.simrs.global.audit
 
-import jakarta.persistence.*
+import com.santika.simrs.global.annotation.uuid.UuidV7
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.Id
+import jakarta.persistence.Table
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.JdbcTypeCode
 import org.hibernate.type.SqlTypes
 import java.time.LocalDateTime
-import java.util.UUID
+import java.util.*
 
 @Entity
 @Table(name = "audit", schema = "shared")
 class AuditEntity(
     @Id
-    @GeneratedValue
+    @UuidV7
     var id: UUID? = null,
 
     @Column(name = "username", nullable = false)

@@ -10,6 +10,7 @@ import com.santika.simrs.jooq.shared.tables.Roles.RolesPath;
 import com.santika.simrs.jooq.shared.tables.StorageFiles.StorageFilesPath;
 import com.santika.simrs.jooq.shared.tables.TempFiles.TempFilesPath;
 import com.santika.simrs.jooq.shared.tables.UserHasRole.UserHasRolePath;
+import com.santika.simrs.jooq.shared.tables.UserSessions.UserSessionsPath;
 import com.santika.simrs.jooq.shared.tables.records.UsersRecord;
 
 import java.time.LocalDateTime;
@@ -208,6 +209,19 @@ public class Users extends TableImpl<UsersRecord> {
             _userHasRole = new UserHasRolePath(this, null, Keys.FK_UHR_USER_ID.getInverseKey());
 
         return _userHasRole;
+    }
+
+    private transient UserSessionsPath _userSessions;
+
+    /**
+     * Get the implicit to-many join path to the
+     * <code>SHARED.USER_SESSIONS</code> table
+     */
+    public UserSessionsPath userSessions() {
+        if (_userSessions == null)
+            _userSessions = new UserSessionsPath(this, null, Keys.FK_USER_SESSIONS_USER_ID.getInverseKey());
+
+        return _userSessions;
     }
 
     /**

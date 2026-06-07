@@ -12,6 +12,7 @@ import com.santika.simrs.jooq.shared.tables.Roles;
 import com.santika.simrs.jooq.shared.tables.StorageFiles;
 import com.santika.simrs.jooq.shared.tables.TempFiles;
 import com.santika.simrs.jooq.shared.tables.UserHasRole;
+import com.santika.simrs.jooq.shared.tables.UserSessions;
 import com.santika.simrs.jooq.shared.tables.Users;
 import com.santika.simrs.jooq.shared.tables.records.AuditRecord;
 import com.santika.simrs.jooq.shared.tables.records.FileRecord;
@@ -21,6 +22,7 @@ import com.santika.simrs.jooq.shared.tables.records.RolesRecord;
 import com.santika.simrs.jooq.shared.tables.records.StorageFilesRecord;
 import com.santika.simrs.jooq.shared.tables.records.TempFilesRecord;
 import com.santika.simrs.jooq.shared.tables.records.UserHasRoleRecord;
+import com.santika.simrs.jooq.shared.tables.records.UserSessionsRecord;
 import com.santika.simrs.jooq.shared.tables.records.UsersRecord;
 
 import org.jooq.ForeignKey;
@@ -50,6 +52,7 @@ public class Keys {
     public static final UniqueKey<TempFilesRecord> CONSTRAINT_8 = Internal.createUniqueKey(TempFiles.TEMP_FILES, DSL.name("CONSTRAINT_8"), new TableField[] { TempFiles.TEMP_FILES.UPLOAD_TOKEN }, true);
     public static final UniqueKey<TempFilesRecord> PK_TEMP_FILES = Internal.createUniqueKey(TempFiles.TEMP_FILES, DSL.name("PK_TEMP_FILES"), new TableField[] { TempFiles.TEMP_FILES.ID }, true);
     public static final UniqueKey<UserHasRoleRecord> PK_USER_HAS_ROLE = Internal.createUniqueKey(UserHasRole.USER_HAS_ROLE, DSL.name("PK_USER_HAS_ROLE"), new TableField[] { UserHasRole.USER_HAS_ROLE.USER_ID, UserHasRole.USER_HAS_ROLE.ROLE_ID }, true);
+    public static final UniqueKey<UserSessionsRecord> PK_USER_SESSIONS = Internal.createUniqueKey(UserSessions.USER_SESSIONS, DSL.name("PK_USER_SESSIONS"), new TableField[] { UserSessions.USER_SESSIONS.ID }, true);
     public static final UniqueKey<UsersRecord> PK_USERS = Internal.createUniqueKey(Users.USERS, DSL.name("PK_USERS"), new TableField[] { Users.USERS.ID }, true);
 
     // -------------------------------------------------------------------------
@@ -62,4 +65,5 @@ public class Keys {
     public static final ForeignKey<TempFilesRecord, UsersRecord> FK_TEMP_FILES_UPLOADED_BY = Internal.createForeignKey(TempFiles.TEMP_FILES, DSL.name("FK_TEMP_FILES_UPLOADED_BY"), new TableField[] { TempFiles.TEMP_FILES.UPLOADED_BY }, Keys.PK_USERS, new TableField[] { Users.USERS.ID }, true);
     public static final ForeignKey<UserHasRoleRecord, RolesRecord> FK_UHR_ROLE_ID = Internal.createForeignKey(UserHasRole.USER_HAS_ROLE, DSL.name("FK_UHR_ROLE_ID"), new TableField[] { UserHasRole.USER_HAS_ROLE.ROLE_ID }, Keys.PK_ROLES, new TableField[] { Roles.ROLES.ID }, true);
     public static final ForeignKey<UserHasRoleRecord, UsersRecord> FK_UHR_USER_ID = Internal.createForeignKey(UserHasRole.USER_HAS_ROLE, DSL.name("FK_UHR_USER_ID"), new TableField[] { UserHasRole.USER_HAS_ROLE.USER_ID }, Keys.PK_USERS, new TableField[] { Users.USERS.ID }, true);
+    public static final ForeignKey<UserSessionsRecord, UsersRecord> FK_USER_SESSIONS_USER_ID = Internal.createForeignKey(UserSessions.USER_SESSIONS, DSL.name("FK_USER_SESSIONS_USER_ID"), new TableField[] { UserSessions.USER_SESSIONS.USER_ID }, Keys.PK_USERS, new TableField[] { Users.USERS.ID }, true);
 }

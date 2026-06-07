@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository
+import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler
 import org.springframework.security.web.header.writers.ReferrerPolicyHeaderWriter
 import org.springframework.web.cors.CorsConfiguration
 
@@ -21,7 +23,20 @@ class SecurityConfiguration(
 
     @Bean
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
-        http.csrf { it.disable() }
+        // Token disimpan di cookie HttpOnly → rentan CSRF, jadi aktifkan proteksi CSRF
+        // double-submit cookie. XSRF-TOKEN dibuat non-HttpOnly agar FE bisa membacanya
+        // dan mengirim balik lewat header X-XSRF-TOKEN. Handler plain (bukan XOR) supaya
+        // nilai cookie == nilai header (cocok untuk SPA, bukan form server-rendered).
+        http.csrf { csrf ->
+            csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+            csrf.csrfTokenRequestHandler(CsrfTokenRequestAttributeHandler())
+            csrf.ignoringRequestMatchers(
+                "/api/v1/auth/login",
+                "/api/v1/auth/csrf",
+                "/api/v1/files/**",
+                "/actuator/**"
+            )
+        }
             .headers {
                 it.frameOptions { fo -> fo.sameOrigin() }
                 it.xssProtection { xss -> xss.disable() }

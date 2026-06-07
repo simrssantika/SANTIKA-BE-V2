@@ -9,3 +9,5 @@ databaseChangeLog:
       file: db/changelog/shared/user/004-role-has-permission.yaml
   - include:
       file: db/changelog/shared/user/005-user-has-role.yaml
+  - include:
+      file: db/changelog/shared/user/006-user-sessions.yaml

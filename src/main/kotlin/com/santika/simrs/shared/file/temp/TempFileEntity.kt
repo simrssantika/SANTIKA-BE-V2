@@ -1,15 +1,16 @@
 package com.santika.simrs.shared.file.temp
 
+import com.santika.simrs.global.annotation.uuid.UuidV7
 import jakarta.persistence.*
 import java.time.LocalDateTime
-import java.util.UUID
+import java.util.*
 
 @Entity
 @Table(name = "temp_files", schema = "shared")
 class TempFileEntity {
 
     @Id
-    @GeneratedValue
+    @UuidV7
     var id: UUID? = null
 
     @Column(name = "original_name")

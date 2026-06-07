@@ -40,6 +40,9 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
+    //  UUID
+    implementation("com.github.f4b6a3:uuid-creator:6.1.1")
+
     // security
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.bouncycastle:bcpkix-jdk18on:1.84")
@@ -78,17 +81,23 @@ allOpen {
     annotation("jakarta.persistence.Embeddable")
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
-}
-
 // Redam warning deprecation `sun.misc.Unsafe::allocateMemory` yang dipanggil Netty
 // (via Lettuce/Redis) di JDK 24+. Flag ini hanya menyenyapkan peringatan, performa
-// Netty tetap penuh. Untuk run jar produksi, pasang flag yang sama saat `java -jar`.
-tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
-    jvmArgs("--sun-misc-unsafe-memory-access=allow")
+// Netty tetap penuh (Netty tetap boleh pakai Unsafe). Untuk run jar produksi,
+// pasang flag yang sama saat `java -jar`.
+val unsafeJvmArgs = listOf(
+    "--enable-native-access=ALL-UNNAMED",
+    "--sun-misc-unsafe-memory-access=allow",
+)
+
+tasks.bootRun {
+    jvmArgs(unsafeJvmArgs)
 }
 
+tasks.withType<Test> {
+    useJUnitPlatform()
+    jvmArgs(unsafeJvmArgs)
+}
 
 jooq {
     configurations {

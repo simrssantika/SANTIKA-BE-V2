@@ -6,6 +6,7 @@ package com.santika.simrs.jooq.shared;
 
 import com.santika.simrs.jooq.shared.tables.StorageFiles;
 import com.santika.simrs.jooq.shared.tables.TempFiles;
+import com.santika.simrs.jooq.shared.tables.UserSessions;
 
 import org.jooq.Index;
 import org.jooq.OrderField;
@@ -29,4 +30,6 @@ public class Indexes {
     public static final Index IDX_TEMP_FILES_EXPIRES_AT = Internal.createIndex(DSL.name("IDX_TEMP_FILES_EXPIRES_AT"), TempFiles.TEMP_FILES, new OrderField[] { TempFiles.TEMP_FILES.EXPIRES_AT }, false);
     public static final Index IDX_TEMP_FILES_UPLOAD_TOKEN = Internal.createIndex(DSL.name("IDX_TEMP_FILES_UPLOAD_TOKEN"), TempFiles.TEMP_FILES, new OrderField[] { TempFiles.TEMP_FILES.UPLOAD_TOKEN }, false);
     public static final Index IDX_TEMP_FILES_UPLOADED_BY = Internal.createIndex(DSL.name("IDX_TEMP_FILES_UPLOADED_BY"), TempFiles.TEMP_FILES, new OrderField[] { TempFiles.TEMP_FILES.UPLOADED_BY }, false);
+    public static final Index IDX_USER_SESSIONS_USER_ID = Internal.createIndex(DSL.name("IDX_USER_SESSIONS_USER_ID"), UserSessions.USER_SESSIONS, new OrderField[] { UserSessions.USER_SESSIONS.USER_ID }, false);
+    public static final Index UQ_USER_SESSIONS_JTI = Internal.createIndex(DSL.name("UQ_USER_SESSIONS_JTI"), UserSessions.USER_SESSIONS, new OrderField[] { UserSessions.USER_SESSIONS.JTI }, true);
 }
